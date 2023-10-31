@@ -2,6 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+    "cli": {
+        "cache": {
+            "enabled": false
+        },
+        "analytics": "149ddaac-4bf6-4e79-a93d-30962027dcb1"
+    },
   "projects": {
     "frontend": {
       "projectType": "application",
@@ -100,8 +106,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "b37cd238-e18d-4e78-8726-ea567317339e"
   }
 }
