@@ -9,6 +9,7 @@ import { EntrantPageComponent } from './pages/entrant-page/entrant-page.componen
 import { StudentPageComponent } from './pages/student-page/student-page.component';
 import { SubdivisionsPageComponent } from './pages/subdivisions-page/subdivisions-page.component';
 import { BaseHeaderComponent } from './pages/base-header/base-header.component';
+import { BaseFooterComponent } from './pages/base-footer/base-footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BaseHeaderComponent } from './pages/base-header/base-header.component';
     MainPageComponent,
     StudentPageComponent,
     SubdivisionsPageComponent,
-    BaseHeaderComponent
+    BaseHeaderComponent,
+    BaseFooterComponent
   ],
   imports: [
     BrowserModule,
