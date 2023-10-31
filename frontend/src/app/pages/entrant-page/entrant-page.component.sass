@@ -1,0 +1,403 @@
+html
+  line-height: 1.15
+  -webkit-text-size-adjust: 100%
+
+body
+  margin: 0
+
+main
+  display: block
+
+.b1
+  background-color: rgba(210, 193, 153, 1)
+  background-image: url(../../../assets/img/main-page-img/img1.jpg)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+
+.b1_inner
+  margin: 0
+  padding-top: 401px
+  padding-bottom: 459px
+  text-align: center
+
+.b1_title
+  display: block
+  margin-bottom: 20px
+  font-family: "Montserrat"
+  font-size: 58px
+  line-height: normal
+  font-weight: 500
+  color: #ffffff
+
+b
+  font-weight: bolder
+
+.b1_text
+  font-size: 36px
+  color: #ffffff
+  font-family: "Montserrat"
+
+.line
+  width: 387px
+  border: 1px solid #FFFFFF
+  margin: 0 auto
+
+.b2
+  background-color:  rgba(210, 193, 153, 1)
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+
+.b2_inner
+  margin: 0
+  text-align: center
+  height: 2310px
+  padding-top: 93px
+
+.b2_text
+  font-size: 34px
+  text-indent: 1.5em
+  color: #ffffff
+  margin-right: 68px
+  text-align: justify
+  margin-bottom: 81px
+  font-family: "Montserrat"
+
+.b2_button
+  color: #FFFFFF
+  font-size: 30px
+  border-bottom: 1px solid #FFFFFF
+  text-decoration: none
+  margin-right: 68px
+  font-family: "Montserrat"
+/////////////////////////////////////////////
+
+.toolbar
+  display: flex
+  flex-direction: row
+  width: 100%
+  padding: 5px
+
+.toolbar-text
+  font-family: "Garamond"
+  font-weight: 400
+  font-size: 25px
+  color: #fff
+  line-height: 26.64px
+  text-align: center
+  margin: 0
+  padding: 0
+  text-decoration: none /* Remove the default underline */
+  transition: text-decoration 0.3s
+
+.toolbar-text:hover
+   text-decoration: underline
+   text-underline-position: under
+
+@media (max-width: 1024px)
+   .toolbar-text
+     font-size: 160%
+
+
+
+@media (max-width: 768px)
+   toolbar-text
+     font-size: 120%
+
+
+@media (max-width: 425px)
+   .toolbar-text
+     font-size: 70%
+
+.navigation
+  width: 1302px
+  height: 34px
+  margin-top: 63px
+  position: absolute
+  top: 66px
+  left: 108px
+  //border: 1px solid
+  display: flex /* To align the buttons in a row */
+  justify-content: space-between
+
+
+@media (max-width: 1440px)
+   .navigation
+     margin-left: 30%
+
+
+
+@media (max-width: 1024px)
+   .navigation
+     margin-left: 20%
+
+
+@media (max-width: 768px)
+   .navigation
+     margin-left: 10%
+
+
+@media (max-width: 425px)
+   .navigation
+     margin-left: 0
+     margin: 5px
+     padding: 5px
+
+.nav-1, .nav-2
+  display: inline-block
+
+
+#nav-button
+  background-color: transparent
+  cursor: pointer
+  border: 0
+  margin-right: 20px
+/////////////////////////////////////////////
+/* Define styles for the container */
+.box-container
+  display: grid
+  grid-template-columns: repeat(2, 1fr) /* Create 2 columns */
+  grid-gap: 20px /* Adjust the gap between boxes as needed */
+  margin-left: -20px
+
+
+section
+  padding: 5rem 10%
+
+.heading
+  text-align: center
+  margin-bottom: 3rem
+  font-size: 4rem
+  text-transform: capitalize
+  color: #1cb359
+//.box
+  width: 600px
+  height: 113px
+  border-radius: 15px
+  text-align: center
+  background: #fff
+  padding: 3rem
+  border: 0.2rem solid #1cb359
+  -webkit-box-shadow: 0 0.5rem 1rem #1cb359
+  box-shadow: 0 0.5rem 1rem #1cb359
+  transition: background 0.3s, border-color 0.3s, color 0.3s
+  cursor: pointer
+  box:hover
+  width: 600px
+  height: 113px
+  top: 88px
+  left: 730px
+  padding:  103px
+  border-radius: 15px
+
+
+
+
+.box img
+  width: 64px /* Ширина зображення */
+  height: 64px /* Висота зображення */
+   top: 25px
+  left: 44px
+
+
+
+.box h3
+  font-size: 1rem
+  text-transform: capitalize
+  color: rgba(129, 102, 68, 0.94)
+  padding: 1rem 0
+
+
+.heading span
+  color: rgba(129, 102, 68, 0.94)
+
+
+////////////////////////////////////////////////////////////////////
+.services .box-container .box
+  text-align: center
+  background: rgba(129, 102, 68, 0.94)
+  padding: 0.2rem
+  border: 0.2rem solid rgba(129, 102, 68, 0.94)
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(129, 102, 68, 0.94)
+  box-shadow: 0 0.5rem 1rem rgba(129, 102, 68, 0.94)
+  transition: background 0.3s, border-color 0.3s, color 0.3s
+  cursor: pointer
+
+.services .box-container .box .box-content
+  display: flex
+
+.services .box-container .box img
+  margin-right: 0.5rem
+
+.services .box-container .box:hover
+  background: rgba(210, 193, 153, 1)
+  border-color: rgba(129, 102, 68, 0.94)
+  color: rgba(129, 102, 68, 0.94)
+
+
+//.services .box-container .box h3
+  font-size: 2rem
+  text-transform: capitalize
+
+
+//.services .box-container .box p
+  font-size: 1rem
+  line-height: 2
+  color: #777
+
+
+/* Button 1 */
+.button-1
+  width: 600px
+  height: 113px
+  top: 88px
+  left: 90px
+  border-radius: 15px
+
+
+/* Button 2 */
+.button-2
+  width: 600px
+  height: 113px
+  top: 88px
+  left: 730px
+  border-radius: 15px
+
+
+/* Button 3 */
+.button-3
+  width: 600px
+  height: 113px
+  top: 585px
+  left: 90px
+  border-radius: 13px
+
+
+/* Button 4 */
+.button-4
+  width: 600px
+  height: 113px
+  top: 586px
+  left: 730px
+  border-radius: 15px
+
+/* Button 5 */
+.button-5
+  width: 600px
+  height: 113px
+  top: 1082px
+  left: 87px
+  border-radius: 15px
+
+
+/* Button 6 *
+.button-6
+  width: 600px
+  height: 113px
+  top: 1082px
+  left: 730px
+  border-radius: 15px
+
+
+/* Button 7 */
+.button-7
+  width: 600px
+  height: 113px
+  top: 1579px
+  left: 90px
+  border-radius: 15px
+
+/* Button 8 */
+.button-8
+  width: 600px
+  height: 113px
+  top: 1579px
+  left: 730px
+  border-radius: 15px
+.expanded
+  width: 600px
+  height: 390px
+  background-color: rgba(129, 102, 68, 0.94)
+  color: white
+
+/* Add margin to create spacing between boxes */
+.box + .box
+  margin-top: 300px /* Adjust the value to create spacing */
+  padding-top: 20px
+
+
+////////////////////////////////////////////////
+
+ol
+  font-size: 33px
+  color: #000000
+  text-align: justify
+  margin-left: 224px
+  margin-right: 122px
+  font-family: "Montserrat"
+
+.footer
+  background-color: #000000
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  font-family: "Montserrat"
+
+.footer_inner
+  width: 100%
+  display: flex
+  justify-content: space-between
+  height: 250px
+  padding-top: 49px
+
+.footer_left
+  width: 60%
+
+.footer_right
+  width: 40%
+  padding-top: 60px
+  text-align: center
+
+.footer_text1
+  color: #ffffff
+  font-size: 33px
+  margin-bottom: 45px
+
+.footer_text2
+  color: #ffffff
+  font-size: 33px
+
+.footer_icon1
+  width: 50px
+  height: 50px
+  margin-left: 122px
+  margin-right: 64px
+  float: left
+
+.footer_icon2
+  width: 50px
+  height: 50px
+  margin-left: 122px
+  margin-right: 64px
+  float: left
+
+.footer_icon3
+  width: 50px
+  height: 50px
+  margin-left: 80px
+
+.footer_icon4
+  width: 50px
+  height: 50px
+  margin-left: 70px
+
+.footer_copy
+  padding: 15px
+  background-color: #1a1a1a
+
+.footer_copy-text
+  font-size: 20px
+  line-height: 24px
+  color: #615555
+  text-align: center
