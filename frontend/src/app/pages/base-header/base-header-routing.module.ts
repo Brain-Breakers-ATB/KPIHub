@@ -24,6 +24,7 @@ const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsPageComponent,
+      loadChildren: () => import('../contacts-page/contacts-page.module').then((m) => m.ContactsPageModule),
   },
   {
     path: 'subdivisions',
