@@ -9,7 +9,9 @@
     margin-top: 27px
     margin-left: 122px
     border: 1px
-
+    transition: transform 0.3s
+.logo:hover
+    transform: scale(1.2)
 .img-logo
     width: 410px
     height: 99px
@@ -23,7 +25,27 @@
     text-align: center
     margin: 0
     padding: 0
+////////////////////////
+/* Add a new CSS class for navigation links */
+#nav-button
+    background-color: transparent
+    cursor: pointer
+    border: 0
+    margin-right: 20px
+    color: #fff /* Default text color */
+    text-decoration: none /* Remove default underline */
+    transition: color 0.3s
 
+#nav-button:hover
+    color: #886F4F /* Change text color on hover to red (you can use your preferred color) */
+
+#nav-button:focus
+    text-decoration: underline /* Add underline when the button is clicked */
+    text-underline-offset: 8px
+#nav-button:hover p.toolbar-text
+    color: #886F4F /* Change text color on hover to ) */
+
+//////////////////////////////
 @media (max-width: 1024px)
     .toolbar-text
         font-size: 160%

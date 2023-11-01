@@ -24,49 +24,48 @@
 
   <section class="b2">
     <div class="b2_inner">
-      <p class="b2_text"> <!-- <img class="alt"="KPI"> -->
+
 
       <section class="services" id="services">
         <h1 class="heading"></h1>
 
         <div class="box-container">
+            <div class="box button-1" (click)="expandBox(1)">
+               <img src="../../../assets/img/entrant-page-img/icon1.png" style="float: left" alt="">
+                <h3></h3>
+            </div>
 
-          <div class="box button-1" onclick="expandBox(1)">
-            <img src="../../../assets/img/entrant-page-img/icon1.png" style="float: left" alt="">
-            <h3></h3>
-          </div>
-
-          <div class="box button-2" onclick="expandBox(2)">
+          <div class="box button-2" (click)="expandBox(2)">
             <img src="../../../assets/img/entrant-page-img/icon2.png" style="float: left" alt="">
             <h3></h3>
           </div>
 
-          <div class="box button-3" onclick="expandBox(3)">
+          <div class="box button-3" (click)="expandBox(3)">
             <img src="../../../assets/img/entrant-page-img/icon3.png" style="float: left">
             <h3></h3>
           </div>
 
-          <div class="box button-4" onclick="expandBox(4)">
+          <div class="box button-4" (click)="expandBox(4)">
             <img src="../../../assets/img/entrant-page-img/icon4.png" style="float: left" alt="">
             <h3></h3>
           </div>
 
-          <div class="box button-5" onclick="expandBox(5)">
+          <div class="box button-5" (click)="expandBox(5)">
             <img src="../../../assets/img/entrant-page-img/icon5.png" style="float: left" alt="">
             <h3></h3>
           </div>
 
-          <div class="box button-6" onclick="expandBox(6)">
+          <div class="box button-6" (click)="expandBox(6)">
             <img src="../../../assets/img/entrant-page-img/icon6.png" style="float: left" alt="">
             <h3></h3>
           </div>
 
-          <div class="box button-7" onclick="expandBox(7)">
+          <div class="box button-7" (click)="expandBox(7)">
             <img src="../../../assets/img/entrant-page-img/icon7.png" style="float: left"  alt="">
             <h3></h3>
           </div>
 
-          <div class="box button-8" onclick="expandBox(8)">
+          <div class="box button-8" (click)="expandBox(8)">
             <img src="../../../assets/img/entrant-page-img/icon8.png" style="float: left" alt="">
             <h3></h3>
           </div>
@@ -76,6 +75,18 @@
 
     </div>
   </section>
+    <div class="popup-container" id="popupContainer">
+        <div class="popup" id="popupWindow" *ngIf="activeBoxId !== null">
+            <button id="closeButton" class="close-button" (click)="activeBoxId = null">Закрити</button>
+            <div *ngIf="activeBoxId === 1">
+                <!-- Content for box 1 -->
+            </div>
+            <div *ngIf="activeBoxId === 2">
+                <!-- Content for box 2 -->
+            </div>
+            <!-- Add similar blocks for other box IDs -->
+        </div>
+    </div>
 
 </main>
 
