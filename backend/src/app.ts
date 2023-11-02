@@ -28,7 +28,7 @@ class Server {
         this.app.use(bodyParser.urlencoded({extended: false}));
 
         //static path to angular folder
-        this.app.use(express.static(path.join('../frontend', 'src')));
+        this.app.use(express.static(path.join('../frontend', 'dist/frontend')));
 
         //Get port from environment and store in Express
         const port = process.env.PORT || '3000';
@@ -59,7 +59,7 @@ class Server {
 
         //catch all other routes and return the index file
         this.app.get('*', (req: express.Request, res: express.Response) => {
-            res.sendFile(path.join('src/index.html'), { root: '../frontend' })
+            res.sendFile(path.join('dist/frontend/index.html'), { root: '../frontend' })
         })
     }
 }
