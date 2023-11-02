@@ -1,17 +1,21 @@
+// Import necessary modules
 var Express = require("express");
 var Mongoclient = require("mongodb").MongoClient;
 var cors = require("cors");
 const multer = require("multer");
 
+// Create an instance of the Express application
 var app = Express();
-app.use(cors());
-const port = 3000;
+app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
+const port = 3000; // Define the port number for the server
 
+// MongoDB connection information
 var CONNECTION_STRING =
   "mongodb+srv://admin:dgdd4333.6fdd5FGRE@cluster0.b0i2ahr.mongodb.net/?retryWrites=true&w=majority";
 var DATABASENAME = "KPIHubdb";
 var database;
 
+// Start the server and establish a MongoDB connection
 app.listen(port, () => {
   Mongoclient.connect(CONNECTION_STRING, (error, client) => {
     database = client.db(DATABASENAME);
@@ -20,6 +24,8 @@ app.listen(port, () => {
 });
 
 // Create a single set of CRUD endpoints that accept a collection name as a URL parameter
+
+// Route to get items from a specific collection
 app.get('/api/:collection/GetItems', (request, response) => {
   const collectionName = request.params.collection;
   const collection = database.collection(collectionName);
@@ -28,6 +34,7 @@ app.get('/api/:collection/GetItems', (request, response) => {
   });
 });
 
+// Route to add an item to a specific collection
 app.post('/api/:collection/AddItem', multer().none(), (request, response) => {
   const collectionName = request.params.collection;
   const collection = database.collection(collectionName);
@@ -48,11 +55,12 @@ app.post('/api/:collection/AddItem', multer().none(), (request, response) => {
   });
 });
 
-
+// Route to delete an item from a specific collection
 app.delete('/api/:collection/DeleteItem', (request, response) => {
   const collectionName = request.params.collection;
   const collection = database.collection(collectionName);
   const itemId = request.query.id;
+  
   // Delete a document from the specified collection based on the provided id
   collection.deleteOne({ id: itemId }, (error, result) => {
     if (error) {
