@@ -12,7 +12,7 @@
         </div>
         <div class="navigation">
             <div class="nav-1">
-                <button class="main" id="nav-button" routerLink="" routerLinkActive="active"><p class="toolbar-text">ГОЛОВНА</p></button>
+                <button class="main" id="nav-button" [class.active]="isMainPage()" routerLink="" routerLinkActive="active"><p class="toolbar-text">ГОЛОВНА</p></button>
                 <button class="entrant" id="nav-button" routerLink="entrant" routerLinkActive="active"><p class="toolbar-text">ВСТУПНИКУ</p></button>
                 <button class="student" id="nav-button" routerLink="student" routerLinkActive="active"><p class="toolbar-text">СТУДЕНТУ</p></button>
                 <button class="gallery" id="nav-button" routerLink="gallery" routerLinkActive="active"><p class="toolbar-text" routerLinkActive="active">ГАЛЕРЕЯ</p></button>
