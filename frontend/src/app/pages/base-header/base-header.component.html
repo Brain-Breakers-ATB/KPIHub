@@ -1,8 +1,9 @@
 <!--Toolbar-->
+<!--suppress XmlDuplicatedId -->
 <header>
     <div class="toolbar" role="banner">
         <div class="logo">
-          <a routerLink="" class="link">
+            <a href="https://kpi.ua/" class="link" target="_blank">
             <img class="img-logo" src="../../../assets/img/KPIHub-logo.png" alt="logo" width="410px" height="99px" >
           </a>
           <hr style="margin-bottom: 0;">
@@ -11,16 +12,16 @@
         </div>
         <div class="navigation">
             <div class="nav-1">
-                <button class="main" id="nav-button" routerLink=""><p class="toolbar-text">ГОЛОВНА</p></button>
-                <button class="entrant" id="nav-button" routerLink="entrant"><p class="toolbar-text">ВСТУПНИКУ</p></button>
-                <button class="student" id="nav-button" routerLink="student"><p class="toolbar-text">СТУДЕНТУ</p></button>
-                <button class="gallery" id="nav-button"><p class="toolbar-text">ГАЛЕРЕЯ</p></button>
+                <button class="main" id="nav-button" [class.active]="isMainPage()" routerLink="" routerLinkActive="active"><p class="toolbar-text">ГОЛОВНА</p></button>
+                <button class="entrant" id="nav-button" routerLink="entrant" routerLinkActive="active"><p class="toolbar-text">ВСТУПНИКУ</p></button>
+                <button class="student" id="nav-button" routerLink="student" routerLinkActive="active"><p class="toolbar-text">СТУДЕНТУ</p></button>
+                <button class="gallery" id="nav-button" routerLink="gallery" routerLinkActive="active"><p class="toolbar-text" routerLinkActive="active">ГАЛЕРЕЯ</p></button>
             </div>
             <br>
             <div class="nav-2">
-                <button class="faculty" id="nav-button"><p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p></button>
-                <button class="contact" id="nav-button" routerLink="contacts"><p class="toolbar-text">КОНТАКТИ</p></button>
-                <button class="map" id="nav-button"><p class="toolbar-text">МАПА</p></button>
+                <button class="faculty" id="nav-button" routerLink="subdivisions" routerLinkActive="active"><p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p></button>
+                <button class="contact" id="nav-button" routerLink="contacts" routerLinkActive="active"><p class="toolbar-text">КОНТАКТИ</p></button>
+                <button class="map" id="nav-button" routerLink="map" routerLinkActive="active"><p class="toolbar-text">МАПА</p></button>
             </div>
         </div>
     </div>

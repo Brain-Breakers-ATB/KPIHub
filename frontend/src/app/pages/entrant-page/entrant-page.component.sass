@@ -10,16 +10,16 @@ main
 
 .b1
   background-color: rgba(210, 193, 153, 1)
-  background-image: url(../../../assets/img/main-page-img/img1.jpg)
+  background-image: url(../../../assets/img/entrant-page-img/img1.png)
   background-repeat: no-repeat
   background-position: center
   background-size: cover
 
 .b1_inner
-  margin: 0
-  padding-top: 401px
-  padding-bottom: 459px
-  text-align: center
+    margin: 0
+    padding-top: 401px
+    padding-bottom: 459px
+    text-align: center
 
 .b1_title
   display: block
@@ -39,9 +39,9 @@ b
   font-family: "Montserrat"
 
 .line
-  width: 387px
-  border: 1px solid #FFFFFF
-  margin: 0 auto
+    width: 387px
+    border: 1px solid #FFFFFF
+    margin: 0 auto
 
 .b2
   background-color:  rgba(210, 193, 153, 1)
@@ -55,16 +55,8 @@ b
   height: 2310px
   padding-top: 93px
 
-.b2_text
-  font-size: 34px
-  text-indent: 1.5em
-  color: #ffffff
-  margin-right: 68px
-  text-align: justify
-  margin-bottom: 81px
-  font-family: "Montserrat"
 
-.b2_button
+//.b2_button
   color: #FFFFFF
   font-size: 30px
   border-bottom: 1px solid #FFFFFF
@@ -95,20 +87,6 @@ b
    text-decoration: underline
    text-underline-position: under
 
-@media (max-width: 1024px)
-   .toolbar-text
-     font-size: 160%
-
-
-
-@media (max-width: 768px)
-   toolbar-text
-     font-size: 120%
-
-
-@media (max-width: 425px)
-   .toolbar-text
-     font-size: 70%
 
 .navigation
   width: 1302px
@@ -117,80 +95,24 @@ b
   position: absolute
   top: 66px
   left: 108px
-  //border: 1px solid
+  border: 1px solid
   display: flex /* To align the buttons in a row */
   justify-content: space-between
 
-
-@media (max-width: 1440px)
-   .navigation
-     margin-left: 30%
-
-
-
-@media (max-width: 1024px)
-   .navigation
-     margin-left: 20%
-
-
-@media (max-width: 768px)
-   .navigation
-     margin-left: 10%
-
-
-@media (max-width: 425px)
-   .navigation
-     margin-left: 0
-     margin: 5px
-     padding: 5px
-
-.nav-1, .nav-2
-  display: inline-block
 
 
 #nav-button
   background-color: transparent
   cursor: pointer
   border: 0
-  margin-right: 20px
+  margin-right: 90px
 /////////////////////////////////////////////
 /* Define styles for the container */
 .box-container
   display: grid
   grid-template-columns: repeat(2, 1fr) /* Create 2 columns */
-  grid-gap: 20px /* Adjust the gap between boxes as needed */
-  margin-left: -20px
-
-
-section
-  padding: 5rem 10%
-
-.heading
-  text-align: center
-  margin-bottom: 3rem
-  font-size: 4rem
-  text-transform: capitalize
-  color: #1cb359
-//.box
-  width: 600px
-  height: 113px
-  border-radius: 15px
-  text-align: center
-  background: #fff
-  padding: 3rem
-  border: 0.2rem solid #1cb359
-  -webkit-box-shadow: 0 0.5rem 1rem #1cb359
-  box-shadow: 0 0.5rem 1rem #1cb359
-  transition: background 0.3s, border-color 0.3s, color 0.3s
-  cursor: pointer
-  box:hover
-  width: 600px
-  height: 113px
-  top: 88px
-  left: 730px
-  padding:  103px
-  border-radius: 15px
-
+  grid-gap: 40px /* Adjust the gap between boxes as needed */
+  margin-left: 100px
 
 
 
@@ -199,15 +121,20 @@ section
   height: 64px /* Висота зображення */
    top: 25px
   left: 44px
+  margin-right: 10px /* Додайте відступ між картинкою та текстом за потреби */
 
 
+.box
+    display: flex
+    align-items: center /* Вирівнювання вертикально по центру */
 
-.box h3
-  font-size: 1rem
-  text-transform: capitalize
-  color: rgba(129, 102, 68, 0.94)
-  padding: 1rem 0
 
+.box
+    background-color: rgba(129, 102, 68, 0.94)
+    color: white
+    cursor: pointer
+    border-radius: 15px
+    transition: background 0.3s, border-color 0.3s, color 0.3s
 
 .heading span
   color: rgba(129, 102, 68, 0.94)
@@ -227,8 +154,6 @@ section
 .services .box-container .box .box-content
   display: flex
 
-.services .box-container .box img
-  margin-right: 0.5rem
 
 .services .box-container .box:hover
   background: rgba(210, 193, 153, 1)
@@ -236,31 +161,24 @@ section
   color: rgba(129, 102, 68, 0.94)
 
 
-//.services .box-container .box h3
-  font-size: 2rem
-  text-transform: capitalize
-
-
-//.services .box-container .box p
-  font-size: 1rem
-  line-height: 2
-  color: #777
+.button-1, .button-2, .button-3, .button-4, .button-5, .button-6, .button-7, .button-8
+    width: 600px
+    height: 113px
+    border-radius: 15px
 
 
 /* Button 1 */
 .button-1
-  width: 600px
-  height: 113px
-  top: 88px
-  left: 90px
-  border-radius: 15px
+  top: 88px /* You can adjust this value as needed */
+  left: 0px /* You can adjust this value as needed */
+   border-radius: 15px
 
 
 /* Button 2 */
 .button-2
   width: 600px
   height: 113px
-  top: 88px
+  top: 0px
   left: 730px
   border-radius: 15px
 
@@ -269,16 +187,16 @@ section
 .button-3
   width: 600px
   height: 113px
-  top: 585px
+  top: 211px
   left: 90px
-  border-radius: 13px
+  border-radius: 15px
 
 
 /* Button 4 */
 .button-4
   width: 600px
   height: 113px
-  top: 586px
+  top: 211px
   left: 730px
   border-radius: 15px
 
@@ -286,7 +204,7 @@ section
 .button-5
   width: 600px
   height: 113px
-  top: 1082px
+  top: 334px
   left: 87px
   border-radius: 15px
 
@@ -295,7 +213,7 @@ section
 .button-6
   width: 600px
   height: 113px
-  top: 1082px
+  top: 344px
   left: 730px
   border-radius: 15px
 
@@ -304,7 +222,7 @@ section
 .button-7
   width: 600px
   height: 113px
-  top: 1579px
+  top: 457px
   left: 90px
   border-radius: 15px
 
@@ -312,14 +230,12 @@ section
 .button-8
   width: 600px
   height: 113px
-  top: 1579px
+  top: 457px
   left: 730px
   border-radius: 15px
-.expanded
-  width: 600px
-  height: 390px
-  background-color: rgba(129, 102, 68, 0.94)
-  color: white
+
+
+
 
 /* Add margin to create spacing between boxes */
 .box + .box
@@ -328,6 +244,43 @@ section
 
 
 ////////////////////////////////////////////////
+/* Додайте стилі для вікна */
+//.popup-container
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.5) /* Півпрозорий фон */
+    z-index: 999
+
+
+//.popup
+    width: 600px
+    height: 390px
+    background: rgba(136, 111, 79, 0.76)
+    border: 1px solid #886F4F
+    border-radius: 10px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+    margin: 10% auto /* Розміщення вікна в центрі сторінки */
+    padding: 20px
+
+
+//.close-button
+    background: #886F4F
+    color: #fff
+    border: none
+    cursor: pointer
+    font-size: 16px
+    position: absolute
+    top: 10px
+    right: 10px
+
+
+
+
+////////////////////////////////////////////
 
 ol
   font-size: 33px
@@ -401,3 +354,84 @@ ol
   line-height: 24px
   color: #615555
   text-align: center
+
+.b_title
+    display: block
+    background-color: #322922
+
+.b_title1
+    margin: 0
+    text-align: center
+    font-size: 36px
+    color: #ffffff
+    font-family: "Montserrat"
+    padding-top: 64px
+    padding-bottom: 54px
+
+.b3
+    background-color: #886F4F
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+
+.b3_inner
+    margin: 0
+    text-align: center
+    padding-bottom: 40px
+
+table, th, td
+    font-size: 22px
+    border: 1px solid white
+    text-align: center
+    margin: 0 auto
+    color: white
+
+table
+    margin-top: 40px
+
+th, td
+    padding: 10px
+
+.b3_button
+    color: #000000
+    font-size: 20px
+    text-align: center
+    display: inline-block
+    cursor: pointer
+    background-color: #D9D9D9
+    border: none
+    border-radius: 100px
+    font-family: "Montserrat"
+    margin-left: 50px
+    margin-right: 50px
+.b3_button:hover
+    background: #BF9E80
+    transform: scale(1.1)
+
+.button3_text
+    margin-top: 10px
+    margin-bottom: 10px
+    margin-left: 20px
+    margin-right: 20px
+
+.b3_img
+    width: 100px
+    height: 100px
+    border-radius: 100px
+    vertical-align: middle
+
+.table_left
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+.left_b3
+    width: 30%
+
+.right_b3
+    width: 70%
+    margin-top: 40px
+
+a
+    text-decoration: none
+    color: #000000
