@@ -114,8 +114,7 @@ b
   grid-template-columns: repeat(2, 1fr) /* Create 2 columns */
   grid-gap: 40px /* Adjust the gap between boxes as needed */
   margin-left: 100px
-
-
+  position: relative
 
 .box img
   width: 64px /* Ширина зображення */
@@ -129,13 +128,18 @@ b
     display: flex
     align-items: center /* Вирівнювання вертикально по центру */
 
-
 .box
     background-color: rgba(129, 102, 68, 0.94)
     color: white
     cursor: pointer
     border-radius: 15px
     transition: background 0.3s, border-color 0.3s, color 0.3s
+
+.text-content
+    top: 100%
+    left: 0
+    width: 100%
+    font-size: 18px
 
 .heading span
   color: rgba(129, 102, 68, 0.94)
@@ -155,12 +159,9 @@ b
 .services .box-container .box .box-content
   display: flex
 
-
 .services .box-container .box:hover
-  background: rgba(210, 193, 153, 1)
+  background: #785035
   border-color: rgba(129, 102, 68, 0.94)
-  color: rgba(129, 102, 68, 0.94)
-
 
 .button-1, .button-2, .button-3, .button-4, .button-5, .button-6, .button-7, .button-8
     width: 600px
@@ -193,7 +194,6 @@ b
   top: 211px
   left: 90px
   border-radius: 15px
-
 
 /* Button 4 */
 .button-4
