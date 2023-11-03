@@ -3,9 +3,9 @@ import { NavigationStart, Router } from '@angular/router';
 import { Subject, filter, takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'app-base-header',
-  templateUrl: './base-header.component.html',
-  styleUrls: ['./base-header.component.sass']
+    selector: 'app-base-header',
+    templateUrl: './base-header.component.html',
+    styleUrls: ['./base-header.component.sass']
 })
 export class BaseHeaderComponent implements OnDestroy {
   isDisplayed=true; 
