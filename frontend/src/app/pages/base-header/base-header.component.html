@@ -2,8 +2,8 @@
 <!--suppress XmlDuplicatedId -->
 <header>
     <div class="toolbar" role="banner">
-        <div class="logo">
-            <a href="https://kpi.ua/" class="link" target="_blank">
+        <div class="logo" *ngIf="isDisplayed">
+          <a routerLink="" class="link">
             <img class="img-logo" src="../../../assets/img/KPIHub-logo.png" alt="logo" width="410px" height="99px" >
           </a>
           <hr style="margin-bottom: 0;">
