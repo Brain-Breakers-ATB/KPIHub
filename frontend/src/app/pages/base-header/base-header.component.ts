@@ -8,13 +8,18 @@ import { Subject, filter, takeUntil } from 'rxjs';
     styleUrls: ['./base-header.component.sass']
 })
 export class BaseHeaderComponent implements OnDestroy {
-  isDisplayed=true; 
+  isDisplayed=true;
   private destroy$: Subject<boolean> = new Subject<boolean>();
   constructor(private router: Router) {
     this.router.events.pipe(filter(event => event instanceof NavigationStart), takeUntil(this.destroy$)).subscribe((event) => {
       this.isDisplayed= (event as NavigationStart).url === "/"
     })
   }
+
+  isMainPage() {
+        return this.router.url === '/';
+  }
+
 
   ngOnDestroy(): void {
     this.destroy$.next(true);
