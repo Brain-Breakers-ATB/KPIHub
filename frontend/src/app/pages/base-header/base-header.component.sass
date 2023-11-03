@@ -37,14 +37,11 @@
     text-decoration: none /* Remove default underline */
     transition: color 0.3s
 
-#nav-button a:focus p.toolbar-text
-    text-decoration: underline /* Add underline when the link is focused (clicked) */
 
-#nav-button:hover a:focus p.toolbar-text
-    text-decoration: underline /* Keep the underline when hovering over the focused link */
 
-#nav-button a:focus p.toolbar-text::before
-    text-decoration: none
+#nav-button.active
+    text-decoration: underline /* Add underline for the active link */
+    text-underline-offset: 8px
 
 #nav-button:focus
     outline: none /* Remove the default focus outline */
@@ -54,15 +51,31 @@
 #nav-button:hover
     color: #886F4F /* Change text color on hover to red (you can use your preferred color) */
 
+
+#nav-button a:focus p.toolbar-text
+    text-decoration: underline /* Add underline when the link is focused (clicked) */
+
+#nav-button:focus p.toolbar-text,
+#nav-button:hover p.toolbar-text
+    text-decoration: none
+
+#nav-button.active p.toolbar-text
+    text-decoration: underline /* Add underline for the active link */
+    text-underline-offset: 8px
+
+#nav-button:hover a:focus p.toolbar-text
+    text-decoration: underline /* Keep the underline when hovering over the focused link */
+
+#nav-button a:focus p.toolbar-text::before
+    text-decoration: none
+
+
 #nav-button:hover p.toolbar-text
     color: #886F4F /* Change text color on hover to ) */
 
 .active p.toolbar-text
     text-decoration: underline
     text-underline-offset: 8px
-
-.nav-button:hover
-    color: #886F4F /* Change text color on hover to your preferred color */
 
 
 .nav-button:hover p.toolbar-text
