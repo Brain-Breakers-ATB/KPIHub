@@ -3,7 +3,7 @@ html
   -webkit-text-size-adjust: 100%
 
 body
-  margin: 0 
+  margin: 0
 
 main
   display: block
@@ -54,14 +54,19 @@ b
   text-align: center
   height: 665px
   padding-top: 93px
+  overflow: hidden
 
 .b2_img
   width: 623px
   height: 460px
   border-radius: 15px
   margin-left: 67px
-  margin-right: 30px
+  margin-right: 70px
   float: left
+
+.b2_img:hover
+    transform: scale(1.2)
+    transition: transform 0.3s
 
 .b2_text
   font-size: 34px
@@ -80,12 +85,16 @@ b
   margin-right: 68px
   font-family: "Montserrat"
 
+.b2_button:hover
+    color: black
+    border-bottom-color: black
+
 .b3
   background-color: #3B352D
   background-image: url(../../../assets/img/main-page-img/img3.jpg)
   background-repeat: no-repeat
   background-position: center
-  background-size: cover
+  background-size: 100% 100%
 
 .b3_inner
   margin: 0
