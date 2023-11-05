@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentPageComponent } from "./student-page.component";
-import {FlexModule} from "@angular/flex-layout";
+import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
 
 
 
@@ -9,7 +9,9 @@ import {FlexModule} from "@angular/flex-layout";
   declarations: [StudentPageComponent],
     imports: [
         CommonModule,
-        FlexModule
+        FlexModule,
+        FlexLayoutModule
     ]
 })
+
 export class StudentPageModule { }
