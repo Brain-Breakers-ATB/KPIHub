@@ -1,7 +1,8 @@
 <!--Toolbar-->
+<!--suppress XmlDuplicatedId -->
 <header>
     <div class="toolbar" role="banner">
-        <div class="logo">
+        <div class="logo" *ngIf="isDisplayed">
           <a routerLink="" class="link">
             <img class="img-logo" src="../../../assets/img/KPIHub-logo.png" alt="logo" width="410px" height="99px" >
           </a>
@@ -35,11 +36,9 @@
                 </div>
             </div>
             <div class="nav-2">
-<<<<<<< Updated upstream
                 <button class="faculty" id="nav-button" routerLink="faculty" routerLinkActive="active"><p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p></button>
                 <button class="contact" id="nav-button" routerLink="contacts" routerLinkActive="active"><p class="toolbar-text">КОНТАКТИ</p></button>
                 <button class="map" id="nav-button" routerLink="map" routerLinkActive="active"><p class="toolbar-text">МАПА</p></button>
-=======
                 <div class="nav-other" *ngIf="!isMainPage()">
                     <button class="home" id="nav-button" routerLink="" routerLinkActive="active-main">
                         <p class="toolbar-text">ГОЛОВНА</p>
@@ -63,7 +62,6 @@
                         <p class="toolbar-text">МАПА</p>
                     </button>
                 </div>
->>>>>>> Stashed changes
             </div>
         </div>
     </div>
