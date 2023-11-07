@@ -7,20 +7,63 @@
           </a>
           <hr style="margin-bottom: 0;">
           <p class="toolbar-text">КПІ ім. Ігоря Сікорського</p>
-
         </div>
         <div class="navigation">
             <div class="nav-1">
-                <button class="main" id="nav-button" [class.active]="isMainPage()" routerLink="" routerLinkActive="active"><p class="toolbar-text">ГОЛОВНА</p></button>
-                <button class="entrant" id="nav-button" routerLink="entrant" routerLinkActive="active"><p class="toolbar-text">ВСТУПНИКУ</p></button>
-                <button class="student" id="nav-button" routerLink="student" routerLinkActive="active"><p class="toolbar-text">СТУДЕНТУ</p></button>
-                <button class="gallery" id="nav-button" routerLink="gallery" routerLinkActive="active"><p class="toolbar-text" routerLinkActive="active">ГАЛЕРЕЯ</p></button>
+                <div class="nav-main" *ngIf="isMainPage()">
+                    <button class="main" id="nav-button" [class.active]="isMainPage()" [class.active-main]="isMainPage()" routerLink="" routerLinkActive="active">
+                        <p class="toolbar-text">ГОЛОВНА</p>
+                    </button>
+                    <button class="entrant" id="nav-button" routerLink="entrant" routerLinkActive="active">
+                        <p class="toolbar-text">ВСТУПНИКУ</p>
+                    </button>
+                    <button class="student" id="nav-button" routerLink="student" routerLinkActive="active">
+                        <p class="toolbar-text">СТУДЕНТУ</p>
+                    </button>
+                    <button class="gallery" id="nav-button" routerLink="gallery" routerLinkActive="active">
+                        <p class="toolbar-text">ГАЛЕРЕЯ</p>
+                    </button>
+                    <button class="faculty" id="nav-button" routerLink="subdivisions" routerLinkActive="active">
+                        <p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p>
+                    </button>
+                    <button class="contact" id="nav-button" routerLink="contacts" routerLinkActive="active">
+                        <p class="toolbar-text">КОНТАКТИ</p>
+                    </button>
+                    <button class="map" id="nav-button" routerLink="map" routerLinkActive="active">
+                        <p class="toolbar-text">МАПА</p>
+                    </button>
+                </div>
             </div>
-            <br>
             <div class="nav-2">
+<<<<<<< Updated upstream
                 <button class="faculty" id="nav-button" routerLink="faculty" routerLinkActive="active"><p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p></button>
                 <button class="contact" id="nav-button" routerLink="contacts" routerLinkActive="active"><p class="toolbar-text">КОНТАКТИ</p></button>
                 <button class="map" id="nav-button" routerLink="map" routerLinkActive="active"><p class="toolbar-text">МАПА</p></button>
+=======
+                <div class="nav-other" *ngIf="!isMainPage()">
+                    <button class="home" id="nav-button" routerLink="" routerLinkActive="active-main">
+                        <p class="toolbar-text">ГОЛОВНА</p>
+                    </button>
+                    <button class="entrant" id="nav-button" routerLink="entrant" routerLinkActive="active">
+                        <p class="toolbar-text">ВСТУПНИКУ</p>
+                    </button>
+                    <button class="student" id="nav-button" routerLink="student" routerLinkActive="active">
+                        <p class="toolbar-text">СТУДЕНТУ</p>
+                    </button>
+                    <button class="gallery" id="nav-button" routerLink="gallery" routerLinkActive="active">
+                        <p class="toolbar-text">ГАЛЕРЕЯ</p>
+                    </button>
+                    <button class="faculty" id="nav-button" routerLink="subdivisions" routerLinkActive="active">
+                        <p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p>
+                    </button>
+                    <button class="contact" id="nav-button" routerLink="contacts" routerLinkActive="active">
+                        <p class="toolbar-text">КОНТАКТИ</p>
+                    </button>
+                    <button class="map" id="nav-button" routerLink="map" routerLinkActive="active">
+                        <p class="toolbar-text">МАПА</p>
+                    </button>
+                </div>
+>>>>>>> Stashed changes
             </div>
         </div>
     </div>

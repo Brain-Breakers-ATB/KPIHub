@@ -7,14 +7,24 @@
 .logo
     height: 145px
     margin-top: 27px
-    margin-left: 122px
+    margin-left: 20px
     border: 1px
     transition: transform 0.3s
+
 .logo:hover
     transform: scale(1.2)
 .img-logo
     width: 410px
     height: 99px
+
+.navigation
+    display: flex
+    justify-content: center /* Center the navigation links horizontally */
+    align-items: center /* Center the navigation links vertically */
+    width: 100%
+    height: 90px
+    margin-top: 63px
+
 
 .toolbar-text
     font-family: "Garamond"
@@ -23,9 +33,21 @@
     color: #fff
     line-height: 26.64px
     text-align: center
-    margin: 0
-    padding: 0
 
+.toolbar-text
+    margin-top: 0
+
+
+.nav-other
+    display: flex
+    justify-content: center
+    align-items: center
+
+#nav-button.active p.toolbar-text
+    text-decoration: underline /* Підкреслення для активного елемента */
+
+#nav-button.active-main p.toolbar-text
+    text-decoration: none
 ////////////////////////
 /* Add a new CSS class for navigation links */
 #nav-button
@@ -37,50 +59,18 @@
     text-decoration: none /* Remove default underline */
     transition: color 0.3s
 
-
-
-#nav-button.active
-    text-decoration: underline /* Add underline for the active link */
-    text-underline-offset: 8px
-
-#nav-button:focus
-    outline: none /* Remove the default focus outline */
-    text-decoration: underline /* Add underline when the button is clicked */
-    text-underline-offset: 8px
-
-#nav-button:hover
-    color: #886F4F /* Change text color on hover to red (you can use your preferred color) */
-
-
-#nav-button a:focus p.toolbar-text
-    text-decoration: underline /* Add underline when the link is focused (clicked) */
-
-#nav-button:focus p.toolbar-text,
-#nav-button:hover p.toolbar-text
-    text-decoration: none
+#nav-button p.toolbar-text
+    white-space: nowrap
 
 #nav-button.active p.toolbar-text
     text-decoration: underline /* Add underline for the active link */
     text-underline-offset: 8px
 
-#nav-button:hover a:focus p.toolbar-text
-    text-decoration: underline /* Keep the underline when hovering over the focused link */
-
 #nav-button a:focus p.toolbar-text::before
     text-decoration: none
 
-
 #nav-button:hover p.toolbar-text
     color: #886F4F /* Change text color on hover to ) */
-
-.active p.toolbar-text
-    text-decoration: underline
-    text-underline-offset: 8px
-
-
-.nav-button:hover p.toolbar-text
-    color: #886F4F /* Change text color on hover */
-
 
 //////////////////////////////
 @media (max-width: 1024px)
@@ -125,12 +115,6 @@
 .nav-2
     display: inline-block
     margin-top: 36px
-
-#nav-button
-    background-color: transparent
-    cursor: pointer
-    border: 0
-    margin-right: 20px
 
 link
     &:hover
