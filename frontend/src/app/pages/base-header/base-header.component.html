@@ -12,7 +12,8 @@
         <div class="navigation">
             <div class="nav-1">
                 <div class="nav-main" *ngIf="isMainPage()">
-                    <button class="main" id="nav-button" [class.active]="isMainPage()" [class.active-main]="isMainPage()" routerLink="" routerLinkActive="active">
+                    <button class="main" id="nav-button" [class.active]="isMainPage()" [class.active-main]="isMainPage()"
+                            routerLink="" routerLinkActive="active">
                         <p class="toolbar-text">ГОЛОВНА</p>
                     </button>
                     <button class="entrant" id="nav-button" routerLink="entrant" routerLinkActive="active">
@@ -36,9 +37,6 @@
                 </div>
             </div>
             <div class="nav-2">
-                <button class="faculty" id="nav-button" routerLink="faculty" routerLinkActive="active"><p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p></button>
-                <button class="contact" id="nav-button" routerLink="contacts" routerLinkActive="active"><p class="toolbar-text">КОНТАКТИ</p></button>
-                <button class="map" id="nav-button" routerLink="map" routerLinkActive="active"><p class="toolbar-text">МАПА</p></button>
                 <div class="nav-other" *ngIf="!isMainPage()">
                     <button class="home" id="nav-button" routerLink="" routerLinkActive="active-main">
                         <p class="toolbar-text">ГОЛОВНА</p>
