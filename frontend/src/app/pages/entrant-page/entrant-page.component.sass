@@ -24,7 +24,7 @@ main
 .b1_title
   display: block
   margin-bottom: 20px
-  font-family: "Montserrat"
+  font-family: "Montserrat", serif
   font-size: 58px
   line-height: normal
   font-weight: 500
@@ -36,7 +36,7 @@ b
 .b1_text
   font-size: 36px
   color: #ffffff
-  font-family: "Montserrat"
+  font-family: "Montserrat", serif
 
 .line
     width: 387px
@@ -56,16 +56,6 @@ b
   height: 2310px
   padding-top: 93px
 
-
-//.b2_button
-  color: #FFFFFF
-  font-size: 30px
-  border-bottom: 1px solid #FFFFFF
-  text-decoration: none
-  margin-right: 68px
-  font-family: "Montserrat"
-/////////////////////////////////////////////
-
 .toolbar
   display: flex
   flex-direction: row
@@ -73,7 +63,7 @@ b
   padding: 5px
 
 .toolbar-text
-  font-family: "Garamond"
+  font-family: "Garamond", serif
   font-weight: 400
   font-size: 25px
   color: #fff
@@ -81,13 +71,12 @@ b
   text-align: center
   margin: 0
   padding: 0
-  text-decoration: none /* Remove the default underline */
+  text-decoration: none
   transition: text-decoration 0.3s
 
 .toolbar-text:hover
    text-decoration: underline
    text-underline-position: under
-
 
 .navigation
   width: 1302px
@@ -97,38 +86,32 @@ b
   top: 66px
   left: 108px
   border: 1px solid
-  display: flex /* To align the buttons in a row */
+  display: flex
   justify-content: space-between
-
-
 
 #nav-button
   background-color: transparent
   cursor: pointer
   border: 0
   margin-right: 90px
-/////////////////////////////////////////////
-/* Define styles for the container */
+
 .box-container
   display: grid
-  grid-template-columns: repeat(2, 1fr) /* Create 2 columns */
-  grid-gap: 40px /* Adjust the gap between boxes as needed */
+  grid-template-columns: repeat(2, 1fr)
+  grid-gap: 40px
   margin-left: 100px
   position: relative
 
 .box img
-  width: 64px /* Ширина зображення */
-  height: 64px /* Висота зображення */
-   top: 25px
+  width: 64px
+  height: 64px
+  top: 25px
   left: 44px
-  margin-right: 10px /* Додайте відступ між картинкою та текстом за потреби */
-
+  margin-right: 10px
 
 .box
     display: flex
-    align-items: center /* Вирівнювання вертикально по центру */
-
-.box
+    align-items: center
     background-color: rgba(129, 102, 68, 0.94)
     color: white
     cursor: pointer
@@ -144,8 +127,6 @@ b
 .heading span
   color: rgba(129, 102, 68, 0.94)
 
-
-////////////////////////////////////////////////////////////////////
 .services .box-container .box
   text-align: center
   background: rgba(129, 102, 68, 0.94)
@@ -168,17 +149,13 @@ b
     height: 113px
     border-radius: 15px
 
-
-/* Button 1 */
 .button-1
   width: 600px
   height: 113px
-  left: 0 /* You can adjust this value as needed */
+  left: 0
   border-radius: 15px
   margin-top: 300px
 
-
-/* Button 2 */
 .button-2
   width: 600px
   height: 113px
@@ -186,8 +163,6 @@ b
   left: 730px
   border-radius: 15px
 
-
-/* Button 3 */
 .button-3
   width: 600px
   height: 113px
@@ -195,7 +170,6 @@ b
   left: 90px
   border-radius: 15px
 
-/* Button 4 */
 .button-4
   width: 600px
   height: 113px
@@ -203,7 +177,6 @@ b
   left: 730px
   border-radius: 15px
 
-/* Button 5 */
 .button-5
   width: 600px
   height: 113px
@@ -211,8 +184,6 @@ b
   left: 87px
   border-radius: 15px
 
-
-/* Button 6 *
 .button-6
   width: 600px
   height: 113px
@@ -220,8 +191,6 @@ b
   left: 730px
   border-radius: 15px
 
-
-/* Button 7 */
 .button-7
   width: 600px
   height: 113px
@@ -229,7 +198,6 @@ b
   left: 90px
   border-radius: 15px
 
-/* Button 8 */
 .button-8
   width: 600px
   height: 113px
@@ -237,53 +205,9 @@ b
   left: 730px
   border-radius: 15px
 
-
-
-
-/* Add margin to create spacing between boxes */
 .box + .box
-  margin-top: 300px /* Adjust the value to create spacing */
+  margin-top: 300px
   padding-top: 20px
-
-
-////////////////////////////////////////////////
-/* Додайте стилі для вікна */
-//.popup-container
-    display: none
-    position: fixed
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background: rgba(0, 0, 0, 0.5) /* Півпрозорий фон */
-    z-index: 999
-
-
-//.popup
-    width: 600px
-    height: 390px
-    background: rgba(136, 111, 79, 0.76)
-    border: 1px solid #886F4F
-    border-radius: 10px
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
-    margin: 10% auto /* Розміщення вікна в центрі сторінки */
-    padding: 20px
-
-
-//.close-button
-    background: #886F4F
-    color: #fff
-    border: none
-    cursor: pointer
-    font-size: 16px
-    position: absolute
-    top: 10px
-    right: 10px
-
-
-
-
-////////////////////////////////////////////
 
 ol
   font-size: 33px
@@ -291,14 +215,14 @@ ol
   text-align: justify
   margin-left: 224px
   margin-right: 122px
-  font-family: "Montserrat"
+  font-family: "Montserrat", serif
 
 .footer
   background-color: #000000
   background-repeat: no-repeat
   background-position: center
   background-size: cover
-  font-family: "Montserrat"
+  font-family: "Montserrat", serif
 
 .footer_inner
   width: 100%
@@ -367,7 +291,7 @@ ol
     text-align: center
     font-size: 36px
     color: #ffffff
-    font-family: "Montserrat"
+    font-family: "Montserrat", serif
     padding-top: 64px
     padding-bottom: 54px
 
@@ -404,18 +328,16 @@ th, td
     background-color: #D9D9D9
     border: none
     border-radius: 100px
-    font-family: "Montserrat"
+    font-family: "Montserrat", serif
     margin-left: 50px
     margin-right: 50px
+
 .b3_button:hover
     background: #BF9E80
     transform: scale(1.1)
 
 .button3_text
-    margin-top: 10px
-    margin-bottom: 10px
-    margin-left: 20px
-    margin-right: 20px
+    margin: 10px 20px
 
 .b3_img
     width: 100px

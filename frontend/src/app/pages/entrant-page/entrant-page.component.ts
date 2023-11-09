@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
     templateUrl: './entrant-page.component.html',
     styleUrls: ['./entrant-page.component.sass']
 })
+
 export class EntrantPageComponent {
     expandedBoxes: Set<number> = new Set<number>();
 
