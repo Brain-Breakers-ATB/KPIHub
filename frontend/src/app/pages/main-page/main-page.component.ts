@@ -12,4 +12,6 @@ export class MainPageComponent {
     isMainPage() {
         return this.router.url === '/';
     }
+
+
 }

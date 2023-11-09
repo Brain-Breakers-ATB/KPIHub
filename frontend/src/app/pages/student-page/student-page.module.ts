@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { StudentPageComponent } from "./student-page.component";
 import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
 
-
-
 @NgModule({
   declarations: [StudentPageComponent],
     imports: [

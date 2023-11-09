@@ -1,19 +1,21 @@
 html
     line-height: 1.15
 
-.b1
+a
+    text-decoration: none
+    color: #000000
+
+.students_banner
     background-color: #816644
     background-image: url(../../../assets/img/student-page-img/img1.jpg)
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-
-.b1_inner
     padding-top: 400px
     padding-bottom: 460px
     text-align: center
 
-.b1_title
+.students_title
     display: block
     margin-bottom: 20px
     font-family: "Montserrat", serif
@@ -22,44 +24,33 @@ html
     font-weight: 500
     color: #ffffff
 
-b
-    font-weight: bolder
-
-.b1_text
-    font-size: 36px
-    color: #ffffff
-
 .line
     width: 387px
     border: 1px solid #FFFFFF
     margin: auto
 
-.b2
-    background-color: #886F4F
-    background-repeat: no-repeat
-    background-position: center
-    background-size: cover
-
-.b2_inner
-    text-align: center
-
-.b_title
+.block_title
     display: block
     background-color: #322922
-
-.b_title1
     margin: 0
     text-align: center
     font-size: 36px
     color: #ffffff
     font-family: "Montserrat", serif
-    padding-top: 64px
-    padding-bottom: 54px
+    padding-top: 44px
+    padding-bottom: 34px
 
-.activity-item
+.activities_block
+    background-color: #886F4F
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    text-align: center
+
+.activity_item
     margin-top: 100px
 
-.activity-name
+.activity_name
     display: block
     font-family: "Montserrat", serif
     font-size: 28px
@@ -68,34 +59,29 @@ b
     color: #ffffff
     text-align: center
 
-.activity-image
+.activity_image
     width: 75%
     max-height: 90%
     border-radius: 15px
+    &:hover
+        transform: scale(1.25)
+        transition: transform 0.3s
 
-.activity-image:hover
-    transform: scale(1.25)
-    transition: transform 0.3s
-
-.activity-icon
+.activity_icon
     width: 7%
     height: 7%
     border-radius: 100px
     margin-right: 30px
     vertical-align: middle
 
-.activity-description
+.activity_description
     font-size: 24px
     text-indent: 1.5em
     color: #ffffff
     text-align: justify
     margin: 32px 122px 60px
 
-a
-    text-decoration: none
-    color: #000000
-
-.activity-button
+.activity_button
     color: #000000
     font-size: 24px
     text-align: center
@@ -106,64 +92,60 @@ a
     border-radius: 100px
     font-family: "Montserrat", serif
     margin-bottom: 60px
+    &:hover
+        background: #d38364
+        color: white
+        transform: scale(1.1)
 
-.activity-button:hover
-    background: #d38364
-    color: white
-    transform: scale(1.1)
-
-.activity-button-text
+.activity_button_text
     margin: 17px 33px
 
-.b3
+.events_block
     background-color: #886F4F
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-
-.b3_inner
     text-align: center
 
-.b3_img1, .b3_img2, .b3_img3
+.event_image
     max-width: 70%
     max-height: 70%
     border-radius: 15px
     margin-top: 60px
     margin-bottom: 60px
+    &:hover
+        transform: scale(1.15)
+        transition: transform 0.3s
 
-.b3_img1:hover, .b3_img2:hover, .b3_img3:hover
-    transform: scale(1.15)
-    transition: transform 0.3s
-
-.b3_icon
+.event_icon
     height: 150px
     border-radius: 100px
     vertical-align: middle
 
-.b3_text1, .b3_text2, .b3_text3, .b3_text4
+.event_text1, .event_text2, .event_text3, .event_text4
     font-size: 24px
     color: #ffffff
     text-align: justify
-    &.b3_text1, &.b3_text2, &.b3_text4
+    &.event_text1, &.event_text2, &.event_text4
         text-indent: 1.5em
         margin-right: 122px
-    &.b3_text2
+    &.event_text2
         text-align: center
         margin: 50px 150px 35px
-    &.b3_text3
+    &.event_text3
         text-align: center
         margin-bottom: 40px
 
-.button2_text, .button2_text1, .button2_text2, .button2_text3
+.event_button_text1, .event_button_text2, .event_button_text3, .event_button_text4
     margin: 43px 50px
-    &.button2_text1
+    &.event_button_text2
        margin: 25px 40px 35px
-    &.button2_text2
+    &.event_button_text3
         margin: 43px 85px
-    &.button2_text3
+    &.event_button_text4
         margin: 10px 20px
 
-.b3_button1, .b3_button2, .b3_button3, .b3_button4, .b3_button5
+.event_button1, .event_button2, .event_button3, .event_button4, .event_button5
     color: #000000
     font-size: 24px
     display: inline-block
@@ -176,10 +158,10 @@ a
         background: #BF9E80
         transform: scale(1.1)
         transition: transform 0.3s
-    &.b3_button4
+    &.event_button4
         width: 200px
         height: 50px
-    &.b3_button5
+    &.event_button5
         font-size: 20px
         margin-left: 60px
         margin-bottom: 50px
@@ -187,16 +169,14 @@ a
 .workshops
     margin-top: 50px
 
-.b4
+.courses_block
     background-color: #886F4F
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-
-.b4_inner
     text-align: center
 
-.b4_icon
+.course_icon
     height: 150px
     border-radius: 100px
     text-align: center
@@ -205,19 +185,14 @@ a
 .courses
     display: flex
 
-.b4_text
+.course_text
     font-size: 24px
     text-indent: 1.5em
     color: #ffffff
     text-align: justify
     margin-left: 123px
 
-.b4_icon
-    height: 130px
-    text-align: center
-    margin-top: 50px
-
-.b4_button
+.course_button
     margin-top: 50px
     height: 130px
     width: 3000px
@@ -231,12 +206,11 @@ a
     border-radius: 100px
     font-family: "Montserrat", serif
     margin-right: 123px
+    &:hover
+        background: #BF9E80
+        transform: scale(1.1)
 
-.b4_button:hover
-    background: #BF9E80
-    transform: scale(1.1)
-
-.b4_img
+.course_image
     max-width: 70%
     max-height: 70%
     border-radius: 15px
@@ -246,30 +220,19 @@ a
         transform: scale(1.2)
         transition: transform 0.3s
 
-.b5
+.telegram_block
     background-color: #886F4F
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-
-.b5_inner
     text-align: center
 
-table, th, td
-    font-size: 22px
-    border: 1px solid white
-    text-align: center
-    margin: 0 auto
-    color: white
+.telegram_image
+    height: 100px
+    border-radius: 100px
+    vertical-align: middle
 
-table
-    margin-top: 40px
-    margin-bottom: 40px
-
-th, td
-    padding: 10px
-
-.b5_button
+.telegram_button
     color: #000000
     font-size: 20px
     text-align: center
@@ -285,13 +248,22 @@ th, td
         background: #BF9E80
         transform: scale(1.1)
 
-.button5_text
+.telegram_text
     margin: 10px 20px
 
-.b5_img
-    height: 100px
-    border-radius: 100px
-    vertical-align: middle
-
-.right_b5
+.left_block_telegram
     margin-top: 40px
+
+table
+    margin-top: 40px !important
+    margin-bottom: 40px !important
+
+th, td
+    padding: 10px
+
+table, th, td
+    font-size: 22px
+    border: 1px solid white
+    text-align: center
+    margin: 0 auto
+    color: white
