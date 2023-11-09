@@ -1,66 +1,29 @@
-<!--Toolbar-->
-<!--suppress XmlDuplicatedId -->
 <header>
-    <div class="toolbar" role="banner">
+    <div class="toolbar" fxLayoutGap="110px" role="banner">
         <div class="logo" *ngIf="isDisplayed">
-            <a routerLink="" class="link">
-                <img class="img-logo" src="../../../assets/img/KPIHub-logo.png" alt="logo" width="410px" height="99px" >
-            </a>
-            <hr style="margin-bottom: 0;">
-            <p class="toolbar-text">КПІ ім. Ігоря Сікорського</p>
+            <a routerLink="" class="link"><img class="image_logo" src="../../../assets/img/KPIHub-logo.png" alt="logo"></a>
+            <p class="toolbar_text">КПІ ім. Ігоря Сікорського</p>
         </div>
-        <div class="navigation">
-            <div class="nav-1">
-                <div class="nav-main" *ngIf="isMainPage()">
-                    <button class="main" id="nav-button" [class.active]="isMainPage()" [class.active-main]="isMainPage()"
-                            routerLink="" routerLinkActive="active">
-                        <p class="toolbar-text">ГОЛОВНА</p>
-                    </button>
-                    <button class="entrant" id="nav-button" routerLink="entrant" routerLinkActive="active">
-                        <p class="toolbar-text">ВСТУПНИКУ</p>
-                    </button>
-                    <button class="student" id="nav-button" routerLink="student" routerLinkActive="active">
-                        <p class="toolbar-text">СТУДЕНТУ</p>
-                    </button>
-                    <button class="gallery" id="nav-button" routerLink="gallery" routerLinkActive="active">
-                        <p class="toolbar-text">ГАЛЕРЕЯ</p>
-                    </button>
-                    <button class="faculty" id="nav-button" routerLink="subdivisions" routerLinkActive="active">
-                        <p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p>
-                    </button>
-                    <button class="contact" id="nav-button" routerLink="contacts" routerLinkActive="active">
-                        <p class="toolbar-text">КОНТАКТИ</p>
-                    </button>
-                    <button class="map" id="nav-button" routerLink="map" routerLinkActive="active">
-                        <p class="toolbar-text">МАПА</p>
-                    </button>
-                </div>
+
+        <div class="navigation" fxLayoutAlign="center" fxLayoutGap="20px">
+            <div *ngIf="isMainPage(); else otherNav">
+                <button class="navigation_button" routerLink="" routerLinkActive="active">
+                    <p class="toolbar_text">ГОЛОВНА</p>
+                </button>
+                <button class="navigation_button" *ngFor="let item of menu" [routerLink]="item.link"
+                        routerLinkActive="active">
+                    <p class="toolbar_text">{{ item.label }}</p>
+                </button>
             </div>
-            <div class="nav-2">
-                <div class="nav-other" *ngIf="!isMainPage()">
-                    <button class="home" id="nav-button" routerLink="" routerLinkActive="active-main">
-                        <p class="toolbar-text">ГОЛОВНА</p>
-                    </button>
-                    <button class="entrant" id="nav-button" routerLink="entrant" routerLinkActive="active">
-                        <p class="toolbar-text">ВСТУПНИКУ</p>
-                    </button>
-                    <button class="student" id="nav-button" routerLink="student" routerLinkActive="active">
-                        <p class="toolbar-text">СТУДЕНТУ</p>
-                    </button>
-                    <button class="gallery" id="nav-button" routerLink="gallery" routerLinkActive="active">
-                        <p class="toolbar-text">ГАЛЕРЕЯ</p>
-                    </button>
-                    <button class="faculty" id="nav-button" routerLink="subdivisions" routerLinkActive="active">
-                        <p class="toolbar-text">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p>
-                    </button>
-                    <button class="contact" id="nav-button" routerLink="contacts" routerLinkActive="active">
-                        <p class="toolbar-text">КОНТАКТИ</p>
-                    </button>
-                    <button class="map" id="nav-button" routerLink="map" routerLinkActive="active">
-                        <p class="toolbar-text">МАПА</p>
-                    </button>
-                </div>
-            </div>
+            <ng-template #otherNav>
+                <button class="navigation_button" routerLink="" routerLinkActive="active-main">
+                    <p class="toolbar_text">ГОЛОВНА</p>
+                </button>
+                <button class="navigation_button" *ngFor="let item of menu" [routerLink]="item.link"
+                        routerLinkActive="active">
+                    <p class="toolbar_text">{{ item.label }}</p>
+                </button>
+            </ng-template>
         </div>
     </div>
 </header>
