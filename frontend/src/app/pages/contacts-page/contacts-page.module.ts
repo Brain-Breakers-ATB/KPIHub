@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactsPageComponent } from "./contacts-page.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     imports: [
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FlexLayoutModule
     ]
 })
 export class ContactsPageModule { }

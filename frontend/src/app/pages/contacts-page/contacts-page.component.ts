@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './contacts-page.component.html',
   styleUrls: ['./contacts-page.component.sass']
 })
+
 export class ContactsPageComponent {
   readonly APIUrl = "http://localhost:3000/api/";
 
@@ -14,7 +15,7 @@ export class ContactsPageComponent {
     private http: HttpClient,
     private fromBuilder: FormBuilder
     ) { }
-  
+
   feedbackForm: FormGroup = this.fromBuilder.group({
     name: ['', Validators.required],
     email: ['', Validators.required],
@@ -28,7 +29,7 @@ export class ContactsPageComponent {
       message: String = feedback.controls['message'].value
     }
     console.log(fbToPost);
-    this.http.post(this.APIUrl+'feedback/AddItem', fbToPost).subscribe( res => {
+    this.http.post(this.APIUrl+'feedback/AddItem', fbToPost).subscribe(res => {
       try{
         console.warn('Your feedback has been submitted');
         console.log(fbToPost);
@@ -43,4 +44,12 @@ export class ContactsPageComponent {
   onSubmit(){
     this.postFeedback(this.feedbackForm);
   }
+
+  socialLinks = [
+      { href: 'https://t.me/presinfokpi', icon: 'telegram' },
+      { href: 'https://twitter.com/kpiua', icon: 'twitter' },
+      { href: 'https://www.facebook.com/ntuu.kpi', icon: 'facebook' },
+      { href: 'https://www.youtube.com/kpiua', icon: 'youtube' },
+      { href: 'https://www.instagram.com/kpi.ua/', icon: 'instagram' }
+  ];
 }
