@@ -45,11 +45,15 @@ export class ContactsPageComponent {
     this.postFeedback(this.feedbackForm);
   }
 
-  socialLinks = [
-      { href: 'https://t.me/presinfokpi', icon: 'telegram' },
-      { href: 'https://twitter.com/kpiua', icon: 'twitter' },
-      { href: 'https://www.facebook.com/ntuu.kpi', icon: 'facebook' },
-      { href: 'https://www.youtube.com/kpiua', icon: 'youtube' },
-      { href: 'https://www.instagram.com/kpi.ua/', icon: 'instagram' }
-  ];
+  socialLinks: any=[];
+
+  refreshItems () {
+      this.http.get(this.APIUrl+'socialLinks/GetItems').subscribe(data=>{
+          this.socialLinks=data;
+      })
+  }
+
+  ngOnInit() {
+      this.refreshItems ();
+  }
 }
