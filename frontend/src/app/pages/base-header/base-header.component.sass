@@ -1,8 +1,9 @@
 .toolbar
     display: flex
     flex-direction: row
-    width: 100%
-    padding: 5px
+    //width: 100%
+    //padding: 5px
+    flex-wrap: wrap
 
 .logo
     height: 145px
@@ -21,7 +22,7 @@
     display: flex
     justify-content: center /* Center the navigation links horizontally */
     align-items: center /* Center the navigation links vertically */
-    width: 100%
+    //width: 100%
     height: 90px
     margin-top: 63px
 
@@ -39,9 +40,9 @@
 
 
 .nav-other
-    display: flex
-    justify-content: center
-    align-items: center
+    //display: flex
+    //justify-content: center
+    //align-items: center
 
 #nav-button.active p.toolbar-text
     text-decoration: underline /* Підкреслення для активного елемента */
@@ -89,32 +90,33 @@
     width: 651px
     height: 90px
     margin-top: 63px
-    margin-left: 132px
+    //margin-left: 132px
 
 @media (max-width: 1440px)
     .navigation
-        margin-left: 30%
+        //margin-left: 30%
 
 @media (max-width: 1024px)
     .navigation
-        margin-left: 20%
+        //margin-left: 20%
 
 @media (max-width: 768px)
     .navigation
-        margin-left: 10%
+        //margin-left: 10%
 
 @media (max-width: 425px)
     .navigation
-        margin-left: 0%
+        margin-left: 0
         margin: 5px
         padding: 5px
 
 .nav-1
-    display: inline-block
+    //display: inline-block
+    margin-top: 200px
 
 .nav-2
-    display: inline-block
-    margin-top: 36px
+    //display: inline-block
+    margin-top: 200px
 
 link
     &:hover

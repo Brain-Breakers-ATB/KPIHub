@@ -11,7 +11,7 @@
         </div>
         <div class="navigation">
             <div class="nav-1">
-                <div class="nav-main" *ngIf="isMainPage()">
+                <div class="nav-main" fxLayout="column" *ngIf="isMainPage()">
                     <button class="main" id="nav-button" [class.active]="isMainPage()" [class.active-main]="isMainPage()"
                             routerLink="" routerLinkActive="active">
                         <p class="toolbar-text">ГОЛОВНА</p>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="nav-2">
-                <div class="nav-other" *ngIf="!isMainPage()">
+                <div class="nav-other" fxLayout="column" *ngIf="!isMainPage()">
                     <button class="home" id="nav-button" routerLink="" routerLinkActive="active-main">
                         <p class="toolbar-text">ГОЛОВНА</p>
                     </button>
