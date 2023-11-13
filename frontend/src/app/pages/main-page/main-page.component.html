@@ -9,67 +9,47 @@
 
 <body>
 
-  <main>
+<main>
 
-    <section class="b1">
-      <div class="b1_inner">
-        <b class="b1_title">
-          Київський Політехнічний Інститут
-          <br>імені Ігоря Сікорського<br>
-        </b>
-        <div class="line"></div>
-        <p class="b1_text">
-          "Діяльність особистості залишається іскрою, що рухає людство вперед"
-        </p>
-      </div>
+    <section class="block_title">
+        <div class="block_title_inner">
+            <b class="block_title_title">Київський Політехнічний Інститут<br>імені Ігоря Сікорського</b>
+            <div class="line"></div>
+            <p class="block_title_text">"Діяльність особистості залишається іскрою, що рухає людство вперед"</p>
+        </div>
     </section>
 
-    <section class="b2">
-      <div class="b2_inner">
-          <img class="b2_img" src="../../../assets/img/main-page-img/img2.jpg" alt="KPI">
-        <p class="b2_text">
-          Національний технічний університет України «Київський політехнічний інститут імені Ігоря
-          Сікорського» –
-          найбільший український університет і один з найбільших технічних університетів Європи. Університет
-          працює і розвивається з 1898 року як кампус, в якому на одній території в 160 гектарів органічно
-          об'єднані умови для навчання, відпочинку...
-        </p>
-        <a href="https://kpi.ua/almamater" class="b2_button">ДЕТАЛЬНІШЕ</a>
-      </div>
+    <section class="block_info">
+        <div class="block_info_inner">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxFlex="40">
+                    <img class="block_info_img" src="../../../assets/img/main-page-img/img2.jpg" alt="KPI">
+                    </div>
+                    <div fxFlex="55">
+                        <p class="block_info_text">
+                            {{ universityDescription }}
+                            <br><br>
+                            <a href="https://kpi.ua/almamater" class="block_info_button">ДЕТАЛЬНІШЕ</a>
+                        </p>
+                    </div>
+                </div>
+        </div>
     </section>
 
-    <section class="b3">
-      <div class="b3_inner">
-        <b class="b3_title">
-          Мета сайту
-        </b>
-        <p class="b3_text">
-          Мета нового сайту полягає в створенні зручного та ефективного інформаційного ресурсу про Київський
-          політехнічний інститут (КПІ), який вирішує проблеми, що існують на поточному сайті. Наша мета
-          включає наступні пункти:
-        </p>
-        <ol type="1">
-          <li style="color: black;">Забезпечити користувачам легкий та швидкий доступ до всієї
-            необхідної інформації про КПІ без зайвого переключення між різними ресурсами.</li>
-          <li style="color: black;">Об'єднати всі існуючі ресурси КПІ на одному сайті, включаючи актуальну
-            інформацію про навчання,
-            факультети, події, наукові досягнення та інші важливі дані.</li>
-          <li style="color: black;">Забезпечити актуальність та цілісність інформації, уникнути дублювання
-            даних і фрагментованості.</li>
-          <li style="color: black;">Запровадити потужний пошуковий інструмент, що дозволить користувачам
-            швидко знаходити потрібну
-            інформацію, зменшуючи час, необхідний для пошуку.</li>
-          <li style="color: black;">Покращити організацію і структуру сайту, щоб забезпечити легке навігування
-            та доступ до різних
-            розділів та послуг.</li>
-          <li style="color: black;">Зробити більш сучасний дизайн, щоб користування сайтом було приємніше.
-          </li>
-        </ol>
-      </div>
+    <section class="block_target">
+        <div class="block_target_inner">
+            <b class="block_target_title">Мета сайту</b>
+            <p class="block_target_text">Мета нового сайту полягає в створенні зручного та ефективного інформаційного ресурсу про Київський
+                політехнічний інститут (КПІ), який вирішує проблеми, що існують на поточному сайті. Наша мета
+                включає наступні пункти:
+            </p>
+            <ol>
+                <li *ngFor="let item of listItems" style="color: black">{{ item }}</li>
+            </ol>
+            </div>
     </section>
 
-  </main>
+</main>
 </body>
 
 </html>
-
