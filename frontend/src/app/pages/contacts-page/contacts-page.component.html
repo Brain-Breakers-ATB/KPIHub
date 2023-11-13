@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KПI ім. Ігоря Сікорського</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts page</title>
 </head>
-
-<body >
+<body>
 <main>
-  <div class="container">
-    <div class="left">
-      <p class="left_title">Зв'яжіться з нами</p>
-      <div class="contact-info">
-        <img src="../../../assets/img/contacts-page-img/icons_tel.jpg" alt="tel">
-        <p class="call">Call Us</p>
+  <div class="container" fxLayoutGap="100">
+      <div class="contacts_block" fxFlex="50">
+          <p class="contacts_block_title">Зв'яжіться з нами</p>
+          <div class="contact_info">
+              <img src="../../../assets/img/contacts-page-img/icons_tel.jpg" alt="tel">
+              <p class="call">Call Us</p>
+          </div>
+          <a class="phone_number" href="tel:+380442049494">+38 (044) 204 9494</a>
+          <div class="location_info">
+              <img src="../../../assets/img/contacts-page-img/icons_location.jpg" alt="location">
+              <p class="location">Locations</p>
+          </div>
+          <p class="location_text">Проспект Перемоги, 37, Київ, 03056</p>
+          <div class="work_time">
+              <img src="../../../assets/img/contacts-page-img/icons_clock.jpg" alt="clock">
+              <p class="work_time">Work time</p>
+          </div>
+          <p class="time">Пн-Пт: 09:00 - 18:00<br>Сб-Нд: Зачинено</p>
+          <div class="email">
+              <img src="../../../assets/img/contacts-page-img/icons_email.jpg" alt="email">
+              <p class="email_text">Email</p>
+          </div>
+          <a class="Email" href="mailto:">Mail@KPI.UA</a>
       </div>
-      <a class="phone-number" href="tel:+3800940939371">+3800940939371</a>
-      <div class="location-info">
-        <img src="../../../assets/img/contacts-page-img/icons_location.jpg" alt="location">
-        <p class="location">Locations</p>
+      <div class="feedback_form" fxFlex="50">
+          <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+              <div class="form_group">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" formControlName="name" required>
+              </div>
+              <div class="form_group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" formControlName="email" required>
+              </div>
+              <div class="form_group">
+                  <label for="message">Message:</label>
+                  <textarea id="message" formControlName="message" rows="4" required></textarea>
+              </div>
+              <button type="submit">Відправити</button>
+          </form>
       </div>
-      <p class="loc">Проспект Перемоги, 37, Київ, 03056</p>
-      <div class="work_time">
-        <img src="../../../assets/img/contacts-page-img/icons_clock.jpg" alt="clock">
-        <p class="work_time">Work time</p>
-      </div>
-      <p class="time">Пн-Пт: 09:00 - 18:00<br>Сб-Нд: Зачинено</p>
-      <div class="email">
-        <img src="../../../assets/img/contacts-page-img/icons_email.jpg" alt="email">
-        <p class="email-text">Email</p>
-      </div>
-      <a class="Email" href="mailto:">Mail@KPI.UA</a>
-    </div>
-    <div class="right">
-      <form>
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit">Відправити</button>
-      </form>
-    </div>
   </div>
-    <div class="links">
-        <a href="https://t.me/presinfokpi"><img src="../../../assets/img/contacts-page-img/icons_telegram.jpg" alt="telegram"></a>
-        <a href="https://twitter.com/kpiua"><img src="../../../assets/img/contacts-page-img/icons_twitter.jpg" alt="twitter"></a>
-        <a href="https://www.facebook.com/ntuu.kpi"><img src="../../../assets/img/contacts-page-img/icons_facebook.jpg" alt="facebook"></a>
-        <a href="https://www.youtube.com/kpiua"><img src="../../../assets/img/contacts-page-img/icons_youtube.jpg" alt="youtube"></a>
-        <a href="https://www.instagram.com/kpi.ua/"><img src="../../../assets/img/contacts-page-img/icons_instagram.jpg" alt="instagram"></a>
+    <div class="links" fxLayoutGap="100">
+        <a *ngFor="let link of socialLinks" [href]="link.href">
+            <img [src]="'../../../assets/img/contacts-page-img/icons_' + link.icon + '.jpg'" [alt]="link.icon">
+        </a>
     </div>
 </main>
+</body>
+</html>

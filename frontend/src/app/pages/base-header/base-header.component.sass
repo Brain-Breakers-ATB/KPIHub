@@ -1,123 +1,50 @@
 .toolbar
     display: flex
-    flex-direction: row
-    //width: 100%
-    //padding: 5px
-    flex-wrap: wrap
+
+.toolbar_text
+    font-family: "Garamond", serif
+    font-weight: 400
+    font-size: 25px
+    color: white
+    line-height: 26.64px
+    text-align: center
+    margin-top: 0
 
 .logo
-    height: 145px
     margin-top: 27px
-    margin-left: 20px
+    margin-left: 100px
     border: 1px
     transition: transform 0.3s
+    &:hover
+        transform: scale(1.2)
 
-.logo:hover
-    transform: scale(1.2)
-.img-logo
-    width: 410px
-    height: 99px
+.image_logo
+    height: 100px
 
 .navigation
     display: flex
-    justify-content: center /* Center the navigation links horizontally */
-    align-items: center /* Center the navigation links vertically */
-    //width: 100%
-    height: 90px
+    justify-content: center
+    align-items: center
     margin-top: 63px
+    flex-wrap: wrap
 
-
-.toolbar-text
-    font-family: "Garamond"
-    font-weight: 400
-    font-size: 25px
-    color: #fff
-    line-height: 26.64px
-    text-align: center
-
-.toolbar-text
-    margin-top: 0
-
-
-.nav-other
-    //display: flex
-    //justify-content: center
-    //align-items: center
-
-#nav-button.active p.toolbar-text
-    text-decoration: underline /* Підкреслення для активного елемента */
-
-#nav-button.active-main p.toolbar-text
-    text-decoration: none
-////////////////////////
-/* Add a new CSS class for navigation links */
-#nav-button
+.navigation_button
     background-color: transparent
     cursor: pointer
     border: 0
     margin-right: 20px
-    color: #fff /* Default text color */
-    text-decoration: none /* Remove default underline */
-    transition: color 0.3s
-
-#nav-button p.toolbar-text
-    white-space: nowrap
-
-#nav-button.active p.toolbar-text
-    text-decoration: underline /* Add underline for the active link */
-    text-underline-offset: 8px
-
-#nav-button a:focus p.toolbar-text::before
+    color: white
     text-decoration: none
+    transition: color 0.3s
+    &:hover p.toolbar_text
+        color: #886F4F
+    p.toolbar_text
+        white-space: nowrap
+        &::before
+            text-decoration: none
+    &.active p.toolbar_text
+        text-decoration: underline
+        text-underline-offset: 8px
 
-#nav-button:hover p.toolbar-text
-    color: #886F4F /* Change text color on hover to ) */
-
-//////////////////////////////
-@media (max-width: 1024px)
-    .toolbar-text
-        font-size: 160%
-
-@media (max-width: 768px)
-    .toolbar-text
-        font-size: 120%
-
-@media (max-width: 425px)
-    .toolbar-text
-        font-size: 70%
-
-.navigation
-    width: 651px
-    height: 90px
-    margin-top: 63px
-    //margin-left: 132px
-
-@media (max-width: 1440px)
-    .navigation
-        //margin-left: 30%
-
-@media (max-width: 1024px)
-    .navigation
-        //margin-left: 20%
-
-@media (max-width: 768px)
-    .navigation
-        //margin-left: 10%
-
-@media (max-width: 425px)
-    .navigation
-        margin-left: 0
-        margin: 5px
-        padding: 5px
-
-.nav-1
-    //display: inline-block
-    margin-top: 200px
-
-.nav-2
-    //display: inline-block
-    margin-top: 200px
-
-link
-    &:hover
-        cursor: pointer
+.link:hover
+    cursor: pointer

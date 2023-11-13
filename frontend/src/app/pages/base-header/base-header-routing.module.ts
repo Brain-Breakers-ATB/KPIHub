@@ -18,7 +18,6 @@ const routes: Routes = [
     component: EntrantPageComponent,
     loadChildren: () => import('../entrant-page/entrant-page.module').then((m) => m.EntrantPageModule)
   },
-
   {
     path: 'student',
     component: StudentPageComponent,
@@ -39,6 +38,7 @@ const routes: Routes = [
     component: ContactsPageComponent,
       loadChildren: () => import('../contacts-page/contacts-page.module').then((m) => m.ContactsPageModule)
   },
+
     {
         path: 'map',
         component: MapPageComponent,
@@ -50,4 +50,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class BaseHeaderRoutingModule { }

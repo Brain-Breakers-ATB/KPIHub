@@ -5,6 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './subdivisions-page.component.html',
   styleUrls: ['./subdivisions-page.component.sass']
 })
-export class SubdivisionsPageComponent {
 
-}
+export class SubdivisionsPageComponent {}
