@@ -14,10 +14,10 @@ export class StudentPageComponent implements OnInit {
   telegramChannels: any=[];
 
   refreshItems () {
-      this.http.get(this.APIUrl+'activities/GetItems').subscribe(data=>{
+      this.http.get(this.APIUrl+'activities/GetActivities').subscribe(data=>{
           this.activities=data;
       })
-      this.http.get(this.APIUrl+'studentTelegramChannels/GetItems').subscribe(data=>{
+      this.http.get(this.APIUrl+'studentTelegramChannels/GetStudentTelegramChannels').subscribe(data=>{
           this.telegramChannels=data;
       })
   }
