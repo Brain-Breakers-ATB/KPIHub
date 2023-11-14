@@ -48,7 +48,7 @@ export class ContactsPageComponent {
   socialLinks: any=[];
 
   refreshItems () {
-      this.http.get(this.APIUrl+'socialLinks/GetSocialLinks').subscribe(data=>{
+      this.http.get(this.APIUrl+'sociallinks/GetItems').subscribe(data=>{
           this.socialLinks=data;
       })
   }
