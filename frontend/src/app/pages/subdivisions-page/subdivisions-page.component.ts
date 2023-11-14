@@ -5,10 +5,8 @@ import { Component } from '@angular/core';
     templateUrl: './subdivisions-page.component.html',
     styleUrls: ['./subdivisions-page.component.sass']
 })
-export class SubdivisionsPageComponent {
-<<<<<<< Updated upstream
 
-=======
+export class SubdivisionsPageComponent {
     isFilterActive: boolean = false;
     isDepartmentFilterActive: boolean = false;
     facultyList: string[] = ['Faculty 1', 'Faculty 2', 'Faculty 3']; // Add your list of faculties here
@@ -30,5 +28,4 @@ export class SubdivisionsPageComponent {
         // For now, let's just set isDepartmentFilterActive to true
         this.isDepartmentFilterActive = true;
     }
->>>>>>> Stashed changes
 }

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SubdivisionsPageComponent } from './subdivisions-page.component';
 
 describe('SubdivisionsPageComponent', () => {
@@ -7,15 +6,11 @@ describe('SubdivisionsPageComponent', () => {
   let fixture: ComponentFixture<SubdivisionsPageComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [SubdivisionsPageComponent]
-    });
+    TestBed.configureTestingModule({declarations: [SubdivisionsPageComponent]});
     fixture = TestBed.createComponent(SubdivisionsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => {expect(component).toBeTruthy();});
 });

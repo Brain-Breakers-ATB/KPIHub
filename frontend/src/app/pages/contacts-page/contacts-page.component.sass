@@ -1,8 +1,7 @@
 html
-  line-height: 1
-  -webkit-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
 
-  body
+body
     margin: 0
     background-image: url(../../../assets/img/contacts-page-img/5.jpg)
     background-repeat: no-repeat
@@ -13,50 +12,33 @@ html
     justify-content: center
     align-items: center
 
-  .container
+.container
     display: flex
     overflow-y: auto
     max-width: 1440px
 
-  .left
+.contacts_block, .feedback_form
     flex: 1
     background: rgba(0, 0, 0, 0.43)
     border-radius: 10px
-    width: 560px
-    height: 750px
-    margin-top: 250px
-    margin-left: 80px
+    margin-top: 175px
     flex-direction: column
     justify-content: flex-start
     align-items: center
     position: relative
 
-  .right
-    flex: 1
-    background: rgba(0, 0, 0, 0.43)
-    border-radius: 10px
-    width: 480px
-    height: 513px
-    margin-top: 250px
-    margin-left: 100px
-    margin-right: 80px
-    flex-direction: column
-    justify-content: flex-start
-    align-items: center
-    position: relative
-
-  .left_title, .email-text
-    font-family: "Montserrat"
+.contacts_block_title, .email_text
+    font-family: "Montserrat", serif
     font-size: 36px
     font-weight: 400
-    color: #ffffff
+    color: white
     text-align: center
     position: relative
     margin-top: 20px
     padding: 0 20px
     max-width: 100%
 
-  .left_title::after
+.contacts_block_title::after
     content: ""
     display: block
     height: 1px
@@ -65,64 +47,77 @@ html
     border: 1px solid #886F4F
     margin: 10px auto 0
 
-  .contact-info, .location-info, .work_time, .email
+.contact_info, .location_info, .work_time, .email
     display: flex
     align-items: center
 
-  .contact-info img, .location-info img, .work_time img, .email img
+.contact_info img, .location_info img, .work_time img, .email img
     width: 50px
     margin-right: 30px
     margin-left: 10px
 
-  .call, .location, .work_time
-    font-family: Cormorant SC
+.call, .location, .work_time
+    font-family: Cormorant SC, serif
     font-size: 36px
     font-weight: 500
-    color: #ffffff
+    color: white
 
-  .phone-number, .loc, .time, .Email
+.phone_number, .location_text, .time, .Email
     color: white
     font-size: 24px
     text-decoration: none
     margin: 0 0 0 20px
 
-  .email
+.email
     margin-top: 20px
 
-  .right form
+.feedback_form form
     margin: 20px
     display: flex
     flex-direction: column
     align-items: center
 
-
-  .right form .form-group
+.feedback_form form .form_group
     margin: 10px
 
-  .right form label
-    font-family: "Montserrat"
+.feedback_form form label
+    font-family: "Montserrat", serif
     font-size: 24px
     font-weight: 400
-    color: #ffffff
+    color: white
 
-  .right form input, .right form textarea
+.feedback_form form input, .feedback_form form textarea
     width: 100%
     padding: 10px
     font-size: 20px
     background: transparent
     border: none
-    border-bottom: 1px solid #ffffff
-    color: #ffffff
+    border-bottom: 1px solid white
+    color: white
     margin-top: 5px
 
-  .right form button
+.feedback_form form button
     padding: 10px 20px
     margin-top: 20px
-    font-family: "Montserrat"
+    font-family: "Montserrat", serif
     font-size: 24px
     font-weight: 400
     background: #886F4F
-    color: #ffffff
+    color: white
     border: none
     cursor: pointer
     border-radius: 10px
+    &:hover
+        background: #785035
+        transform: scale(1.1)
+
+.links
+    height: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 50px
+    margin-bottom: 50px
+
+.links img:hover
+    transform: scale(1.3)

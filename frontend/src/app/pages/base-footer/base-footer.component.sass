@@ -1,33 +1,27 @@
 .footer
-  background-color: #000000
+  background-color: black
   background-repeat: no-repeat
   background-position: center
   background-size: cover
-  font-family: "Montserrat"
+  font-family: "Montserrat", serif
 
-.footer_inner
-  width: 100%
+.footer_base
   display: flex
   justify-content: space-between
-  height: 250px
-  padding-top: 49px
+  height: 200px
+  padding-top: 40px
 
-.footer_left
-  width: 60%
+body.contact .footer_base
+  display: none
 
-.footer_right
-  width: 40%
-  padding-top: 60px
+.footer_social_links
+  padding-top: 40px
   text-align: center
 
-.footer_text1
-  color: #ffffff
+.footer_text
+  color: white
   font-size: 33px
-  margin-bottom: 45px
-
-.footer_text2
-  color: #ffffff
-  font-size: 33px
+  text-decoration: none
 
 .footer_icon1
   width: 50px
@@ -39,25 +33,15 @@
 .footer_icon2
   width: 50px
   height: 50px
-  margin-left: 122px
-  margin-right: 64px
-  float: left
-
-.footer_icon3
-  width: 50px
-  height: 50px
   margin-left: 80px
+  &:hover
+      transform: scale(1.3)
 
-.footer_icon4
-  width: 50px
-  height: 50px
-  margin-left: 70px
-
-.footer_copy
+.copyright
   padding: 15px
   background-color: #1a1a1a
 
-.footer_copy-text
+.copyright_text
   font-size: 20px
   line-height: 24px
   color: #615555

@@ -1,271 +1,188 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPIHub</title>
-</head>
-
-<body>
-
-    <main>
-
-        <section class="b1">
-            <div class="b1_inner">
-                <b class="b1_title">
-                    "KPI Life: Відкрий світ можливостей разом зі
-                    <br>студентськими ініціативами!"
-                </b>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student page</title>
+    </head>
+    <body>
+        <main>
+            <section class="students_banner">
+                <b class="students_title">"KPI Life: Відкрий світ можливостей разом зі<br />студентськими ініціативами!"</b>
                 <div class="line"></div>
-            </div>
-        </section>
-
-        <section class="b2">
-            <div class="b2_inner">
-
-                <div class="b_title">
-                    <p class="b_title1">АКТИВНОСТІ</p>
+            </section>
+            <section class="activities_block">
+                <div class="block_title"><p>АКТИВНОСТІ</p></div>
+                <div *ngFor="
+                let activity of activities;
+                let i = index;
+                let last = last" class="activity_item">
+                    <ng-container *ngIf="i % 2 === 0; else oddTemplate">
+                        <!-- Even iterations -->
+                        <div fxFlex="50">
+                            <img class="activity_image" [src]="activity.imageSrc" alt="{{ activity.title }}"/>
+                        </div>
+                        <div fxFlex="50">
+                            <b class="activity_name">
+                                <img class="activity_icon" [src]="activity.iconImgSrc" alt="{{ activity.title }}"/>
+                                {{ activity.title }}
+                            </b>
+                            <p class="activity_description">{{ activity.description }}</p>
+                            <button class="activity_button">
+                                <div class="activity_button_text"><a [href]="activity.link">Детальніше</a></div>
+                            </button>
+                        </div>
+                    </ng-container>
+                    <ng-template #oddTemplate>
+                        <!-- Odd iterations -->
+                        <div fxFlex="50">
+                            <b class="activity_name">
+                                <img class="activity_icon" [src]="activity.iconImgSrc" alt="{{ activity.title }}"/>
+                                {{ activity.title }}
+                            </b>
+                            <p class="activity_description">{{ activity.description }}</p>
+                            <button class="activity_button">
+                                <div class="activity_button_text"><a [href]="activity.link">Детальніше</a></div>
+                            </button>
+                        </div>
+                        <div fxFlex="50">
+                            <img class="activity_image" [src]="activity.imageSrc" alt="{{ activity.title }}"/>
+                        </div>
+                    </ng-template>
+                    <!-- Add a line if it's not the last element -->
+                    <div class="horizontal_divider_line" *ngIf="!last"></div>
                 </div>
-
-                <div class="swimming_pool">
-                    <div class="left1">
-                        <img class="b2_img1" src="../../../assets/img/student-page-img/img2.jpg" alt="KPI">
+            </section>
+            <section class="events_block">
+                <div class="block_title"><p>Гуртки. Олімпіади. Проєкти</p></div>
+                <img class="event_image" src="../../../assets/img/student-page-img/img6.jpg" alt="KPI"/>
+                <div>
+                    <div fxFlex="30">
+                        <img class="event_icon" src="../../../assets/img/student-page-img/icon5.jpg" alt="KPI"/>
                     </div>
-                    <div class="right1">
-                        <b class="b2_title1"><img class="b2_icon1" src="../../../assets/img/student-page-img/icon1.jpg" alt="KPI">Великий басейн</b>
-                        <p class="b2_text1">
-                            У великому басейні КПІ проводяться заняття з плавання, аквааеробіки, дайвінгу, водного
-                            поло,
-                            каякінгу. Для відвідування необхідно мати довідку від терапевта з дозволом відвідувати
-                            басейн.
-                        </p>
-                        <button class="b2_button1">
-                            <div class="button1_text">
-                                <a href="https://kpi.ua/swimming-pool">Детальніше</a>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="line1"></div>
-
-                <div class="driving_school">
-                    <div class="left1">
-                        <b class="b2_title2"><img class="b2_icon2" src="../../../assets/img/student-page-img/icon2.jpg" alt="KPI">Автошкола КПІ</b>
-                        <p class="b2_text2">
-                            Студенти, викладачі та співробітники КПІ ім. Ігоря Сікорського зможуть навчитися водити
-                            автомобіль, підготуватися до складання іспитів на отримання водійських прав та отримати
-                            необхідний супровід під час такого складання безпосередньо в університеті.
-                        </p>
-                        <button class="b2_button2">
-                            <div class="button1_text">
-                                <a href="https://kpi.ua/autoschool">Детальніше</a>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="right1">
-                        <img class="b2_img2" src="../../../assets/img/student-page-img/img3.jpg" alt="KPI">
-                    </div>
-                </div>
-
-                <div class="line1"></div>
-
-                <div class="library">
-                    <div class="left1">
-                        <img class="b2_img1" src="../../../assets/img/student-page-img/img4.jpg" alt="KPI">
-                    </div>
-                    <div class="right1">
-                        <b class="b2_title1"><img class="b2_icon1" src="../../../assets/img/student-page-img/icon3.jpg" alt="KPI">Бібліотека</b>
-                        <p class="b2_text1">
-                            Бібліотека КПІ - інтелектуальна, комунікаційна, інноваційна відкрита платформа; надійний
-                            партнер університетської та фахової спільноти у розвитку освітньо-наукового середовища.
-                        </p>
-                        <button class="b2_button1">
-                            <div class="button1_text">
-                                <a href="https://www.library.kpi.ua/">Детальніше</a>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="line1"></div>
-
-                <div class="tower">
-                    <div class="left1">
-                        <b class="b2_title2"><img class="b2_icon2" src="../../../assets/img/student-page-img/icon4.jpg" alt="KPI">Вежа КПІ</b>
-                        <p class="b2_text2">
-                            17 квітня гостинно відчинила свої двері оновлена вежа корпусу № 1 Національного технічного
-                            університету України «Київський політехнічний інститут».
-                            Відтепер тут відкрито галерею Арт-простір «Вежа КПІ», в якій експонуватимуться художні твори
-                            студентів-політехніків.
-                        </p>
-                        <button class="b2_button2">
-                            <div class="button1_text">
-                                <a href="https://kpi.ua/vezha-open">Детальніше</a>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="right1">
-                        <img class="b2_img2" src="../../../assets/img/student-page-img/img5.jpg" alt="KPI">
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section class="b3">
-            <div class="b3_inner">
-
-                <div class="b_title">
-                    <p class="b_title1">Гуртки. Олімпіади. Проєкти</p>
-                </div>
-
-                <img class="b3_img1" src="../../../assets/img/student-page-img/img6.jpg" alt="KPI">
-                <div class="circles">
-                    <div class="left2">
-                        <img class="b3_icon" src="../../../assets/img/student-page-img/icon5.jpg" alt="KPI">
-                    </div>
-                    <div class="right2">
-                        <p class="b3_text1">
+                    <div fxFlex="70">
+                        <p class="event_text1">
                             Гуртки – це факультативи, де студенти займаються тим, що їм подобається. Окремий бонус –
                             студент може долучитися до роботи гуртка, діяльність якого відмінна від його основного
                             процесу навчання. Тобто, навчаючись на факультеті електроніки, студент може взяти участь у
                             гуртках соціогуманітарного напрямку або навпаки – студент-лінгвіст може вивчати
                             ракето-космічну інженерію.
                         </p>
-                        <div class="circles1">
-                            <div class="c_left3">
-                                <button class="b3_button1">
-                                    <div class="button2_text">
-                                        <a href="https://telegra.ph/engineering-club-06-16">Engineering</a>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="c_center3">
-                                <button class="b3_button2">
-                                    <div class="button2_text1">
-                                        <a href="https://telegra.ph/sochum-club-06-16">Social and
-                                        <br>humanitarian</a>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="c_right3">
-                                <button class="b3_button3">
-                                    <div class="button2_text2">
-                                        <a href="https://telegra.ph/science-club-06-16">Science</a>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="line1"></div>
-
-                <p class="b3_text2">
-                    Також в КПІ ім. Ігоря Сікорського проходять І етапи Всеукраїнських студентських олімпіад , переможці
-                    яких беруть участь в ІІ етапах Всеукраїнських студентських олімпіад.
-                </p>
-                <img class="b3_img2" src="../../../assets/img/student-page-img/img7.jpg" alt="KPI">
-                <div class="circles">
-                    <div class="left2">
-                        <img class="b3_icon" src="../../../assets/img/student-page-img/icon6.jpg" alt="KPI">
-                    </div>
-                    <div class="right2">
-                        <div class="inner">
-                            <div class="left2_inner">
-                                <p class="b3_text3">
-                                    I етап студентських
-                                    <br>олімпіад в КПІ
-                                </p>
-                                <button class="b3_button4">
-                                    <div class="button1_text">
-                                        <a href="https://telegra.ph/stud-olimp-12-14">Детальніше</a>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="right2_inner">
-                                <p class="b3_text3">
-                                    II етап Всеукраїнських студентських
-                                    <br>олімпіад в КПІ
-                                </p>
-                                <button class="b3_button4">
-                                    <div class="button1_text">
-                                        <a href="https://telegra.ph/OL%D0%86MP%D0%86ADI-2-tur-shcho-provodyatsya-v-KP%D0%86-08-04">Детальніше</a>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
-                <div class="line1"></div>
-
-                <img class="b3_img3" src="../../../assets/img/student-page-img/img8.jpg" alt="KPI">
-                <div class="circles">
-                    <div class="left2">
-                        <img class="b3_icon" src="../../../assets/img/student-page-img/icon7.jpg" alt="KPI">
+                <div class="workshops">
+                    <div fxFlex="30">
+                        <button class="event_button1">
+                            <div class="event_button_text1">
+                                <a href="https://telegra.ph/engineering-club-06-16">Engineering</a>
+                            </div>
+                        </button>
                     </div>
-                    <div class="right2">
-                        <p class="b3_text4">
-                            Крім олімпіад є ряд традиційних проєктів та заходів, які проводять для студентів та за їх
-                            активної участі, зокрема KPI-OPEN та День першокурсника.
-                            <br>
-                            <br>KPI-OPEN <button class="b3_button5">
-                                <div class="button2_text3">
-                                    <a href="https://kpi.ua/vezha-open">Детальніше</a>
-                                </div>
-                            </button>
-                            <br>
-                            <br>День першокурсника <button class="b3_button5">
-                                <div class="button2_text3">
-                                    <a href="https://kpi.ua/vezha-open">Детальніше</a>
-                                </div>
-                            </button>
-                        </p>
+                    <div fxFlex="40">
+                        <button class="event_button2">
+                            <div class="event_button_text2">
+                                <a href="https://telegra.ph/sochum-club-06-16">Social and<br />humanitarian</a>
+                            </div>
+                        </button>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="b4">
-            <div class="b4_inner">
-
-                <div class="b_title">
-                    <p class="b_title1">Безкоштовні курси</p>
-                </div>
-
-                <img class="b4_icon" src="../../../assets/img/student-page-img/icon8.jpg" alt="KPI">
-                <div class="courses">
-                    <div class="left3">
-                        <p class="b4_text">
-                            Після переговорів МОН та КПІ з представниками Coursera, студенти та викладачі КПІ ім. Ігоря
-                            Сікорського можуть безкоштовно зареєструватися та отримати доступ до більш ніж 5200 курсів і
-                            2200 керованих проектів від провідних університетів і партнерів Coursera. Окрім Coursera
-                            студенти також можуть користуватися іншими платформами, а також відвідувати курси, що
-                            належать саме КПІ (наприклад, курси іноземних мов тощо).
-                        </p>
-                    </div>
-                    <div class="center3">
-                        <img class="b4_icon1" src="../../../assets/img/student-page-img/icon9.png" alt="KPI">
-                    </div>
-                    <div class="right3">
-                        <button class="b4_button">
-                            <div class="button3_text">
-                                <a href="https://kpi.ua/board-fdp">Детальніше</a>
+                    <div fxFlex="30">
+                        <button class="event_button3">
+                            <div class="event_button_text3">
+                                <a href="https://telegra.ph/science-club-06-16">Science</a>
                             </div>
                         </button>
                     </div>
                 </div>
-                <img class="b4_img" src="../../../assets/img/student-page-img/img9.jpg" alt="KPI">
-            </div>
-        </section>
-
-    </main>
-
-</body>
-
+                <div class="horizontal-divider-line"></div>
+                <p class="event_text2">
+                    Також в КПІ ім. Ігоря Сікорського проходять І етапи Всеукраїнських студентських олімпіад, переможці
+                    яких беруть участь в ІІ етапах Всеукраїнських студентських олімпіад.
+                </p>
+                <img class="event_image" src="../../../assets/img/student-page-img/img7.jpg" alt="KPI"/>
+                <div>
+                    <div fxFlex="30">
+                        <img class="event_icon" src="../../../assets/img/student-page-img/icon6.jpg" alt="KPI"/>
+                    </div>
+                    <div fxFlex="70">
+                        <div>
+                            <div fxFlex="50">
+                                <p class="event_text3">I етап студентських<br />олімпіад в КПІ</p>
+                                <button class="event_button4">
+                                    <div class="event_button_text4">
+                                        <a href="https://telegra.ph/stud-olimp-12-14">Детальніше</a>
+                                    </div>
+                                </button>
+                            </div>
+                            <div fxFlex="50">
+                                <p class="event_text3">II етап Всеукраїнських студентських<br />олімпіад в КПІ</p>
+                                <button class="event_button4">
+                                    <div class="event_button_text4">
+                                        <a href="https://telegra.ph/OL%D0%86MP%D0%86ADI-2-tur-shcho-provodyatsya-v-KP%D0%86-08-04"
+                                        >Детальніше</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="horizontal-divider-line"></div>
+                <img class="event_image" src="../../../assets/img/student-page-img/img8.jpg" alt="KPI"/>
+                <div>
+                    <div fxFlex="30">
+                        <img class="event_icon" src="../../../assets/img/student-page-img/icon7.jpg" alt="KPI"/>
+                    </div>
+                    <div fxFlex="70">
+                        <p class="event_text4">
+                            Крім олімпіад є ряд традиційних проєктів та заходів, які проводять для студентів та за їх
+                            активної участі, зокрема KPI-OPEN та День першокурсника.<br /><br />KPI-OPEN
+                            <button class="event_button5">
+                                <div class="event_button_text4">
+                                    <a href="https://kpi.ua/vezha-open">Детальніше</a>
+                                </div>
+                            </button><br /><br />День першокурсника
+                            <button class="event_button5">
+                                <div class="event_button_text4"><a href="https://kpi.ua/vezha-open">Детальніше</a></div>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="courses_block">
+                <div class="block_title"><p>Безкоштовні курси</p></div>
+                <img class="course_icon" src="../../../assets/img/student-page-img/icon8.jpg" alt="KPI"/>
+                <div class="courses" fxLayoutGap="50px">
+                    <p class="course_text">
+                        Після переговорів МОН та КПІ з представниками Coursera, студенти та викладачі КПІ ім. Ігоря
+                        Сікорського можуть безкоштовно зареєструватися та отримати доступ до більш ніж 5200 курсів і
+                        2200 керованих проектів від провідних університетів і партнерів Coursera. Окрім Coursera
+                        студенти також можуть користуватися іншими платформами, а також відвідувати курси, що належать
+                        саме КПІ (наприклад, курси іноземних мов тощо).
+                    </p>
+                    <img class="course_icon" src="../../../assets/img/student-page-img/icon9.png" alt="KPI"/>
+                    <button class="course_button"><div><a href="https://kpi.ua/board-fdp">Детальніше</a></div></button>
+                </div>
+                <img class="course_image" src="../../../assets/img/student-page-img/img9.jpg" alt="KPI"/>
+            </section>
+            <section class="telegram_block" fxLayout="column">
+                <div class="block_title"><p>Усі важливі Telegram-канали КПІ</p></div>
+                <table>
+                    <tr *ngFor="let channel of telegramChannels">
+                        <td>
+                            <div>
+                                <div fxFlex="30">
+                                    <img class="telegram_image" [src]="channel.imageSrc" alt="{{ channel.name }}" />
+                                </div>
+                                <div class="left_block_telegram" fxFlex="70">{{channel.name}}</div>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="telegram_button">
+                                <div class="telegram_text"><a [href]="channel.link">Перейти</a></div>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+    </body>
 </html>
