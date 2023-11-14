@@ -29,7 +29,7 @@ export class ContactsPageComponent {
       message: String = feedback.controls['message'].value
     }
     console.log(fbToPost);
-    this.http.post(this.APIUrl+'feedback/AddItem', fbToPost).subscribe(res => {
+    this.http.post(this.APIUrl+'feedbacks/AddFeedback', fbToPost).subscribe(res => {
       try{
         console.warn('Your feedback has been submitted');
         console.log(fbToPost);
@@ -48,7 +48,7 @@ export class ContactsPageComponent {
   socialLinks: any=[];
 
   refreshItems () {
-      this.http.get(this.APIUrl+'socialLinks/GetItems').subscribe(data=>{
+      this.http.get(this.APIUrl+'socialLinks/GetSocialLinks').subscribe(data=>{
           this.socialLinks=data;
       })
   }
