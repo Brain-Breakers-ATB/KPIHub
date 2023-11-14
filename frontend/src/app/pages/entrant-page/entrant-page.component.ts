@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
     selector: 'app-entrant-page',
@@ -33,5 +34,26 @@ export class EntrantPageComponent {
                 }
             }
         }
+    }
+
+    readonly APIUrl = "http://localhost:3000/api/";
+
+    constructor(private http: HttpClient) { }
+
+    tableItems: any=[];
+    faqItems: any=[];
+
+    refreshItems () {
+        this.http.get(this.APIUrl+'entranttelegramchannels/GetItems').subscribe(data=>{
+            this.tableItems=data;
+        })
+
+        this.http.get(this.APIUrl+'entrantfaq/GetItems').subscribe(data=>{
+            this.faqItems=data;
+        })
+    }
+
+    ngOnInit() {
+        this.refreshItems ();
     }
 }

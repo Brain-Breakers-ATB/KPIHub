@@ -22,125 +22,14 @@
         <section class="services" id="services">
           <h1 class="heading"></h1>
           <div class="box-container">
-            <div class="box button-1" (click)="expandBox(1)">
-              <img src="../../../assets/img/entrant-page-img/icon1.png" style="float: left" alt=""
-                   [style.display]="!isBoxExpanded(1) ? 'block' : 'none'">
-              <h3 [style.display]="!isBoxExpanded(1) ? 'block' : 'none'">Які документи потрібно подати для вступу?</h3>
-                <div class="text-content1" id="content-1" [style.display]="isBoxExpanded(1) ? 'block' : 'none' ">
-                    Бакалаврат:
-                    - Паспорт (копія, але оригінал мати з собою);
-                    - Облікова картка платника податків (копія, але оригінал мати з собою);
-                    - Приписне свідоцтво або військовий квиток (копія, але оригінал мати з собою);
-                    - Чотири кольорові фотографії (формат 3×4 см);
-                    - Сертифікат доуніверситетської підготовки, якщо закінчували підготовчі курси і претендуєте на додаткові бали
-                    (оригінал);
-                    - Диплом МС/МБ/ФМБ, якщо Ви вступник з індивідуальною програмою підготовки (копія);
-                    - Договір між КПІ та вступником (оригінал – 2 примірника);
-                    - Спеціальні умови вступу на навчання (оригінал, копія).
-                    Магістратура:
-                    - Паспорт (копія, але оригінал мати з собою);
-                    - Облікова картка платника податків (копія, але оригінал мати з собою);
-                    - Приписне свідоцтво або військовий квиток (копія, але оригінал мати з собою);
-                    - Чотири кольорові фотографії (формат 3×4 см);
-                    - Договір між КПІ та вступником (оригінал – 2 примірника);
-                    - Спеціальні умови вступу на навчання (оригінал, копія).
-
-                    <br>Посилання: <a class="href" href="https://pk.kpi.ua/originals/" >https://pk.kpi.ua/originals/</a>
-                </div>
-            </div>
-            <div class="box button-2" (click)="expandBox(2)">
-              <img src="../../../assets/img/entrant-page-img/icon2.png" style="float: left" alt=""
-                   [style.display]="!isBoxExpanded(2) ? 'block' : 'none'">
-              <h3 [style.display]="!isBoxExpanded(2) ? 'block' : 'none'">Яка вартість навчання на контракті?</h3>
-                  <div class="text-content" id="content-2" [style.display]="isBoxExpanded(2) ? 'block' : 'none' ">
-                      Вартість навчання у 2023/2024 навчальному році - перший (бакалаврський) рівня вищої освіти:
-                      https://kpi.ua/files/2023_HGF-73a1.pdf
-                      Вартість навчання у 2023/2024 навчальному році - другий (магістерський) рівень вищої освіти:
-                      https://kpi.ua/files/2023_HGF-73a2.pdf
-                      Вартість навчання у 2023/2024 н./р. здобувачів вищої освіти третього рівня ступеня доктора філософії -
-                      громадян України: https://kpi.ua/files/2023_HGF-73a3.pdf
-                      Вартість навчання у 2023/2024 навчальному році здобувачів ступеня доктора наук - громадян України:
-                      <br>Посилання: <a class="href" href="https://kpi.ua/files/2023_HGF-73a4.pdf">https://kpi.ua/files/2023_HGF-73a4.pdf</a>
+              <div *ngFor="let faqItem of faqItems" class="box faq_button" (click)="expandBox(faqItem.id)">
+                  <img [src]="faqItem.iconSrc" style="float: left" alt="" [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">
+                  <h3 [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">{{ faqItem.question }}</h3>
+                  <div [class]="'text-content' + faqItem.id" [style.display]="isBoxExpanded(faqItem.id) ? 'block' : 'none'">
+                      {{ faqItem.answer }}
+                      <br>Посилання: <a class="href" [href]="faqItem.link">{{ faqItem.link }}</a>
                   </div>
-            </div>
-            <div class="box button-3" (click)="expandBox(3)">
-              <img src="../../../assets/img/entrant-page-img/icon3.png" style="float: left" alt=""
-                   [style.display]="!isBoxExpanded(3) ? 'block' : 'none'">
-              <h3 [style.display]="!isBoxExpanded(3) ? 'block' : 'none'">Які існують підготовчі курси в кпі?</h3>
-                  <div class="text-content3" id="content-3" [style.display]="isBoxExpanded(3) ? 'block' : 'none' ">
-                      Успішно працюють наступні формати навчання
-
-                      - базовий курс (8 місяців) для учнів 11 класів (початок липень 2023 року)
-                      - поглиблений курс (10 місяців) для учнів 11 класів (початок липень 2023 року)
-                      - базовий курс (8 місяців) для учнів 11 класів (початок жовтень 2023 року)
-                      - поглиблений курс (8 місяців) для учнів 11 класів (початок жовтень 2023 року)
-                      - інтенсивний курс (4 місяці) для учнів 11 класів (почато лютий 2024 року)
-                      - базовий курс (8 місяців) для учнів 10 класів (початок липень 2023 року)
-                      - базовий курс (8 місяців) для учнів 10 класів (початок жовтень 2023 року)
-                      - базовий курс (8 місяців) для учнів 9 класів (початок липень 2023 року)
-                      - базовий курс (8 місяців) для учнів 9 класів (початок жовтень 2023 року)
-
-                      <br>Посилання: <a class="href" href="https://kpi.ua/enter">https://kpi.ua/enter</a>
-                  </div>
-            </div>
-            <div class="box button-4" (click)="expandBox(4)">
-              <img src="../../../assets/img/entrant-page-img/icon4.png" style="float: left" alt=""
-                   [style.display]="!isBoxExpanded(4) ? 'block' : 'none'">
-              <h3 [style.display]="!isBoxExpanded(4) ? 'block' : 'none'">Які іноземні програми обміну доступні?</h3>
-                  <div class="text-content" id="content-4" [style.display]="isBoxExpanded(4) ? 'block' : 'none' ">
-                      У структурі КПІ ім. Ігоря Сікорського працює 5 міжнародних центрів (українсько-французький центр,
-                      німецька служба академічних обмінів DAAD, українсько-японський центр, українсько-польський центр,
-                      українсько-китайський центр), метою яких є розвиток співпраці з відповідними країнами. Центри
-                      поширюють інформацію щодо програм обміну, розвивають культурну складову представленої країни, а
-                      також працюють у взаємодії з посольствами.
-                      <br>Посилання: <a class="href" href="https://mobilnist.kpi.ua/">https://mobilnist.kpi.ua/</a>
-                  </div>
-            </div>
-            <div class="box button-5" (click)="expandBox(5)">
-              <img src="../../../assets/img/entrant-page-img/icon5.png" style="float: left" alt=""
-                   [style.display]="!isBoxExpanded(5) ? 'block' : 'none'">
-              <h3 [style.display]="!isBoxExpanded(5) ? 'block' : 'none'">Як можна ознайомитись із навчальними планами
-                  факультетів?</h3>
-                  <div class="text-content" id="content-5" [style.display]="isBoxExpanded(5) ? 'block' : 'none' ">
-                      Можна переглянути навчальні плани на сайтах факультетів чи навчально-наукових інститутів, обравши
-                      відповідну кафедру, або звернутись до кафедр за телефонами, вказаними на сайтах, та подивитись плани
-                      особисто. Також радиться ознайомитись з освітніми програмами, за якими ведеться підготовка фахівців.
-                      <br>Посилання: <a class="href" href="https://kpi.ua/files/2023_HGF-73a4.pdf">https://kpi.ua/files/2023_HGF-73a4.pdf</a>
-                  </div>
-            </div>
-            <div class="box button-6" (click)="expandBox(6)">
-              <img src="../../../assets/img/entrant-page-img/icon6.png" style="float: left" alt=""
-                   [style.display]="!isBoxExpanded(6) ? 'block' : 'none'">
-              <h3 [style.display]="!isBoxExpanded(6) ? 'block' : 'none'">Що таке «творчий конкурс»?</h3>
-                  <div class="text-content" id="content-6" [style.display]="isBoxExpanded(6) ? 'block' : 'none' ">
-                      Це спеціалізовані екзамени для вступників на спеціальності «Образотворче мистецтво, декоративне
-                      мистецтво, реставрація». Творчий конкурс складається з конкурсу портфоліо та усної співбесіди.
-                      <br>Посилання: <a class="href" href="https://pk.kpi.ua/wp-content/uploads/official-documents/prog-tk.pdf">https://pk.kpi.ua/wp-content/uploads/official-documents/prog-tk.pdf</a>
-                  </div>
-            </div>
-            <div class="box button-7" (click)="expandBox(7)">
-              <img src="../../../assets/img/entrant-page-img/icon7.png" style="float: left" alt=""
-                   [style.display]="!isBoxExpanded(7) ? 'block' : 'none'">
-              <h3 [style.display]="!isBoxExpanded(7) ? 'block' : 'none'">В якому стані гуртожитки?</h3>
-                  <div class="text-content" id="content-7" [style.display]="isBoxExpanded(7) ? 'block' : 'none' ">
-                      Гуртожитки знаходяться у абсолютно різному стані залежно від конкретного гуртожитку, який може мати
-                      блочну або коридорну систему. Багато студентів самі роблять ремонти, намагаються поліпшити умови,
-                      але жити точно можна!
-                      <br>Посилання: <a class="href" href="https://telegra.ph/hostels-06-16">https://telegra.ph/hostels-06-16</a>
-                  </div>
-            </div>
-            <div class="box button-8" (click)="expandBox(8)">
-              <img src="../../../assets/img/entrant-page-img/icon8.png" style="float: left" alt=""
-                   [style.display]="!isBoxExpanded(8) ? 'block' : 'none'">
-              <h3 [style.display]="!isBoxExpanded(8) ? 'block' : 'none'">Як дізнатися, що треба для вступу іноземним
-                  громадянам?</h3>
-                  <div class="text-content" id="content-8" [style.display]="isBoxExpanded(8) ? 'block' : 'none' ">
-                      Організацією навчання, проживання, медичного обслуговування, громадського і спортивного життя іноземних
-                      громадян в Національному технічному університеті України «Київський політехнічний інститут імені
-                      Ігоря Сікорського» опікується Центр міжнародної освіти.
-                      <br>Посилання: <a class="href" href="https://kpi.ua/foreigners">https://kpi.ua/foreigners</a>
-                  </div>
-            </div>
+              </div>
           </div>
         </section>
       </div>
@@ -150,65 +39,28 @@
         <div class="b_title">
           <p class="b_title1">Корисні Telegram-канали для вступників</p>
         </div>
-        <table>
-          <tr>
-            <td [width]="600">
-              <div class="table_left">
-                <div class="left_b3" fxFlex="30">
-                  <img class="b3_img" src="../../../assets/img/entrant-page-img/tab1img.jpg" alt="KPI">
-                </div>
-                <div class="right_b3" fxFlex="70">
-                  Вступник КПІ
-                </div>
-              </div>
-            </td>
-            <td>
-              <button class="b3_button">
-                <div class="button3_text">
-                  <a href="https://t.me/vstup_kpi">Перейти</a>
-                </div>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td [width]="600">
-              <div class="table_left">
-                <div class="left_b3">
-                  <img class="b3_img" src="../../../assets/img/entrant-page-img/tab2img.jpg" alt="KPI">
-                </div>
-                <div class="right_b3">
-                  КПІ Вступник чат
-                </div>
-              </div>
-            </td>
-            <td>
-              <button class="b3_button">
-                <div class="button3_text">
-                  <a href="https://t.me/vstup_kpi_chat">Перейти</a>
-                </div>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td [width]="600">
-              <div class="table_left">
-                <div class="left_b3">
-                  <img class="b3_img" src="../../../assets/img/entrant-page-img/tab3img.jpg" alt="KPI">
-                </div>
-                <div class="right_b3">
-                  Кафедра військової підготовки КПІ
-                </div>
-              </div>
-            </td>
-            <td>
-              <button class="b3_button">
-                <div class="button3_text">
-                  <a href="https://t.me/kvp_kpi">Перейти</a>
-                </div>
-              </button>
-            </td>
-          </tr>
-        </table>
+
+          <table>
+              <tr *ngFor="let item of tableItems">
+                  <td [width]="600">
+                      <div class="table_left">
+                          <div class="left_b3" fxFlex="30">
+                              <img class="b3_img" [src]="item.imgSrc" alt="KPI">
+                          </div>
+                          <div class="right_b3" fxFlex="70">
+                              {{ item.name }}
+                          </div>
+                      </div>
+                  </td>
+                  <td>
+                      <button class="b3_button">
+                          <div class="button3_text">
+                              <a [href]="item.link">Перейти</a>
+                          </div>
+                      </button>
+                  </td>
+              </tr>
+          </table>
       </div>
     </section>
   </main>
