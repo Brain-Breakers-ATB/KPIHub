@@ -44,11 +44,11 @@ export class EntrantPageComponent {
     faqItems: any=[];
 
     refreshItems () {
-        this.http.get(this.APIUrl+'entranttelegramchannels/GetItems').subscribe(data=>{
+        this.http.get(this.APIUrl+'entrantTelegramChannels/Get').subscribe(data=>{
             this.tableItems=data;
         })
 
-        this.http.get(this.APIUrl+'entrantfaq/GetItems').subscribe(data=>{
+        this.http.get(this.APIUrl+'entrantFAQ/Get').subscribe(data=>{
             this.faqItems=data;
         })
     }
