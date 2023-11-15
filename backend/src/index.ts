@@ -2,12 +2,16 @@ import express from "express";
 import cors from 'cors';
 import mongoose from "mongoose";
 import { json } from "body-parser";
+
 import { itemsRouter } from "./routes/items.ts";
 import { activitiesRouter } from "./routes/activities.ts";
 import { studentTelegramChannelRouter } from "./routes/studentTelegramChannels.ts";
 import { socialLinksRouter } from "./routes/socialLinks.ts";
 import { feedbacksRouter } from "./routes/feedbacks.ts";
+import { entrantFAQRouter } from "./routes/entrantfaq.ts";
+
 import { DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT } from "../config";
+import { entrantTelegramChannelRouter } from "./routes/entranttelegramchannels.ts";
 
 // MongoDB connection URL with authentication
 const CONNECTION_STRING = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@${DB_ENDPOINT}`;
@@ -34,6 +38,10 @@ app.use("/api/socialLinks", socialLinksRouter);
 
 // Mount the feedbacksRouter for handling feedback-related routes
 app.use("/api/feedbacks", feedbacksRouter);
+
+app.use("/api/entrantFAQ", entrantFAQRouter);
+
+app.use("/api/entrantTelegramChannels", entrantTelegramChannelRouter)
 
 // Connect to MongoDB
 mongoose
