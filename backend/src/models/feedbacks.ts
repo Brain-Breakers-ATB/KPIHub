@@ -5,6 +5,8 @@ interface FeedbackInterface {
   name: string;
   email: string;
   message: string;
+  createdAt: Date;
+  updateAt: Date;
 }
 
 // Define the shape of the feedback model with additional methods
@@ -29,6 +31,9 @@ const feedbackSchema = new Schema({
     type: String,
     required: true,
   },
+}, 
+{
+  timestamps: true,
 });
 
 // Add a static method to the schema to create a new feedback instance
