@@ -6,7 +6,7 @@ import { Activity } from "../models/activities"; // Assuming you have an 'Activi
 const router = express.Router();
 
 // Route to get all activities
-router.get("/GetActivities", async (req: Request, res: Response) => {
+router.get("/GetActivity", async (req: Request, res: Response) => {
   try {
     // Retrieve all activities from the database using the Activity model
     const activities = await Activity.find();

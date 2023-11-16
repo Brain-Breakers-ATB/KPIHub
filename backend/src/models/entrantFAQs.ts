@@ -1,8 +1,8 @@
 import mongoose, { Document, Model, Schema } from 'mongoose';
 
-// Define the shape of an EntrantFAQ item
+// Define the shape of an EntrantFAQs item
 interface EntrantFAQInterface {
-  id: string;
+  id: number;
   iconSrc: string;
   question: string;
   answer: string;
@@ -17,10 +17,10 @@ interface EntrantFAQModelInterface extends Model<EntrantFAQDoc> {
   build(attr: EntrantFAQInterface): EntrantFAQDoc;
 }
 
-// Create a Mongoose schema for "EntrantFAQ" documents
+// Create a Mongoose schema for "EntrantFAQs" documents
 const entrantFAQSchema = new Schema({
   id: {
-    type: String,
+    type: Number,
     required: true,
   },
   iconSrc: {
@@ -41,15 +41,15 @@ const entrantFAQSchema = new Schema({
   },
 });
 
-// Define a static method to create new "EntrantFAQ" instances
+// Define a static method to create new "EntrantFAQs" instances
 entrantFAQSchema.statics.build = function (attr: EntrantFAQInterface) {
   return new this(attr); // Use 'this' to refer to the model
 };
 
-// Create the Mongoose model for "EntrantFAQ" items
-const EntrantFAQ = mongoose.model<EntrantFAQDoc, EntrantFAQModelInterface>(
-  'entrantfaq',
+// Create the Mongoose model for "EntrantFAQs" items
+const EntrantFAQs = mongoose.model<EntrantFAQDoc, EntrantFAQModelInterface>(
+  'entrantfaqs',
   entrantFAQSchema
 );
 
-export { EntrantFAQ };
+export { EntrantFAQs };

@@ -5,7 +5,7 @@ import { StudentTelegramChannel } from '../models/studentTelegramChannels';
 const router = express.Router();
 
 // Route to get all student Telegram channels
-router.get('/GetStudentTelegramChannels', async (req: Request, res: Response) => {
+router.get('/GetStudentTelegramChannel', async (req: Request, res: Response) => {
   try {
     // Fetch all student Telegram channels from the database
     const channels = await StudentTelegramChannel.find();

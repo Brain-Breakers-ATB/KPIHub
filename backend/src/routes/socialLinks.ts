@@ -5,7 +5,7 @@ import { SocialLink } from '../models/socialLinks';
 const router = express.Router();
 
 // Route to get all social links
-router.get('/GetSocialLinks', async (req: Request, res: Response) => {
+router.get('/GetSocialLink', async (req: Request, res: Response) => {
   try {
     // Fetch all social links from the database
     const links = await SocialLink.find();

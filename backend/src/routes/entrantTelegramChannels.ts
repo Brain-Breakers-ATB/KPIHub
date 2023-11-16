@@ -1,11 +1,11 @@
 import express, { Request, Response } from 'express';
-import { EntrantTelegramChannel } from '../models/entranttelegramchannels';
+import { EntrantTelegramChannel } from '../models/entrantTelegramChannels.ts';
 
 // Create an Express router
 const router = express.Router();
 
 // Route to get all EntrantTelegramChannel items
-router.get('/Get', async (req: Request, res: Response) => {
+router.get('/GetEntrantTelegramChannel', async (req: Request, res: Response) => {
   try {
     // Retrieve all EntrantTelegramChannel items from the database using the EntrantTelegramChannel model
     const entrantTelegramChannels = await EntrantTelegramChannel.find();
