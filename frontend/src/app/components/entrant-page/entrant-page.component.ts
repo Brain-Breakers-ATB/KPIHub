@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
+import { EntrantFAQService } from 'src/app/services/entrant-faq.service';
+import { EntrantFAQ } from 'src/app/models/entrantFAQ';
+import { take } from 'rxjs';
 
 @Component({
     selector: 'app-entrant-page',
@@ -38,12 +41,20 @@ export class EntrantPageComponent {
 
     readonly APIUrl = "http://localhost:3000/api/";
 
-    constructor(private http: HttpClient) { }
+    constructor(private entrantFAQService: EntrantFAQService) { }
+    
+    tableItems: any = [];
+    //faqItems: any=[];
 
-    tableItems: any=[];
-    faqItems: any=[];
+    faqItems: EntrantFAQ[] = [];
 
-    refreshItems () {
+    ngOnInit() {
+        this.entrantFAQService.getEntrantFAQ().pipe(take(1)).subscribe((entrantFAQ: EntrantFAQ[]) => {
+            this.faqItems = entrantFAQ
+        })
+    }
+
+    /* refreshItems () {
         this.http.get(this.APIUrl+'entrantFAQ/GetEntrantFAQ').subscribe(data=>{
             this.faqItems=data;
         })
@@ -55,5 +66,5 @@ export class EntrantPageComponent {
 
     ngOnInit() {
         this.refreshItems ();
-    }
+    } */
 }
