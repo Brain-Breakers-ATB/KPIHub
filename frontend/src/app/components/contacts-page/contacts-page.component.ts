@@ -1,59 +1,60 @@
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SocialLinksService } from "../../services/social-links.service";
+import { SocialLink } from "../../models/socialLinks"; // Adjust the import path
 
 @Component({
-  selector: 'app-contacts-page',
-  templateUrl: './contacts-page.component.html',
-  styleUrls: ['./contacts-page.component.sass']
+    selector: 'app-contacts-page',
+    templateUrl: './contacts-page.component.html',
+    styleUrls: ['./contacts-page.component.sass']
 })
+export class ContactsPageComponent implements OnInit {
+    readonly APIUrl = "http://localhost:3000/api/";
 
-export class ContactsPageComponent {
-  readonly APIUrl = "http://localhost:3000/api/";
+    socialLinks: SocialLink[] = [];
 
-  constructor(
-    private http: HttpClient,
-    private fromBuilder: FormBuilder
+    constructor(
+        private socialLinksService: SocialLinksService,
+        private formBuilder: FormBuilder, // Fix the typo here
+        private http: HttpClient // Inject HttpClient here
     ) { }
 
-  feedbackForm: FormGroup = this.fromBuilder.group({
-    name: ['', Validators.required],
-    email: ['', Validators.required],
-    message: ['', Validators.required]
-  });
+    feedbackForm: FormGroup = this.formBuilder.group({
+        name: ['', Validators.required],
+        email: ['', Validators.required],
+        message: ['', Validators.required]
+    });
 
-  postFeedback(feedback: FormGroup){
-    const fbToPost: any = {
-      name: String = feedback.controls['name'].value,
-      email: String =  feedback.controls['email'].value,
-      message: String = feedback.controls['message'].value
-    }
-    console.log(fbToPost);
-    this.http.post(this.APIUrl+'feedbacks/AddFeedback', fbToPost).subscribe(res => {
-      try{
-        console.warn('Your feedback has been submitted');
+    postFeedback(feedback: FormGroup) {
+        const fbToPost: any = {
+            name: feedback.controls['name'].value,
+            email: feedback.controls['email'].value,
+            message: feedback.controls['message'].value
+        };
+
         console.log(fbToPost);
-      }
-      catch{
-        console.warn('Your feedback has NOT been submitted');
-      }
-    })
-    this.feedbackForm.reset();
-  }
 
-  onSubmit(){
-    this.postFeedback(this.feedbackForm);
-  }
+        this.http.post(this.APIUrl + 'feedbacks/AddFeedback', fbToPost).subscribe(res => {
+            try {
+                console.warn('Your feedback has been submitted');
+                console.log(fbToPost);
+            }
+            catch {
+                console.warn('Your feedback has NOT been submitted');
+            }
+        });
 
-  socialLinks: any=[];
+        this.feedbackForm.reset();
+    }
 
-  refreshItems () {
-      this.http.get(this.APIUrl+'socialLinks/GetSocialLink').subscribe(data=>{
-          this.socialLinks=data;
-      })
-  }
+    onSubmit() {
+        this.postFeedback(this.feedbackForm);
+    }
 
-  ngOnInit() {
-      this.refreshItems ();
-  }
+    ngOnInit() {
+        this.socialLinksService.getSocialLinks().subscribe((socialLinks: SocialLink[]) => {
+            this.socialLinks = socialLinks;
+        });
+    }
 }
