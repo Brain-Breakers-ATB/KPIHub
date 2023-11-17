@@ -3,6 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { EntrantFAQService } from 'src/app/services/entrant-faq.service';
 import { EntrantFAQ } from 'src/app/models/entrantFAQ';
 import { take } from 'rxjs';
+import {EntrantTgChannel} from "../../models/entrantTelegramChannels";
+import {EntrantTelegramChannelsService} from 'src/app/services/entrant-telegram-channels.service';
 
 @Component({
     selector: 'app-entrant-page',
@@ -41,16 +43,20 @@ export class EntrantPageComponent {
 
     readonly APIUrl = "http://localhost:3000/api/";
 
-    constructor(private entrantFAQService: EntrantFAQService) { }
-    
-    tableItems: any = [];
+    constructor(private entrantFAQService: EntrantFAQService, private entrantTgChannelsService: EntrantTelegramChannelsService) { }
+
+    //tableItems: any = [];
     //faqItems: any=[];
 
     faqItems: EntrantFAQ[] = [];
-
+    tableItems: EntrantTgChannel[] = [];
     ngOnInit() {
         this.entrantFAQService.getEntrantFAQ().pipe(take(1)).subscribe((entrantFAQ: EntrantFAQ[]) => {
-            this.faqItems = entrantFAQ
+        this.faqItems = entrantFAQ
+        })
+
+        this.entrantTgChannelsService.getEntrantTgChannels().pipe(take(1)).subscribe((entrantTgChannels: EntrantTgChannel[]) => {
+            this.tableItems = entrantTgChannels
         })
     }
 
