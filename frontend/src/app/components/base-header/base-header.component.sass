@@ -1,0 +1,50 @@
+.toolbar
+    display: flex
+
+.toolbar_text
+    font-family: "Garamond", serif
+    font-weight: 400
+    font-size: 25px
+    color: white
+    line-height: 26.64px
+    text-align: center
+    margin-top: 0
+
+.logo
+    margin-top: 27px
+    margin-left: 100px
+    border: 1px
+    transition: transform 0.3s
+    &:hover
+        transform: scale(1.2)
+
+.image_logo
+    height: 100px
+
+.navigation
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 63px
+    flex-wrap: wrap
+
+.navigation_button
+    background-color: transparent
+    cursor: pointer
+    border: 0
+    margin-right: 20px
+    color: white
+    text-decoration: none
+    transition: color 0.3s
+    &:hover p.toolbar_text
+        color: #886F4F
+    p.toolbar_text
+        white-space: nowrap
+        &::before
+            text-decoration: none
+    &.active p.toolbar_text
+        text-decoration: underline
+        text-underline-offset: 8px
+
+.link:hover
+    cursor: pointer
