@@ -38,5 +38,32 @@ router.post("/AddEntrantFAQ", async (req: Request, res: Response) => {
   }
 });
 
+// router to update entrantFAQ item
+router.put('/UpdateEntrantFAQ/:id', async (req: Request, res: Response) => {
+  try{
+    // find item by id and update them
+    const entrantFAQ = await EntrantFAQs.findByIdAndUpdate(req.params.id, req.body);
+
+    const updatedEntrantFAQ = await EntrantFAQs.findById(req.params.id)
+
+    // Respond with a success message and the updated entrantFAQ item
+    return res.status(200).json({ 'EntrantFAQ item successfully updated': updatedEntrantFAQ });
+  } catch (error) {
+    // Handle found errors
+    if (error instanceof mongoose.Error.DocumentNotFoundError) {
+      // Respond with a 404 status and not found error message
+      return res.status(404).json({ 'EntrantFAQ Id does not found': error });
+    }
+    // Handle validation errors separately and other errors generically
+    else if (error instanceof mongoose.Error.ValidationError) {
+      // Respond with a 400 status and validation error message
+      return res.status(400).json({ 'Validation error': error.message });
+    }
+
+    // Respond with a 500 status and a generic error message for other errors
+    return res.status(500).json({ 'Error saving a EntrantFAQ item': error });
+  }
+});
+
 // Export the router for use in other parts of the application
 export { router as entrantFAQRouter };
