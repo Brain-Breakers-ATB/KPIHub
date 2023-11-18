@@ -44,7 +44,6 @@ export class EntrantPageComponent {
     constructor(private entrantFAQService: EntrantFAQService) { }
     
     tableItems: any = [];
-    //faqItems: any=[];
 
     faqItems: EntrantFAQ[] = [];
 
