@@ -16,7 +16,6 @@ export class StudentPageComponent implements OnInit {
     readonly APIUrl = "http://localhost:3000/api/";
 
     activities: Activity[] = [];
-    //activities: any = [];
     telegramChannels: StudentTgChannel [] = [];
 
     constructor(private activitiesService: ActivitiesService, private studentTgChannelsService: StudentTelegramChannelsService) { }

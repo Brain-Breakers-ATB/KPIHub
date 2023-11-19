@@ -20,11 +20,11 @@
                     <ng-container *ngIf="i % 2 === 0; else oddTemplate">
                         <!-- Even iterations -->
                         <div fxFlex="50">
-                            <img class="activity_image" [src]="activity.imageSrc" alt="{{ activity.title }}"/>
+                            <img class="activity_image" [src]="'../../../assets/img/student-page-img/' + activity.imageSrc" alt="{{ activity.title }}"/>
                         </div>
                         <div fxFlex="50">
                             <b class="activity_name">
-                                <img class="activity_icon" [src]="activity.iconImgSrc" alt="{{ activity.title }}"/>
+                                <img class="activity_icon" [src]="'../../../assets/img/student-page-img/' + activity.iconImgSrc" alt="{{ activity.title }}"/>
                                 {{ activity.title }}
                             </b>
                             <p class="activity_description">{{ activity.description }}</p>
@@ -37,7 +37,7 @@
                         <!-- Odd iterations -->
                         <div fxFlex="50">
                             <b class="activity_name">
-                                <img class="activity_icon" [src]="activity.iconImgSrc" alt="{{ activity.title }}"/>
+                                <img class="activity_icon" [src]="'../../../assets/img/student-page-img/' + activity.iconImgSrc" alt="{{ activity.title }}"/>
                                 {{ activity.title }}
                             </b>
                             <p class="activity_description">{{ activity.description }}</p>
@@ -46,7 +46,7 @@
                             </button>
                         </div>
                         <div fxFlex="50">
-                            <img class="activity_image" [src]="activity.imageSrc" alt="{{ activity.title }}"/>
+                            <img class="activity_image" [src]="'../../../assets/img/student-page-img/' + activity.imageSrc" alt="{{ activity.title }}"/>
                         </div>
                     </ng-template>
                     <!-- Add a line if it's not the last element -->
@@ -170,7 +170,7 @@
                         <td>
                             <div>
                                 <div fxFlex="30">
-                                    <img class="telegram_image" [src]="channel.imageSrc" alt="{{ channel.name }}" />
+                                    <img class="telegram_image" [src]="'../../../assets/img/student-page-img/' + channel.imageSrc" alt="{{ channel.name }}" />
                                 </div>
                                 <div class="left_block_telegram" fxFlex="70">{{channel.name}}</div>
                             </div>

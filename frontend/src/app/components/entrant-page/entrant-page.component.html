@@ -23,7 +23,7 @@
           <h1 class="heading"></h1>
           <div class="box-container">
               <div *ngFor="let faqItem of faqItems" class="box faq_button" (click)="expandBox(faqItem.id)">
-                  <img [src]="faqItem.iconSrc" style="float: left" alt="" [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">
+                  <img [src]="'../../../assets/img/entrant-page-img/' + faqItem.iconSrc" style="float: left" alt="" [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">
                   <h3 [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">{{ faqItem.question }}</h3>
                   <div [class]="'text-content' + faqItem.id" [style.display]="isBoxExpanded(faqItem.id) ? 'block' : 'none'">
                       {{ faqItem.answer }}
@@ -45,7 +45,7 @@
                   <td [width]="600">
                       <div class="table_left">
                           <div class="left_b3" fxFlex="30">
-                              <img class="b3_img" [src]="item.imgSrc" alt="KPI">
+                              <img class="b3_img" [src]="'../../../assets/img/entrant-page-img/' + item.imgSrc" alt="KPI">
                           </div>
                           <div class="right_b3" fxFlex="70">
                               {{ item.name }}
