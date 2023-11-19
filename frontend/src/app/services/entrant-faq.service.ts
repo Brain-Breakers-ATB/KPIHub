@@ -13,7 +13,7 @@ export class EntrantFAQService {
   getEntrantFAQ(): Observable<EntrantFAQ[]> {
     const url = 'http://localhost:3000/api/entrantFAQ/GetEntrantFAQ';
     const mockUrl = 'assets/mocks/entrantFAQ.json';
-    
-    return this.httpClient.get<EntrantFAQ[]>(mockUrl);
+
+    return this.httpClient.get<EntrantFAQ[]>(url);
   }
 }

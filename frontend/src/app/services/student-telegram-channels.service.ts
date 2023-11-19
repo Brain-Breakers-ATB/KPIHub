@@ -13,7 +13,7 @@ export class StudentTelegramChannelsService {
   getStudentTgChannels(): Observable<StudentTgChannel[]> {
     const url = 'http://localhost:3000/api/studentTelegramChannels/GetStudentTelegramChannel';
     const mockUrl = 'assets/mocks/studentTelegramChannels.json';
-    
-    return this.httpClient.get<StudentTgChannel[]>(mockUrl);
+
+    return this.httpClient.get<StudentTgChannel[]>(url);
   }
 }
