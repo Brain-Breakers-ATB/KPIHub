@@ -25,20 +25,6 @@ export class EntrantPageComponent {
         } else {
             this.expandedBoxes.add(boxId);
         }
-
-        const content = document.getElementById(`content-${boxId}`);
-        if (content) {
-            const box = content.parentElement;
-            if (box) {
-                if (content.style.display === 'none' || content.style.display === '') {
-                    content.style.display = 'block';
-                    box.style.height = '400px';
-                } else {
-                    content.style.display = 'none';
-                    box.style.height = '113px';
-                }
-            }
-        }
     }
 
     readonly APIUrl = "http://localhost:3000/api/";
