@@ -1,67 +1,51 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entrant page</title>
 </head>
-
 <body>
   <main>
-    <section class="b1">
-        <b class="b1_title">
-            "Головні питання вступника: Все, що вам потрібно знати перед вступом"
-        </b>
+    <section class="entrants_banner">
+        <b class="entrants_banner_title">"Головні питання вступника: Все, що вам потрібно знати перед вступом"</b>
         <div class="line"></div>
-        <p class="b1_text">
-        </p>
     </section>
-    <section class="b2">
-      <div class="b2_inner">
+    <section class="faq_block">
         <section class="services" id="services">
-          <h1 class="heading"></h1>
-          <div class="box-container">
+          <div class="box_container">
               <div *ngFor="let faqItem of faqItems" class="box faq_button" (click)="expandBox(faqItem.id)">
-                  <img [src]="'../../../assets/img/entrant-page-img/' + faqItem.iconSrc" style="float: left" alt="" [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">
+                  <img [src]="'../../../assets/img/entrant-page-img/' + faqItem.iconSrc" style="float: left"
+                       alt="" [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">
                   <h3 [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">{{ faqItem.question }}</h3>
-                  <div [class]="'text-content' + faqItem.id" [style.display]="isBoxExpanded(faqItem.id) ? 'block' : 'none'">
+                  <div [class]="'text_content' + faqItem.id" [style.display]="isBoxExpanded(faqItem.id) ? 'block' : 'none'">
                       {{ faqItem.answer }}
-                      <br>Посилання: <a class="href" [href]="faqItem.link">{{ faqItem.link }}</a>
+                          <br><br>Посилання: <a class="href" [href]="faqItem.link" target="_blank">{{ faqItem.link }}</a>
                   </div>
               </div>
           </div>
         </section>
-      </div>
     </section>
-    <section class="b3">
-      <div class="b3_inner">
-        <div class="b_title">
-          <p class="b_title1">Корисні Telegram-канали для вступників</p>
-        </div>
-
+    <section class="telegram_block">
+        <div class="telegram_block_title"><p>Корисні Telegram-канали для вступників</p></div>
           <table>
               <tr *ngFor="let item of tableItems">
                   <td [width]="600">
-                      <div class="table_left">
-                          <div class="left_b3" fxFlex="30">
-                              <img class="b3_img" [src]="'../../../assets/img/entrant-page-img/' + item.imgSrc" alt="KPI">
+                      <div>
+                          <div fxFlex="30">
+                              <img class="telegram_image" [src]="'../../../assets/img/entrant-page-img/' + item.imgSrc"
+                                   alt="KPI">
                           </div>
-                          <div class="right_b3" fxFlex="70">
-                              {{ item.name }}
-                          </div>
+                          <div class="left_block_telegram" fxFlex="70">{{ item.name }}</div>
                       </div>
                   </td>
                   <td>
-                      <button class="b3_button">
-                          <div class="button3_text">
-                              <a [href]="item.link">Перейти</a>
-                          </div>
+                      <button class="telegram_button">
+                          <div class="telegram_text"><a [href]="item.link" target="_blank">Перейти</a></div>
                       </button>
                   </td>
               </tr>
           </table>
-      </div>
     </section>
   </main>
 </body>

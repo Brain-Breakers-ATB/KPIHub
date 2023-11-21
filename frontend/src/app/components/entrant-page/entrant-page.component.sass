@@ -5,7 +5,8 @@ html
 main
     display: block
 
-.b1
+.entrants_banner
+    margin-top: -3px
     background-color: black
     background-image: url(../../../assets/img/entrant-page-img/img1.png)
     background-repeat: no-repeat
@@ -15,40 +16,30 @@ main
     padding-bottom: 460px
     text-align: center
 
-.b1_title
-  display: block
-  margin-bottom: 20px
-  font-family: "Montserrat", serif
-  font-size: 58px
-  line-height: normal
-  font-weight: 500
-  color: #ffffff
+.entrants_banner_title
+    display: block
+    margin-bottom: 20px
+    font-family: "Montserrat", serif
+    font-size: 58px
+    line-height: normal
+    font-weight: 500
+    color: white
 
 b
     font-weight: bolder
 
-.b1_text
-    font-size: 36px
-    color: #ffffff
-    font-family: "Montserrat", serif
-
 .line
     width: 387px
-    border: 1px solid #FFFFFF
+    border: 1px solid white
     margin: auto
 
-.b2
+.faq_block
     margin-top: -5px
-    padding-right: 60px
     background-color:  rgba(210, 193, 153, 1)
     background-size: cover
     background-repeat: no-repeat
     background-position: center
     height: fit-content
-
-.b2_inner
-    margin: 0
-    text-align: center
     padding-top: 93px
     padding-bottom: 200px
 
@@ -56,8 +47,7 @@ b
     width: 64px
     height: 64px
     top: 25px
-    left: 44px
-    margin-right: 10px
+    margin-right: 30px
 
 .box
     display: flex
@@ -67,29 +57,18 @@ b
     cursor: pointer
     border-radius: 15px
     transition: background 0.3s, border-color 0.3s, color 0.3s
-    overflow-x: auto
     padding-top: 20px
     min-height: 200px
 
-.text-content
+.text_content1, .text_content2, .text_content3, .text_content4, .text_content5, .text_content6, .text_content7, .text_content8
     width: 100%
-    font-size: 16px
-
-.text-content1
-    margin-top: 90px
-    width: 100%
-    font-size: 16px
-
-.text-content3
-    margin-top: 30px
-    width: 100%
-    font-size: 16px
+    font-size: 18px
+    text-align: center
 
 .heading span
     color: rgba(129, 102, 68, 0.94)
 
-.services .box-container .box
-    text-align: justify
+.services .box_container .box
     background: rgba(129, 102, 68, 0.94)
     padding: 0.2rem
     border: 0.2rem solid rgba(129, 102, 68, 0.94)
@@ -98,14 +77,14 @@ b
     transition: background 0.3s, border-color 0.3s, color 0.3s
     cursor: pointer
 
-.services .box-container .box .box-content
+.services .box_container .box
     display: flex
 
-.services .box-container .box:hover
+.services .box_container .box:hover
     background: #785035
     border-color: rgba(129, 102, 68, 0.94)
 
-.box-container
+.box_container
     display: flex
     flex-wrap: wrap
     justify-content: center
@@ -131,37 +110,33 @@ b
     font-size: 18px
 
 @media screen and (min-width: 768px)
-.box-container
+.box_container
     max-width: 80%
 
 ol
     font-size: 33px
-    color: #000000
+    color: black
     text-align: justify
     margin-left: 224px
     margin-right: 122px
     font-family: "Montserrat", serif
 
-.b_title
+.telegram_block_title
     display: block
     background-color: #322922
-
-.b_title1
     margin: 0
     text-align: center
     font-size: 36px
-    color: #ffffff
+    color: white
     font-family: "Montserrat", serif
     padding-top: 64px
     padding-bottom: 54px
 
-.b3
+.telegram_block
     background-color: #886F4F
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-
-.b3_inner
     margin: 0
     text-align: center
     padding-bottom: 40px
@@ -172,14 +147,6 @@ table, th, td
     text-align: center
     margin: 0 auto
     color: white
-//    table-layout: fixed
-//    width: fit-content
-//    max-width: 1000px
-
-
-
-.b3 table, .b3 th, .b3 td
-    font-size: 20px
 
 table
     margin-top: 40px
@@ -188,8 +155,8 @@ table
 th, td
     padding: 10px
 
-.b3_button
-    color: #000000
+.telegram_button
+    color: black
     font-size: 20px
     text-align: center
     display: inline-block
@@ -200,29 +167,19 @@ th, td
     font-family: "Montserrat", serif
     margin-left: 50px
     margin-right: 50px
+    &:hover
+        background: #BF9E80
+        transform: scale(1.1)
 
-.b3_button:hover
-    background: #BF9E80
-    transform: scale(1.1)
-
-.button3_text
+.telegram_text
     margin: 10px 20px
 
-.b3_img
+.telegram_image
     height: 100px
     border-radius: 100px
     vertical-align: middle
 
-.table_left
-    width: 100%
-    display: flex
-    justify-content: space-between
-
-.left_b3
-    width: 30%
-
-.right_b3
-    width: 70%
+.left_block_telegram
     margin-top: 40px
 
 a
@@ -232,8 +189,6 @@ a
 .href
     text-decoration: none
     color: #ffffff
-
-.href:hover
-    text-decoration: underline
-    text-underline-position: under
-
+    &:hover
+        text-decoration: underline
+        text-underline-position: under

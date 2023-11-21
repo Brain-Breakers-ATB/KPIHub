@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { EntrantFAQService } from './entrant-faq.service';
 
 describe('EntrantFAQService', () => {
