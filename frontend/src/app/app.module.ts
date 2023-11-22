@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { BaseHeaderModule } from "./components/base-header/base-header.module";
 import { BaseFooterModule } from "./components/base-footer/base-footer.module";
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { HttpErrorInterceptor } from './interceptors/HTTPErrorInterceptor/http-error.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -28,7 +28,7 @@ export class MainPageComponent implements OnInit {
 
 
     refreshItems () {
-        this.http.get(this.APIUrl+'activities/GetItems').subscribe(data=>{
+        this.http.get(this.APIUrl+'items/GetItems').subscribe(data=>{
             this.activities=data;
         })
     }
