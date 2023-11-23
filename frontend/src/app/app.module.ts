@@ -27,4 +27,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
   bootstrap: [AppComponent]
 })
     
+<<<<<<< HEAD
 export class AppModule { }
+=======
+export class AppModule { }
+>>>>>>> 1106651044131bb971b186da27f878fbb2bec137
