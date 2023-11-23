@@ -7,11 +7,13 @@ import { BaseHeaderModule } from "./components/base-header/base-header.module";
 import { BaseFooterModule } from "./components/base-footer/base-footer.module";
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent
+    MainPageComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -19,10 +21,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BaseHeaderModule,
     BaseFooterModule,
     HttpClientModule,
-    FlexLayoutModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-
+    
 export class AppModule { }
