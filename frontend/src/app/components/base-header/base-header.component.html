@@ -1,0 +1,29 @@
+<header>
+    <div class="toolbar" fxLayoutGap="110px" role="banner">
+        <div class="logo" *ngIf="isDisplayed">
+            <a href="https://kpi.ua" class="link" target="_blank"><img class="image_logo" src="../../../assets/img/KPIHub-logo.png" alt="logo"></a>
+            <p class="toolbar_text">КПІ ім. Ігоря Сікорського</p>
+        </div>
+
+        <div class="navigation" fxLayoutAlign="center" fxLayoutGap="20px">
+            <div *ngIf="isMainPage(); else otherNav">
+                <button class="navigation_button" routerLink="" routerLinkActive="active">
+                    <p class="toolbar_text">ГОЛОВНА</p>
+                </button>
+                <button class="navigation_button" *ngFor="let item of menu" [routerLink]="item.link"
+                        routerLinkActive="active">
+                    <p class="toolbar_text">{{ item.label }}</p>
+                </button>
+            </div>
+          <ng-template #otherNav>
+                <button class="navigation_button" routerLink="" routerLinkActive="active-main">
+                    <p class="toolbar_text">ГОЛОВНА</p>
+                </button>
+                <button class="navigation_button" *ngFor="let item of menu" [routerLink]="item.link"
+                        routerLinkActive="active">
+                    <p class="toolbar_text">{{ item.label }}</p>
+                </button>
+            </ng-template>
+        </div>
+    </div>
+</header>

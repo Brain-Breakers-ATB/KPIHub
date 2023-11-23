@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts page</title>
+</head>
+<body>
+<main>
+  <div class="container" fxLayoutGap="100">
+      <div class="contacts_block" fxFlex="50">
+          <p class="contacts_block_title">Зв'яжіться з нами</p>
+          <div class="contact_info">
+              <img src="../../../assets/img/contacts-page-img/icons_tel.jpg" alt="tel">
+              <p class="call">Телефон</p>
+          </div>
+          <a class="phone_number" href="tel:+380442049494">+38 (044) 204 9494</a>
+          <div class="location_info">
+              <img src="../../../assets/img/contacts-page-img/icons_location.jpg" alt="location">
+              <p class="location">Адреса</p>
+          </div>
+          <p class="location_text">Проспект Перемоги, 37, Київ, 03056</p>
+          <div class="work_time">
+              <img src="../../../assets/img/contacts-page-img/icons_clock.jpg" alt="clock">
+              <p class="work_time">Робочі години</p>
+          </div>
+          <p class="time">Пн-Пт: 09:00 - 18:00<br>Сб-Нд: Зачинено</p>
+          <div class="email">
+              <img src="../../../assets/img/contacts-page-img/icons_email.jpg" alt="email">
+              <p class="email_text">Електронна пошта</p>
+          </div>
+          <a class="Email" href="mailto:" target="_blank">Mail@KPI.UA</a>
+      </div>
+      <div class="feedback_form" fxFlex="50">
+          <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+              <div class="form_group">
+                  <label for="name">Ім'я/Нікнейм:</label>
+                  <input type="text" id="name" formControlName="name" required>
+              </div>
+              <div class="form_group">
+                  <label for="email">Електронна пошта:</label>
+                  <input type="email" id="email" formControlName="email" required>
+              </div>
+              <div class="form_group">
+                  <label for="message">Повідомлення:</label>
+                  <textarea id="message" formControlName="message" rows="4" required></textarea>
+              </div>
+              <button type="submit">Відправити</button>
+          </form>
+      </div>
+  </div>
+    <div class="links" fxLayoutGap="100">
+        <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank">
+            <img [src]="'../../../assets/img/contacts-page-img/icons_' + link.icon + '.jpg'" [alt]="link.icon">
+        </a>
+    </div>
+</main>
+</body>
+</html>

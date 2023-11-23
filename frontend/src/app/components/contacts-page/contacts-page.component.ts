@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { SocialLinksService } from "../../services/social-links.service";
-import { SocialLink } from "../../models/socialLinks"; // Adjust the import path
+import { SocialLink } from "../../models/socialLinks";
+import {take} from "rxjs"; // Adjust the import path
 
 @Component({
     selector: 'app-contacts-page',
@@ -53,7 +54,7 @@ export class ContactsPageComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.socialLinksService.getSocialLinks().subscribe((socialLinks: SocialLink[]) => {
+        this.socialLinksService.getSocialLinks().pipe(take(1)).subscribe((socialLinks: SocialLink[]) => {
             this.socialLinks = socialLinks;
         });
     }
