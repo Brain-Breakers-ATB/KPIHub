@@ -26,14 +26,5 @@ export class MainPageComponent implements OnInit {
     ];
     activities: any=[];
 
-
-    refreshItems () {
-        this.http.get(this.APIUrl+'items/GetItems').subscribe(data=>{
-            this.activities=data;
-        })
-    }
-
-    ngOnInit() {
-        this.refreshItems ();
-    }
+    ngOnInit() { }
 }

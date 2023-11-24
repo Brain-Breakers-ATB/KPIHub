@@ -18,11 +18,20 @@ export class HttpErrorInterceptor implements HttpInterceptor {
       retry(1),
       catchError((err: HttpErrorResponse) => {
         switch(err.status){
+          case 400:
+            console.error("Bad Request");
+            break;
           case 404:
-            alert("Page Not Found");
+            console.error("URL Not Found");
+            break;
+          case 408:
+            console.error("Request Timeout");
             break;
           case 500:
-            alert("Internal Server Error");
+            console.error("Internal Server Error");
+            break;
+          case 504:
+            console.error("Service Unvailabe")
             break;
         }
         return throwError(()=> err);
