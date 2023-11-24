@@ -5,7 +5,6 @@ import {FlexModule} from "@angular/flex-layout";
 import {ReactiveFormsModule} from "@angular/forms";
 import { PaginatorModule } from 'primeng/paginator';
 
-
 @NgModule({
     declarations: [SubdivisionsPageComponent],
     imports: [CommonModule, FlexModule, ReactiveFormsModule, PaginatorModule]

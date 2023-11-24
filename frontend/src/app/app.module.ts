@@ -9,22 +9,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SubdivisionsPageComponent} from "./components/subdivisions-page/subdivisions-page.component";
+import {PaginatorModule} from "primeng/paginator";
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SubdivisionsPageComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BaseHeaderModule,
-    BaseFooterModule,
-    HttpClientModule,
-    FlexLayoutModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BaseHeaderModule,
+        BaseFooterModule,
+        HttpClientModule,
+        FlexLayoutModule,
+        BrowserAnimationsModule,
+        PaginatorModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
