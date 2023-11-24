@@ -7,6 +7,7 @@ import { BaseHeaderModule } from "./components/base-header/base-header.module";
 import { BaseFooterModule } from "./components/base-footer/base-footer.module";
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BaseFooterModule,
     HttpClientModule,
     FlexLayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
