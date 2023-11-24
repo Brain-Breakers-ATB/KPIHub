@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { SocialLinksService } from './social-links.service';
 
 describe('SocialLinksService', () => {

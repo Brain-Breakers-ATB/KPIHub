@@ -6,8 +6,8 @@ import { EntrantFAQ } from '../models/entrantFAQ';
 @Injectable({
   providedIn: 'root'
 })
-export class EntrantFAQService {
 
+export class EntrantFAQService {
   constructor(private httpClient:HttpClient) { }
 
   getEntrantFAQ(): Observable<EntrantFAQ[]> {

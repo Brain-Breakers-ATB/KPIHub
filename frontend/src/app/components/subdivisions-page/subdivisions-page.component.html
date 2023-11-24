@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subdivisions page</title>
-</head>
-<body>
-<main>
+<div class="wrapper">
     <section class="b1">
         <div class="background-image"></div>
         <div class="b1_inner">
@@ -16,18 +8,21 @@
             <div class="line"></div>
             <div class="search-container">
                 <div class="filter-container" [class.active]="isFilterActive" (click)="toggleFilter($event)">
-                <p class="filter-text1">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p>
-                        <p class="filter-text2">*НЕОБОВ'ЯЗКОВО ОБИРАТИ</p>
-                    <img src="../../../assets/img/subdivision-page-img/icons2.png" alt="Filter Image" class="filter-image">
+                    <p class="filter-text1">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p>
+                    <p class="filter-text2">*НЕОБОВ'ЯЗКОВО ОБИРАТИ</p>
+                    <img src="../../../assets/img/subdivision-page-img/icons2.png" alt="Filter Image"
+                        class="filter-image">
                     <div class="faculty-list" *ngIf="isFilterActive">
                         <button *ngFor="let faculty of facultyList">
                             <div class="left-side">{{ faculty }}</div>
                             <div class="right-side">Additional Info</div>
                         </button>
                     </div>
-                    <div class="filter-container" *ngIf="isDepartmentFilterActive" (click)="toggleDepartmentFilter($event)">
+                    <div class="filter-container" *ngIf="isDepartmentFilterActive"
+                        (click)="toggleDepartmentFilter($event)">
                         <p class="filter-text1">КАФЕДРИ</p>
-                        <img src="../../../assets/img/subdivision-page-img/icons2.png" alt="Filter Image" class="filter-image">
+                        <img src="../../../assets/img/subdivision-page-img/icons2.png" alt="Filter Image"
+                            class="filter-image">
                         <div class="department-list" *ngIf="isDepartmentFilterActive">
                             <!-- Add your list of departments here -->
                             <button *ngFor="let department of departmentList">{{ department }}</button>
@@ -42,8 +37,8 @@
             </div>
         </div>
 
-    </section>
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
+            [rowsPerPageOptions]="[10, 25, 50]"></p-paginator>
 
-</main>
-</body>
-</html>
+    </section>
+</div>

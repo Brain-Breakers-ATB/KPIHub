@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Component, OnInit } from '@angular/core';
 import { SocialLinksService } from "../../services/social-links.service";
 import { SocialLink } from "../../models/socialLinks";
-import {take} from "rxjs"; // Adjust the import path
+import {take} from "rxjs";
 
 @Component({
     selector: 'app-contacts-page',
@@ -17,8 +17,8 @@ export class ContactsPageComponent implements OnInit {
 
     constructor(
         private socialLinksService: SocialLinksService,
-        private formBuilder: FormBuilder, // Fix the typo here
-        private http: HttpClient // Inject HttpClient here
+        private formBuilder: FormBuilder,
+        private http: HttpClient
     ) { }
 
     feedbackForm: FormGroup = this.formBuilder.group({
@@ -60,9 +60,11 @@ export class ContactsPageComponent implements OnInit {
         this.postFeedback(this.feedbackForm);
     }
 
+    isSocialLinksLoading: boolean = true;
     ngOnInit() {
         this.socialLinksService.getSocialLinks().pipe(take(1)).subscribe((socialLinks: SocialLink[]) => {
             this.socialLinks = socialLinks;
+            this.isSocialLinksLoading = false;
         });
     }
 }

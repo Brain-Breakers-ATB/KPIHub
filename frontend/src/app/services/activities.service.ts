@@ -6,8 +6,8 @@ import { Activity } from '../models/activities';
 @Injectable({
   providedIn: 'root'
 })
-export class ActivitiesService {
 
+export class ActivitiesService {
   constructor(private httpClient:HttpClient) { }
 
   getActivities(): Observable<Activity[]> {

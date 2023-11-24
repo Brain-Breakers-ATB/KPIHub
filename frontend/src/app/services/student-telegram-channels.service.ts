@@ -6,8 +6,8 @@ import { StudentTgChannel } from '../models/studentTelegramChannels';
 @Injectable({
   providedIn: 'root'
 })
-export class StudentTelegramChannelsService {
 
+export class StudentTelegramChannelsService {
   constructor(private httpClient:HttpClient) { }
 
   getStudentTgChannels(): Observable<StudentTgChannel[]> {
