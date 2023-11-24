@@ -8,12 +8,16 @@ import { BaseFooterModule } from "./components/base-footer/base-footer.module";
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {SubdivisionsPageComponent} from "./components/subdivisions-page/subdivisions-page.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    NotfoundComponent
+    NotfoundComponent,
+      SubdivisionsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     BaseHeaderModule,
     BaseFooterModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+      FormsModule,
+      ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
