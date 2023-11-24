@@ -1,6 +1,9 @@
 html
     line-height: 1.15
 
+.wrapper
+    font-family: "Montserrat", serif
+
 a
     text-decoration: none
     color: black
@@ -37,8 +40,14 @@ a
     font-size: 36px
     color: white
     font-family: "Montserrat", serif
-    padding-top: 44px
-    padding-bottom: 34px
+    padding-top: 24px
+    padding-bottom: 14px
+    &.sticky
+        position: sticky
+        top: 0
+        opacity: 50%
+        z-index: 1000
+        padding-bottom: 0
 
 .activities_block
     background-color: #886F4F
@@ -254,7 +263,6 @@ a
 
 table
     margin-top: 40px !important
-    margin-bottom: 40px !important
 
 th, td
     padding: 10px
