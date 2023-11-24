@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { BaseHeaderModule } from "./components/base-header/base-header.module";
 import { BaseFooterModule } from "./components/base-footer/base-footer.module";
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpErrorInterceptor } from './interceptors/HTTPErrorInterceptor/http-error.interceptor';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SubdivisionsPageComponent} from "./components/subdivisions-page/subdivisions-page.component";
@@ -19,7 +20,7 @@ import {PaginatorModule} from "primeng/paginator";
     NotfoundComponent,
     SubdivisionsPageComponent
   ],
-    imports: [
+  imports: [
         BrowserModule,
         AppRoutingModule,
         BaseHeaderModule,
@@ -29,7 +30,13 @@ import {PaginatorModule} from "primeng/paginator";
         BrowserAnimationsModule,
         PaginatorModule
     ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 

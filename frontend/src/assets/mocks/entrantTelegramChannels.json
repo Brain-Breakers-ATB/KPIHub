@@ -1,17 +1,17 @@
 [
     {
         "name":"Вступник КПІ",
-        "imgSrc":"../../../assets/img/entrant-page-img/tab1img.jpg",
+        "imgSrc":"tab1img.jpg",
         "link":"https://t.me/vstup_kpi"
     },
     {
         "name":"КПІ Вступник чат",
-        "imgSrc":"../../../assets/img/entrant-page-img/tab2img.jpg",
+        "imgSrc":"tab2img.jpg",
         "link":"https://t.me/vstup_kpi_chat"
     },
     {
         "name":"Кафедра військової підготовки КПІ",
-        "imgSrc":"../../../assets/img/entrant-page-img/tab3img.jpg",
+        "imgSrc":"tab3img.jpg",
         "link":"https://t.me/kvp_kpi"
     }
 ]
