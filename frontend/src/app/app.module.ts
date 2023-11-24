@@ -9,6 +9,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpErrorInterceptor } from './interceptors/HTTPErrorInterceptor/http-error.interceptor';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SubdivisionsPageComponent} from "./components/subdivisions-page/subdivisions-page.component";
 import {PaginatorModule} from "primeng/paginator";
@@ -28,7 +30,9 @@ import {PaginatorModule} from "primeng/paginator";
         HttpClientModule,
         FlexLayoutModule,
         BrowserAnimationsModule,
-        PaginatorModule
+        PaginatorModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [
     {
