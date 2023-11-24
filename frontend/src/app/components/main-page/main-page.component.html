@@ -1,38 +1,24 @@
-<section class="block_title">
-    <div class="block_title_inner">
-        <b class="block_title_title">Київський Політехнічний Інститут<br>імені Ігоря Сікорського</b>
-        <div class="line"></div>
-        <p class="block_title_text">"Діяльність особистості залишається іскрою, що рухає людство вперед"</p>
-    </div>
+<section class="main_banner">
+  <b class="main_banner_title">Київський Політехнічний Інститут<br>імені Ігоря Сікорського</b>
+  <div class="line"></div>
+  <p class="main_banner_text">"Діяльність особистості залишається іскрою, що рухає людство вперед"</p>
 </section>
 
 <section class="block_info">
-    <div class="block_info_inner">
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div fxFlex="50">
-                <img class="block_info_img" src="../../../assets/img/main-page-img/img2.jpg" alt="KPI">
-            </div>
-            <div fxFlex="50">
-                <p class="block_info_text">
-                    {{ universityDescription }}
-                    <br><br>
-                    <a href="https://kpi.ua/almamater" class="block_info_button">ДЕТАЛЬНІШЕ</a>
-                </p>
-            </div>
-        </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex="50"><img class="block_info_img" src="../../../assets/img/main-page-img/img2.jpg" alt="KPI"></div>
+    <div fxFlex="50"><p class="block_info_text">{{ universityDescription }}<br><br>
+      <a href="https://kpi.ua/almamater" target="_blank" class="block_info_button">ДЕТАЛЬНІШЕ</a></p>
     </div>
+  </div>
 </section>
 
 <section class="block_target">
-    <div class="block_target_inner">
-        <b class="block_target_title">Мета сайту</b>
-        <p class="block_target_text">Мета нового сайту полягає в створенні зручного та ефективного інформаційного
-            ресурсу про Київський
-            політехнічний інститут (КПІ), який вирішує проблеми, що існують на поточному сайті. Наша мета
-            включає наступні пункти:
-        </p>
-        <ol>
-            <li *ngFor="let item of listItems" style="color: black">{{ item }}</li>
-        </ol>
-    </div>
+  <div class="block_target_inner">
+    <b class="block_target_title">Мета сайту</b>
+    <p class="block_target_text">Мета нового сайту полягає в створенні зручного та ефективного інформаційного          
+      ресурсу про Київський політехнічний інститут (КПІ), який вирішує проблеми, що існують на поточному сайті.
+      Наша мета включає наступні пункти:</p>
+    <ol><li *ngFor="let item of listItems" style="color: black">{{ item }}</li></ol>
+  </div>
 </section>

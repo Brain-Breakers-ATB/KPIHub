@@ -6,8 +6,8 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class SocialLinksService {
 
+export class SocialLinksService {
   constructor(private httpClient:HttpClient) { }
 
     getSocialLinks(): Observable<SocialLink[]> {
