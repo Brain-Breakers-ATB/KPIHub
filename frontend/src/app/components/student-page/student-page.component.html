@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress XmlDuplicatedId -->
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -12,7 +13,11 @@
                 <div class="line"></div>
             </section>
             <section class="activities_block">
-                <div class="block_title"><p>АКТИВНОСТІ</p></div>
+                <div class="block_title" id="stickyTitle1"><p>АКТИВНОСТІ</p></div>
+                <div class="card">
+                    <p-progressSpinner *ngIf="isActivitiesLoading" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+                                       animationDuration=".5s"></p-progressSpinner>
+                </div>
                 <div *ngFor="
                 let activity of activities;
                 let i = index;
@@ -54,7 +59,7 @@
                 </div>
             </section>
             <section class="events_block">
-                <div class="block_title"><p>Гуртки. Олімпіади. Проєкти</p></div>
+                <div class="block_title" id="stickyTitle2"><p>Гуртки. Олімпіади. Проєкти</p></div>
                 <img class="event_image" src="../../../assets/img/student-page-img/img6.jpg" alt="KPI"/>
                 <div>
                     <div fxFlex="30">
@@ -148,7 +153,7 @@
                 </div>
             </section>
             <section class="courses_block">
-                <div class="block_title"><p>Безкоштовні курси</p></div>
+                <div class="block_title" id="stickyTitle3"><p>Безкоштовні курси</p></div>
                 <img class="course_icon" src="../../../assets/img/student-page-img/icon8.jpg" alt="KPI"/>
                 <div class="courses" fxLayoutGap="50px">
                     <p class="course_text">
@@ -163,8 +168,12 @@
                 </div>
                 <img class="course_image" src="../../../assets/img/student-page-img/img9.jpg" alt="KPI"/>
             </section>
-            <section class="telegram_block" fxLayout="column">
-                <div class="block_title"><p>Усі важливі Telegram-канали КПІ</p></div>
+            <section class="telegram_block">
+                <div class="block_title" id="stickyTitle4"><p>Усі важливі Telegram-канали КПІ</p></div>
+                <div class="card">
+                    <p-progressSpinner *ngIf="isStudentTgChannelsLoading" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+                                       animationDuration=".5s"></p-progressSpinner>
+                </div>
                 <table>
                     <tr *ngFor="let channel of telegramChannels">
                         <td>

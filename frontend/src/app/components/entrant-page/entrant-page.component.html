@@ -12,6 +12,10 @@
         <div class="line"></div>
     </section>
     <section class="faq_block">
+        <div class="card" fxLayoutAlign="center">
+            <p-progressSpinner *ngIf="isEntrantFAQLoading" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+                               animationDuration=".5s"></p-progressSpinner>
+        </div>
         <section class="services" id="services">
           <div class="box_container">
               <div *ngFor="let faqItem of faqItems" class="box faq_button" (click)="expandBox(faqItem.id)">
@@ -28,6 +32,10 @@
     </section>
     <section class="telegram_block">
         <div class="telegram_block_title"><p>Корисні Telegram-канали для вступників</p></div>
+        <div class="card">
+            <p-progressSpinner *ngIf="isEntrantTgChannelsLoading" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+                               animationDuration=".5s"></p-progressSpinner>
+        </div>
           <table>
               <tr *ngFor="let item of tableItems">
                   <td [width]="600">

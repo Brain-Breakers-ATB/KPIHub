@@ -8,6 +8,7 @@ import { BaseFooterModule } from "./components/base-footer/base-footer.module";
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     BaseHeaderModule,
     BaseFooterModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+      BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
