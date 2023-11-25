@@ -15,6 +15,9 @@ import { BaseFooterModule } from "./components/base-footer/base-footer.module";
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 @NgModule({
@@ -22,7 +25,11 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     AppComponent,
     MainPageComponent,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     SubdivisionsPageComponent
+=======
+    NotfoundComponent
+>>>>>>> Stashed changes
 =======
     NotfoundComponent
 >>>>>>> Stashed changes

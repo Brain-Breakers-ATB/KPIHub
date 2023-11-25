@@ -9,6 +9,9 @@ import { SubdivisionsPageComponent } from "../subdivisions-page/subdivisions-pag
 =======
 import { MapPageComponent } from "../map-page/map-page.component";
 import {NotfoundComponent} from "../notfound/notfound.component";
+<<<<<<< Updated upstream:frontend/src/app/pages/base-header/base-header-routing.module.ts
+>>>>>>> Stashed changes:frontend/src/app/components/base-header/base-header-routing.module.ts
+=======
 >>>>>>> Stashed changes:frontend/src/app/components/base-header/base-header-routing.module.ts
 
 const routes: Routes = [
@@ -46,6 +49,9 @@ const routes: Routes = [
     },
     { path: '**', redirectTo: '/notfound' }
 
+<<<<<<< Updated upstream:frontend/src/app/pages/base-header/base-header-routing.module.ts
+>>>>>>> Stashed changes:frontend/src/app/components/base-header/base-header-routing.module.ts
+=======
 >>>>>>> Stashed changes:frontend/src/app/components/base-header/base-header-routing.module.ts
 ];
 
