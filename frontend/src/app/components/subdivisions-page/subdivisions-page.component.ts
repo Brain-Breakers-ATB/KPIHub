@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaginatorState } from 'primeng/paginator';
 
+// noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
     selector: 'app-subdivisions-page',
     templateUrl: './subdivisions-page.component.html',
@@ -35,7 +36,7 @@ export class SubdivisionsPageComponent implements OnInit {
     currentPage: number = 1;
     Math: any;
     totalPages: number = 0;
-    pageNumbers: number[] = []; 
+    pageNumbers: number[] = [];
 
     ngOnInit() {
         // You can call your backend here to fetch initial data
@@ -120,10 +121,10 @@ export class SubdivisionsPageComponent implements OnInit {
                         url: 'http://result1.com',
                         snippet: 'Snippet 1'
                     },
-                    { 
-                        title: 'Result 2', 
-                        url: 'http://result2.com', 
-                        snippet: 'Snippet 2' 
+                    {
+                        title: 'Result 2',
+                        url: 'http://result2.com',
+                        snippet: 'Snippet 2'
                     },
                     // ... (up to 10 results based on maxResultsPerPage)
                 ],
