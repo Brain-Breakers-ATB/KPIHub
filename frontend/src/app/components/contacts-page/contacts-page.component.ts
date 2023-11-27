@@ -10,10 +10,13 @@ import {take} from "rxjs";
     templateUrl: './contacts-page.component.html',
     styleUrls: ['./contacts-page.component.sass']
 })
+
 export class ContactsPageComponent implements OnInit {
     readonly APIUrl = "http://localhost:3000/api/";
 
     socialLinks: SocialLink[] = [];
+    feedbackForm!: FormGroup;
+    submitted: boolean = false;
 
     constructor(
         private socialLinksService: SocialLinksService,
@@ -21,14 +24,9 @@ export class ContactsPageComponent implements OnInit {
         private http: HttpClient
     ) { }
 
-    feedbackForm: FormGroup = this.formBuilder.group({
-        name: new FormControl('', [Validators.required]),
-        email: new FormControl('', [
-            Validators.required,
-            Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
-        ]),
-        message: new FormControl('', [Validators.required])
-    });
+    get feedback(){
+        return this.feedbackForm.controls;
+    }
 
     get Email(){
         return this.feedbackForm.get('email')
@@ -52,19 +50,32 @@ export class ContactsPageComponent implements OnInit {
                 console.warn('Your feedback has NOT been submitted');
             }
         });
-
-        this.feedbackForm.reset();
     }
 
     onSubmit() {
+        this.submitted = true;
+
+        if (this.feedbackForm.invalid) {
+            return;
+        }
+      
         this.postFeedback(this.feedbackForm);
+        this.submitted = false;
+        this.feedbackForm.reset();
     }
 
     isSocialLinksLoading: boolean = true;
+
     ngOnInit() {
         this.socialLinksService.getSocialLinks().pipe(take(1)).subscribe((socialLinks: SocialLink[]) => {
             this.socialLinks = socialLinks;
             this.isSocialLinksLoading = false;
+        });
+
+        this.feedbackForm = this.formBuilder.group({
+            name: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
+            message: ['', Validators.required]
         });
     }
 }
