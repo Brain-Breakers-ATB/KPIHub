@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { EntrantFAQService } from './entrant-faq.service';
+import { SocialLinksService } from './social-links.service';
 
-describe('EntrantFAQService', () => {
-  let service: EntrantFAQService;
+describe('SocialLinksService', () => {
+  let service: SocialLinksService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EntrantFAQService);
+    service = TestBed.inject(SocialLinksService);
   });
 
   it('should be created', () => {

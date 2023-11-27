@@ -6,14 +6,14 @@ import { StudentTgChannel } from '../models/studentTelegramChannels';
 @Injectable({
   providedIn: 'root'
 })
-export class StudentTelegramChannelsService {
 
+export class StudentTelegramChannelsService {
   constructor(private httpClient:HttpClient) { }
 
   getStudentTgChannels(): Observable<StudentTgChannel[]> {
     const url = 'http://localhost:3000/api/studentTelegramChannels/GetStudentTelegramChannel';
     const mockUrl = 'assets/mocks/studentTelegramChannels.json';
-    
-    return this.httpClient.get<StudentTgChannel[]>(mockUrl);
+
+    return this.httpClient.get<StudentTgChannel[]>(url);
   }
 }
