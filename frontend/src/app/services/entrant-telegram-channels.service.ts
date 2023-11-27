@@ -3,12 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EntrantTgChannel } from '../models/entrantTelegramChannels';
 
-
 @Injectable({
     providedIn: 'root'
 })
-export class EntrantTelegramChannelsService {
 
+export class EntrantTelegramChannelsService {
     constructor(private httpClient:HttpClient) { }
 
     getEntrantTgChannels(): Observable<EntrantTgChannel[]> {

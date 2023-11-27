@@ -1,15 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { SocialLinksService } from "../../services/social-links.service";
 import { SocialLink } from "../../models/socialLinks";
-import {take} from "rxjs"; // Adjust the import path
+import {take} from "rxjs";
 
 @Component({
     selector: 'app-contacts-page',
     templateUrl: './contacts-page.component.html',
     styleUrls: ['./contacts-page.component.sass']
 })
+
 export class ContactsPageComponent implements OnInit {
     readonly APIUrl = "http://localhost:3000/api/";
 
@@ -19,12 +20,16 @@ export class ContactsPageComponent implements OnInit {
 
     constructor(
         private socialLinksService: SocialLinksService,
-        private formBuilder: FormBuilder, // Fix the typo here
-        private http: HttpClient // Inject HttpClient here
+        private formBuilder: FormBuilder,
+        private http: HttpClient
     ) { }
 
     get feedback(){
         return this.feedbackForm.controls;
+    }
+
+    get Email(){
+        return this.feedbackForm.get('email')
     }
 
     postFeedback(feedback: FormGroup) {
@@ -53,15 +58,18 @@ export class ContactsPageComponent implements OnInit {
         if (this.feedbackForm.invalid) {
             return;
         }
+      
         this.postFeedback(this.feedbackForm);
-
         this.submitted = false;
         this.feedbackForm.reset();
     }
 
+    isSocialLinksLoading: boolean = true;
+
     ngOnInit() {
         this.socialLinksService.getSocialLinks().pipe(take(1)).subscribe((socialLinks: SocialLink[]) => {
             this.socialLinks = socialLinks;
+            this.isSocialLinksLoading = false;
         });
 
         this.feedbackForm = this.formBuilder.group({

@@ -1,6 +1,9 @@
 html
     line-height: 1.15
 
+.wrapper
+    font-family: "Montserrat", serif
+
 a
     text-decoration: none
     color: black
@@ -37,8 +40,14 @@ a
     font-size: 36px
     color: white
     font-family: "Montserrat", serif
-    padding-top: 44px
-    padding-bottom: 34px
+    padding-top: 24px
+    padding-bottom: 14px
+    &.sticky
+        position: sticky
+        top: 0
+        opacity: 50%
+        z-index: 1000
+        padding-bottom: 0
 
 .activities_block
     background-color: #886F4F
@@ -137,14 +146,19 @@ a
         margin-bottom: 40px
 
 .event_button_text1, .event_button_text2, .event_button_text3, .event_button_text4
-    margin: 43px 50px
+    margin: 13px 30px
+    &.event_button_text2
+        margin: 1px 30px
+        font-size: 18px
     &.event_button_text3
-        margin: 43px 85px
+        margin: 13px 55px
     &.event_button_text4
         margin: 10px 20px
 
 .event_button1, .event_button2, .event_button3, .event_button4, .event_button5
-    color: #000000
+    color: black
+    height: 65px
+    width: 210px
     font-size: 24px
     display: inline-block
     cursor: pointer
@@ -158,7 +172,7 @@ a
         transition: transform 0.3s
     &.event_button4
         width: 200px
-        height: 50px
+        height: 65px
     &.event_button5
         font-size: 20px
         margin-left: 60px
@@ -191,11 +205,11 @@ a
     margin-left: 123px
 
 .course_button
-    margin-top: 50px
-    height: 130px
-    width: 3000px
+    margin-top: 90px
+    height: 65px
+    width: 1000px
     color: black
-    font-size: 36px
+    font-size: 24px
     text-align: center
     display: inline-block
     cursor: pointer
@@ -254,7 +268,6 @@ a
 
 table
     margin-top: 40px !important
-    margin-bottom: 40px !important
 
 th, td
     padding: 10px

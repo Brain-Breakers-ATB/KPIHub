@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Student page</title>
-    </head>
-    <body>
-        <main>
-            <section class="students_banner">
+<div class="wrapper">
+    <section class="students_banner">
                 <b class="students_title">"KPI Life: Відкрий світ можливостей разом зі<br />студентськими ініціативами!"</b>
                 <div class="line"></div>
             </section>
             <section class="activities_block">
-                <div class="block_title"><p>АКТИВНОСТІ</p></div>
+                <div class="block_title" id="stickyTitle1"><p>АКТИВНОСТІ</p></div>
+                <div class="card">
+                    <p-progressSpinner *ngIf="isActivitiesLoading" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+                                       animationDuration=".5s"></p-progressSpinner>
+                </div>
                 <div *ngFor="
                 let activity of activities;
                 let i = index;
@@ -29,7 +25,7 @@
                             </b>
                             <p class="activity_description">{{ activity.description }}</p>
                             <button class="activity_button">
-                                <div class="activity_button_text"><a [href]="activity.link">Детальніше</a></div>
+                                <div class="activity_button_text"><a [href]="activity.link" target="_blank">Детальніше</a></div>
                             </button>
                         </div>
                     </ng-container>
@@ -42,7 +38,7 @@
                             </b>
                             <p class="activity_description">{{ activity.description }}</p>
                             <button class="activity_button">
-                                <div class="activity_button_text"><a [href]="activity.link">Детальніше</a></div>
+                                <div class="activity_button_text"><a [href]="activity.link" target="_blank">Детальніше</a></div>
                             </button>
                         </div>
                         <div fxFlex="50">
@@ -54,7 +50,7 @@
                 </div>
             </section>
             <section class="events_block">
-                <div class="block_title"><p>Гуртки. Олімпіади. Проєкти</p></div>
+                <div class="block_title" id="stickyTitle2"><p>Гуртки. Олімпіади. Проєкти</p></div>
                 <img class="event_image" src="../../../assets/img/student-page-img/img6.jpg" alt="KPI"/>
                 <div>
                     <div fxFlex="30">
@@ -74,21 +70,21 @@
                     <div fxFlex="30">
                         <button class="event_button1">
                             <div class="event_button_text1">
-                                <a href="https://telegra.ph/engineering-club-06-16">Інженерія</a>
+                                <a href="https://telegra.ph/engineering-club-06-16" target="_blank">Інженерія</a>
                             </div>
                         </button>
                     </div>
                     <div fxFlex="40">
                         <button class="event_button2">
                             <div class="event_button_text2">
-                                <a href="https://telegra.ph/sochum-club-06-16">Соціально-гуманітарний гурток</a>
+                                <a href="https://telegra.ph/sochum-club-06-16" target="_blank">Соціально-гуманітарний гурток</a>
                             </div>
                         </button>
                     </div>
                     <div fxFlex="30">
                         <button class="event_button3">
                             <div class="event_button_text3">
-                                <a href="https://telegra.ph/science-club-06-16">Наука</a>
+                                <a href="https://telegra.ph/science-club-06-16" target="_blank">Наука</a>
                             </div>
                         </button>
                     </div>
@@ -109,7 +105,7 @@
                                 <p class="event_text3">I етап студентських<br />олімпіад в КПІ</p>
                                 <button class="event_button4">
                                     <div class="event_button_text4">
-                                        <a href="https://telegra.ph/stud-olimp-12-14">Детальніше</a>
+                                        <a href="https://telegra.ph/stud-olimp-12-14" target="_blank">Детальніше</a>
                                     </div>
                                 </button>
                             </div>
@@ -118,7 +114,7 @@
                                 <button class="event_button4">
                                     <div class="event_button_text4">
                                         <a href="https://telegra.ph/OL%D0%86MP%D0%86ADI-2-tur-shcho-provodyatsya-v-KP%D0%86-08-04"
-                                        >Детальніше</a>
+                                        target="_blank">Детальніше</a>
                                     </div>
                                 </button>
                             </div>
@@ -137,18 +133,18 @@
                             активної участі, зокрема KPI-OPEN та День першокурсника.<br /><br />KPI-OPEN
                             <button class="event_button5">
                                 <div class="event_button_text4">
-                                    <a href="https://kpi.ua/vezha-open">Детальніше</a>
+                                    <a href="https://kpi.ua/vezha-open" target="_blank">Детальніше</a>
                                 </div>
                             </button><br /><br />День першокурсника
                             <button class="event_button5">
-                                <div class="event_button_text4"><a href="https://kpi.ua/vezha-open">Детальніше</a></div>
+                                <div class="event_button_text4"><a href="https://kpi.ua/vezha-open" target="_blank">Детальніше</a></div>
                             </button>
                         </p>
                     </div>
                 </div>
             </section>
             <section class="courses_block">
-                <div class="block_title"><p>Безкоштовні курси</p></div>
+                <div class="block_title" id="stickyTitle3"><p>Безкоштовні курси</p></div>
                 <img class="course_icon" src="../../../assets/img/student-page-img/icon8.jpg" alt="KPI"/>
                 <div class="courses" fxLayoutGap="50px">
                     <p class="course_text">
@@ -159,12 +155,16 @@
                         саме КПІ (наприклад, курси іноземних мов тощо).
                     </p>
                     <img class="course_icon" src="../../../assets/img/student-page-img/icon9.png" alt="KPI"/>
-                    <button class="course_button"><div><a href="https://kpi.ua/board-fdp">Детальніше</a></div></button>
+                    <button class="course_button"><div><a href="https://kpi.ua/board-fdp" target="_blank">Детальніше</a></div></button>
                 </div>
                 <img class="course_image" src="../../../assets/img/student-page-img/img9.jpg" alt="KPI"/>
             </section>
-            <section class="telegram_block" fxLayout="column">
-                <div class="block_title"><p>Усі важливі Telegram-канали КПІ</p></div>
+            <section class="telegram_block">
+                <div class="block_title" id="stickyTitle4"><p>Усі важливі Telegram-канали КПІ</p></div>
+                <div class="card">
+                    <p-progressSpinner *ngIf="isStudentTgChannelsLoading" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+                                       animationDuration=".5s"></p-progressSpinner>
+                </div>
                 <table>
                     <tr *ngFor="let channel of telegramChannels">
                         <td>
@@ -177,12 +177,10 @@
                         </td>
                         <td>
                             <button class="telegram_button">
-                                <div class="telegram_text"><a [href]="channel.link">Перейти</a></div>
+                                <div class="telegram_text"><a [href]="channel.link" target="_blank">Перейти</a></div>
                             </button>
                         </td>
                     </tr>
                 </table>
             </section>
-        </main>
-    </body>
-</html>
+</div>

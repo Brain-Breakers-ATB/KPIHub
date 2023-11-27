@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts page</title>
-</head>
-<body>
-<main>
+<div class="wrapper">
   <div class="container" fxLayoutGap="100">
       <div class="contacts_block" fxFlex="50">
           <p class="contacts_block_title">Зв'яжіться з нами</p>
@@ -29,7 +21,7 @@
               <img src="../../../assets/img/contacts-page-img/icons_email.jpg" alt="email">
               <p class="email_text">Електронна пошта</p>
           </div>
-          <a class="Email" href="mailto:">Mail@KPI.UA</a>
+          <a class="Email" href="mailto:" target="_blank">Mail@KPI.UA</a>
       </div>
       <div class="feedback_form" fxFlex="50">
           <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
@@ -60,10 +52,12 @@
       </div>
   </div>
     <div class="links" fxLayoutGap="100">
-        <a *ngFor="let link of socialLinks" [href]="link.href">
+        <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank">
             <img [src]="'../../../assets/img/contacts-page-img/icons_' + link.icon + '.jpg'" [alt]="link.icon">
         </a>
+        <div class="card">
+            <p-progressSpinner *ngIf="isSocialLinksLoading" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+                               animationDuration=".5s"></p-progressSpinner>
+        </div>
     </div>
-</main>
-</body>
-</html>
+</div>
