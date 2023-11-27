@@ -10,8 +10,13 @@
             <section class="students_banner">
                 <b class="students_title">"KPI Life: Відкрий світ можливостей разом зі<br />студентськими ініціативами!"</b>
                 <div class="line"></div>
+                <div class="content">
+                        <li><a href="#activities" class="text">Активності</a></li>
+                        <li><a href="#events" class="text">Гуртки.Олімпіади.Проєкти</a></li>
+                        <li><a href="#courses" class="text">Безкоштовні курси</a></li>
+                </div>
             </section>
-            <section class="activities_block">
+            <section class="activities_block" id="activities">
                 <div class="block_title"><p>АКТИВНОСТІ</p></div>
                 <div *ngFor="
                 let activity of activities;
@@ -53,7 +58,7 @@
                     <div class="horizontal_divider_line" *ngIf="!last"></div>
                 </div>
             </section>
-            <section class="events_block">
+            <section class="events_block" id="events">
                 <div class="block_title"><p>Гуртки. Олімпіади. Проєкти</p></div>
                 <img class="event_image" src="../../../assets/img/student-page-img/img6.jpg" alt="KPI"/>
                 <div>
@@ -147,7 +152,7 @@
                     </div>
                 </div>
             </section>
-            <section class="courses_block">
+            <section class="courses_block" id="courses">
                 <div class="block_title"><p>Безкоштовні курси</p></div>
                 <img class="course_icon" src="../../../assets/img/student-page-img/icon8.jpg" alt="KPI"/>
                 <div class="courses" fxLayoutGap="50px">
