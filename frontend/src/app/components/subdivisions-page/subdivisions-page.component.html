@@ -41,8 +41,9 @@
                             (keyup.enter)="onSearch()"
                         >
                         <ul class="dropdown-list" *ngIf="showSearchHistory && searchHistory.length > 0">
-                            <li *ngFor="let historyItem of searchHistory.slice(0, 5)" (click)="onHistoryItemClick(historyItem)">
+                            <li *ngFor="let historyItem of searchHistory.slice(0, 5)">
                                 {{ historyItem }}
+                                <button class="delete-button" (click)="deleteHistoryItem(historyItem)">×</button>
                             </li>
                             <button class="clear-history-button" (click)="clearSearchHistory($event)">Очистити історію</button>
                         </ul>

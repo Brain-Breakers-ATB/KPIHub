@@ -26,6 +26,13 @@ export class SubdivisionsPageComponent implements OnInit {
             this.searchHistory = JSON.parse(storedHistory);
         }
     }
+    deleteHistoryItem(historyItem: string) {
+        const index = this.searchHistory.indexOf(historyItem);
+        if (index !== -1) {
+            this.searchHistory.splice(index, 1);
+            localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
+        }
+    }
 
     first: number = 0;
     rows: number = 10;
