@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4bd643cf-6b70-43e8-93fb-564c4a7b6bc9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/contacts-page/contacts-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/contacts-page/contacts-page.component.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2YGynbmvv3W7tuOFoAvJq1uswgt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Programming\\WebStorm\\KPIHub\\backend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bd643cf-6b70-43e8-93fb-564c4a7b6bc9" name="Changes" comment="" />
+      <created>1700166382756</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700166382756</updated>
+      <workItem from="1700166384477" duration="430000" />
+      <workItem from="1700236590393" duration="3805000" />
+      <workItem from="1700259202505" duration="2545000" />
+      <workItem from="1700394039395" duration="473000" />
+      <workItem from="1700416756192" duration="810000" />
+      <workItem from="1700482738029" duration="1064000" />
+      <workItem from="1700580385098" duration="27000" />
+      <workItem from="1700580428275" duration="15877000" />
+      <workItem from="1700669517437" duration="3658000" />
+      <workItem from="1700756111226" duration="2662000" />
+      <workItem from="1700761683698" duration="2328000" />
+      <workItem from="1700810994339" duration="1827000" />
+      <workItem from="1700813131253" duration="238000" />
+      <workItem from="1700828701484" duration="10952000" />
+      <workItem from="1700844701450" duration="18393000" />
+      <workItem from="1700923272586" duration="595000" />
+      <workItem from="1700932559604" duration="556000" />
+      <workItem from="1700933283253" duration="3114000" />
+      <workItem from="1701100476175" duration="4433000" />
+      <workItem from="1701106646115" duration="1297000" />
+      <workItem from="1701109139406" duration="4570000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="angular.json" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
