@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PaginatorState } from 'primeng/paginator';
+import { DepartmentsService } from "../../services/departments.service";
+import { Subject, take, takeUntil } from "rxjs";
+import { SelectItemGroup } from 'primeng/api';
+import { Cathedra, Department } from 'src/app/models/departments';
+import { InstitutesService } from 'src/app/services/institutes.service';
+import { Institute } from 'src/app/models/institutes';
 
 // noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
@@ -8,24 +14,48 @@ import { PaginatorState } from 'primeng/paginator';
     styleUrls: ['./subdivisions-page.component.sass']
 })
 
-export class SubdivisionsPageComponent implements OnInit {
+export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     isFilterActive: boolean = false;
     isDepartmentFilterActive: boolean = false;
-    facultyList: string[] = ['Faculty 1', 'Faculty 2', 'Faculty 3'];
-    departmentList: string[] = ['Department 1', 'Department 2', 'Department 3'];
 
     searchInput = '';
     showSearchHistory = false;
     searchHistory: string[] = [];
     searchResults: string[] = [];
 
+    first: number = 0;
+    rows: number = 10;
+
+    departments: Department[] = [];
+
+    private destroy$: Subject<boolean> = new Subject<boolean>();
+
+    filterDepartmentList: SelectItemGroup[] = [];
+
+    private departmentList!: SelectItemGroup[];
+
+    instituteList!: Institute[];
+
+    selectedDepartments!: Department[];
+
+    constructor(private departmentService: DepartmentsService, private instituteService: InstitutesService) { }
+
     ngOnInit() {
-        // Load search history from localStorage when the component is initialized
+
+        this.getDepartments();
+        this.getInstitutes();
+
         const storedHistory = localStorage.getItem('searchHistory');
         if (storedHistory) {
             this.searchHistory = JSON.parse(storedHistory);
         }
     }
+
+    ngOnDestroy(): void {
+        this.destroy$.next(true);
+        this.destroy$.unsubscribe();
+    }
+
     deleteHistoryItem(historyItem: string) {
         const index = this.searchHistory.indexOf(historyItem);
         if (index !== -1) {
@@ -34,24 +64,7 @@ export class SubdivisionsPageComponent implements OnInit {
         }
     }
 
-    first: number = 0;
-    rows: number = 10;
-
-    /* results: any[] = [];
-    totalResults: number = 0;
-    maxResultsPerPage: number = 10;
-    currentPage: number = 1;
-    Math: any;
-    totalPages: number = 0;
-    pageNumbers: number[] = [];
-
-    ngOnInit() {
-        // You can call your backend here to fetch initial data
-        this.fetchResults();
-    } */
-
     toggleFilter(event: Event) {
-        // Clear the search input when toggling the filter
         this.searchInput = '';
 
         this.isFilterActive = !this.isFilterActive;
@@ -59,7 +72,6 @@ export class SubdivisionsPageComponent implements OnInit {
     }
 
     toggleDepartmentFilter(event: Event) {
-        // Clear the search input when toggling the department filter
         this.searchInput = '';
 
         this.isDepartmentFilterActive = !this.isDepartmentFilterActive;
@@ -67,7 +79,6 @@ export class SubdivisionsPageComponent implements OnInit {
     }
 
     toggleDropdown(event: Event) {
-        // Always show the search history dropdown when clicking the input field
         this.showSearchHistory = true;
     }
 
@@ -78,18 +89,16 @@ export class SubdivisionsPageComponent implements OnInit {
     }
 
     onSearch() {
-        // Your existing search logic
         this.searchResults = ['Результат 1', 'Результат 2', 'Результат 3'];
-        // Add the current searchInput to the searchHistory
+
         this.addToSearchHistory(this.searchInput);
 
-        // Close the search history dropdown after pressing Enter or clicking the "Знайти" button
         this.showSearchHistory = false;
     }
 
     onHistoryItemClick(historyItem: string) {
         this.searchInput = historyItem;
-        this.onSearch(); // Perform search when history item is clicked
+        this.onSearch();
     }
 
     clearSearchHistory(event: Event) {
@@ -117,44 +126,29 @@ export class SubdivisionsPageComponent implements OnInit {
         this.rows = event.rows!;
     }
 
-    /* fetchResults() {
-        // Mock backend response
-        const mockResponse = {
-            status: 'success',
-            data: {
-                results: [
-                    {
-                        title: 'Result 1',
-                        url: 'http://result1.com',
-                        snippet: 'Snippet 1'
-                    },
-                    {
-                        title: 'Result 2',
-                        url: 'http://result2.com',
-                        snippet: 'Snippet 2'
-                    },
-                    // ... (up to 10 results based on maxResultsPerPage)
-                ],
-                totalResults: 25
-            }
-        };
-
-        // Assigning mock response to properties
-        this.results = mockResponse.data.results;
-        this.totalResults = mockResponse.data.totalResults;
-
-        this.totalPages = Math.ceil(this.totalResults / this.maxResultsPerPage);
-        this.pageNumbers = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+    onSelectChange(event: { value: Institute[] }) {
+        const selectedInstitutes: string[] = event.value.map((instituteList: Institute) => instituteList.code);
+        this.filterDepartmentList = this.departmentList.filter((department: SelectItemGroup) => selectedInstitutes.includes(department.label));
+        console.log(selectedInstitutes);
+        console.log(this.departmentList);
     }
 
-    onPageChange(newPage: number) {
-        this.currentPage = newPage;
-        // You can call your backend with updated page number here
-        this.fetchResults();
+    private getDepartments(): void {
+        this.departmentService.getDepartments().pipe(takeUntil(this.destroy$)).subscribe((departments: Department[]) => {
+            this.departmentList = departments.map((department: Department) => ({
+                label: department.shortName,
+                items: department.departments.map((cathedra: Cathedra) => ({
+                    label: cathedra.fullName,
+                    value: cathedra.shortName
+                }))
+            }))
+        })
     }
 
-    getPagesArray(): number[] {
-        const totalPages = Math.ceil(this.totalResults / this.maxResultsPerPage);
-        return Array.from({ length: totalPages }, (_, index) => index + 1);
-    } */
+    private getInstitutes(): void {
+        this.instituteService
+            .getInstitutes()
+            .pipe(takeUntil(this.destroy$))
+            .subscribe((institutes: Institute[]) => this.instituteList = institutes)
+    }
 }

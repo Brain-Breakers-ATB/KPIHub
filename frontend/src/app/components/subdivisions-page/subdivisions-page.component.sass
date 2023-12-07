@@ -46,7 +46,6 @@
 .search-bar
     width: 517px
     height: 58px
-    margin: 20px auto
     padding: 4px 16px
     border-radius: 11px
     background-color: rgba(255, 255, 255, 0.47)
@@ -70,83 +69,6 @@
     letter-spacing: 0
     color: rgba(0, 0, 0, 1)
     background-color: transparent
-
-.filter-container
-    width: 24%
-    height: 58px
-    top: 85px
-    left: 50px
-    right: 40px
-    padding: 0 6px 0 0
-    border-radius: 11px
-    background: rgba(0, 0, 0, 0.7)
-    position: absolute
-
-.filter-container
-    font-family: "Montserrat", serif
-    text-align: center
-    position: relative
-
-.filter-text1
-    font-size: 20px
-    font-weight: 300
-    line-height: 0
-    letter-spacing: 0
-    color: rgba(255, 255, 255, 1)
-    display: inline-block
-    margin-bottom: 5px
-
-.filter-text2
-    font-size: 10px
-    font-weight: 300
-    line-height: 0
-    letter-spacing: 0
-    color: rgba(255, 255, 255, 1)
-    display: inline-block
-
-.filter-image
-    width: 25px
-    height: 25px
-    position: absolute
-    top: 17px
-    left: 320px
-
-.filter-container
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease
-
-.filter-container:hover
-    transform: scale(1.1)
-
-.faculty-list.active
-    transform: translateY(100px) scale(1.1)
-
-.filter-image
-    transition: transform 0.3s ease
-
-.filter-container.active .filter-image
-    transform: rotate(90deg)
-
-.faculty-list
-    width: 335px
-    height: 416px
-    top: 55px
-    left: 0
-    border-radius: 11px
-    position: absolute
-    background: rgba(0, 0, 0, 0.7)
-    padding: 10px
-    display: flex
-    flex-direction: column
-    overflow-y: auto
-
-.faculty-list button
-    margin-bottom: 10px
-    padding: 5px
-    border: none
-    background: transparent
-    color: #fff
-    font-size: 16px
-    cursor: pointer
 
 .search-button
     width: 206px
@@ -204,7 +126,6 @@
     line-height: 17px
     letter-spacing: 0
     text-align: center
-
 
 .faculty-list button .left-side
     font-size: 24px
@@ -287,3 +208,6 @@
 .clear-history-button
     margin: 10px
     left: 45%
+
+.search-container
+    padding: 3rem 2rem 0 8.3rem
