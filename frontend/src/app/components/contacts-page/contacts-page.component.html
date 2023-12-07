@@ -29,15 +29,15 @@
                   <label for="name">Ім'я/Нікнейм:</label>
                   <input type="text" id="name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && feedback['name'].errors }" required>
                   <div *ngIf="submitted && feedback['name'].errors" class="invalid-feedback">
-                    <div *ngIf="feedback['name'].errors?.['required']" style="color:white;">Name is required</div>
+                    <div *ngIf="feedback['name'].errors?.['required']" style="color:red;">Name is required</div>
                   </div>
               </div>
               <div class="form_group">
                   <label for="email">Електронна пошта:</label>
                   <input type="email" id="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && feedback['email'].errors }" required>
                   <div *ngIf="submitted && feedback['email'].errors" class="invalid-feedback">
-                    <div *ngIf="feedback['email'].errors?.['required']" style="color:white;">Email is required</div>
-                    <div *ngIf="feedback['email'].errors?.['email']" style="color:white;">Email must be a valid email address</div>
+                    <div *ngIf="feedback['email'].errors?.['required']" style="color:red;">Email is required</div>
+                    <div *ngIf="feedback['email'].errors?.['email']" style="color:red;">Email must be a valid email address</div>
                   </div>
               </div>
               <div class="form_group">
@@ -45,7 +45,7 @@
                   <textarea id="message" formControlName="message" rows="4" [ngClass]="{ 'is-invalid': submitted &&
                   feedback['message'].errors }" required></textarea>
                   <div *ngIf="submitted && feedback['message'].errors" class="invalid-feedback">
-                    <div *ngIf="feedback['message'].errors?.['required']" style="color:white;">Message is required</div>
+                    <div *ngIf="feedback['message'].errors?.['required']" style="color:red;">Message is required</div>
                   </div>
               </div>
               <button type="submit">Відправити</button>
