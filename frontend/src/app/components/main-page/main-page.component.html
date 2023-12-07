@@ -6,7 +6,7 @@
 </section>
 
 <section class="block_info">
-  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div [fxLayout]="isMobile ? 'column' : 'row'" [fxLayoutAlign]="isMobile ? 'center center' : 'space-between center'">
     <div fxFlex="50"><img class="block_info_img" src="../../../assets/img/main-page-img/img2.jpg" alt="KPI"></div>
     <div fxFlex="50"><p class="block_info_text">{{ universityDescription }}<br><br>
       <a href="https://kpi.ua/almamater" target="_blank" class="block_info_button">ДЕТАЛЬНІШЕ</a></p>

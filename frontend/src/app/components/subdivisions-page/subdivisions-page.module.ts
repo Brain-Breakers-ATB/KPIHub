@@ -5,7 +5,6 @@ import { FlexModule } from "@angular/flex-layout";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from "@angular/forms";
 import { PaginatorModule } from 'primeng/paginator';
-import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
