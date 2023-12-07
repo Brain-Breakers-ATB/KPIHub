@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4bd643cf-6b70-43e8-93fb-564c4a7b6bc9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/student-page/student-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/student-page/student-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/student-page/student-page.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/student-page/student-page.component.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/student-page/student-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/student-page/student-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/interceptors/HTTPErrorInterceptor/http-error.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/interceptors/HTTPErrorInterceptor/http-error.interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,25 +33,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "students__adaptation",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Programming/WebStorm/KPIHub/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor.code.editing",
-    "ts.external.directory.path": "D:\\Programming\\WebStorm\\KPIHub\\backend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming/WebStorm/KPIHub/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor.code.editing&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Admin\\WebstormProjects\\KPIHub\\backend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Programming\WebStorm\KPIHub\backend" />
@@ -93,6 +93,8 @@
       <workItem from="1701603187059" duration="9848000" />
       <workItem from="1701616021691" duration="35000" />
       <workItem from="1701623439808" duration="15020000" />
+      <workItem from="1701793340187" duration="1005000" />
+      <workItem from="1701794383786" duration="4173000" />
     </task>
     <servers />
   </component>
