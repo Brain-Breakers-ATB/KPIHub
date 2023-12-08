@@ -11,7 +11,7 @@
                     <p class="filter-text1">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p>
                     <p class="filter-text2">*НЕОБОВ'ЯЗКОВО ОБИРАТИ</p>
                     <img src="../../../assets/img/subdivision-page-img/icons2.png" alt="Filter Image"
-                        class="filter-image">
+                         class="filter-image">
                     <div class="faculty-list" *ngIf="isFilterActive">
                         <button *ngFor="let faculty of facultyList">
                             <div class="left-side">{{ faculty }}</div>
@@ -19,10 +19,10 @@
                         </button>
                     </div>
                     <div class="filter-container" *ngIf="isDepartmentFilterActive"
-                        (click)="toggleDepartmentFilter($event)">
+                         (click)="toggleDepartmentFilter($event)">
                         <p class="filter-text1">КАФЕДРИ</p>
                         <img src="../../../assets/img/subdivision-page-img/icons2.png" alt="Filter Image"
-                            class="filter-image">
+                             class="filter-image">
                         <div class="department-list" *ngIf="isDepartmentFilterActive">
                             <!-- Add your list of departments here -->
                             <button *ngFor="let department of departmentList">{{ department }}</button>
@@ -35,16 +35,16 @@
                     <div class="search-input-container">
                         <input
                             type="text"
-                            placeholder="Search..."
                             [(ngModel)]="searchInput"
                             (blur)="onSearchBlur()"
                             (keyup.enter)="onSearch()"
                         >
-                        <ul class="dropdown-list" *ngIf="showSearchHistory && searchHistory.length > 0">
+                        <ul class="dropdown-list" *ngIf="showSearchHistory">
                             <li *ngFor="let historyItem of searchHistory.slice(0, 5)" (click)="onHistoryItemClick(historyItem)">
                                 {{ historyItem }}
+                                <button *ngIf="searchHistory.length > 0" class="delete-button" (click)="deleteHistoryItem(historyItem)">×</button>
                             </li>
-                            <button class="clear-history-button" (click)="clearSearchHistory($event)">Очистити історію</button>
+                            <button *ngIf="searchHistory.length > 0" class="clear-history-button" (click)="clearSearchHistory($event)">Очистити історію</button>
                         </ul>
                     </div>
                 </div>
@@ -52,6 +52,6 @@
         </div>
 
         <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
-            [rowsPerPageOptions]="[10, 25, 50]"></p-paginator>
+                     [rowsPerPageOptions]="[10, 25, 50]"></p-paginator>
     </section>
 </div>
