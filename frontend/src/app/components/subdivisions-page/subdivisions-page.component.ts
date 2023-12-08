@@ -7,7 +7,6 @@ import { Cathedra, Department } from 'src/app/models/departments';
 import { InstitutesService } from 'src/app/services/institutes.service';
 import { Institute } from 'src/app/models/institutes';
 
-// noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
     selector: 'app-subdivisions-page',
     templateUrl: './subdivisions-page.component.html',
@@ -17,7 +16,6 @@ import { Institute } from 'src/app/models/institutes';
 export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     isFilterActive: boolean = false;
     isDepartmentFilterActive: boolean = false;
-
     searchInput = '';
     showSearchHistory = false;
     searchHistory: string[] = [];
@@ -89,31 +87,74 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     }
 
     onSearch() {
+        const trimmedSearchInput = this.searchInput.trim();
+        if (trimmedSearchInput === '') {
+            return;
+        }
+
+        // Your existing search logic
         this.searchResults = ['Результат 1', 'Результат 2', 'Результат 3'];
+        // Додаємо поточний searchInput в історію пошуку
+        this.addToSearchHistory(trimmedSearchInput);
 
-        this.addToSearchHistory(this.searchInput);
-
+        // Закриваємо випадаючий список історії пошуку після натискання Enter або кнопки "Знайти"
         this.showSearchHistory = false;
     }
 
     onHistoryItemClick(historyItem: string) {
-        this.searchInput = historyItem;
+        // Перевіряємо, чи цей запит унікальний
+        const index = this.searchHistory.indexOf(historyItem);
+        if (index !== -1) {
+            // Переміщаємо вибраний елемент на початок історії пошуку
+            this.searchHistory.splice(index, 1);
+            this.searchHistory.unshift(historyItem);
+
+            // Зберігаємо тільки перші 5 результатів
+            this.searchHistory = this.searchHistory.slice(0, 5);
+
+            // Оновлюємо локальне сховище з історією пошуку
+            localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
+        }
+
+        // Додаємо вибраний елемент історії в поле пошуку
+        this.searchInput = historyItem.trim();
+
+        // Виконуємо пошук
         this.onSearch();
+
+        // Зберігаємо цей запит як останній унікальний
+        this.lastUniqueSearch = this.searchInput;
+
+        // Закриваємо випадаючий список історії пошуку
+        this.showSearchHistory = false;
     }
 
     clearSearchHistory(event: Event) {
+        // Очищаємо історію пошуку та локальне сховище
         this.searchHistory = [];
         localStorage.removeItem('searchHistory');
+
+        // Очищаємо останній унікальний запит
+        this.lastUniqueSearch = '';
+
+        // Закриваємо випадаючий список історії пошуку
+        this.showSearchHistory = false;
+
+        // Зупиняємо подальше поширення події вверх
         event.stopPropagation();
     }
 
     private addToSearchHistory(item: string) {
-        this.searchHistory.unshift(item);
+        // Додаємо тільки унікальні результати в історію пошуку
+        if (!this.searchHistory.includes(item)) {
+            this.searchHistory.unshift(item.trim());
 
-        if (this.searchHistory.length > 5) {
-            this.searchHistory.pop();
+            // Зберігаємо тільки перші 5 результатів
+            if (this.searchHistory.length > 5) {
+                this.searchHistory.pop();
+            }
+            localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
         }
-        localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
     }
 
     showDepartments(faculty: string) {
