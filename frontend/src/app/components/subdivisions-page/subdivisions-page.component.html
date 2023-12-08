@@ -6,29 +6,14 @@
                 "Дізнайся більше про навчальні напрями та освітні можливості в інститутах&факультетах!"
             </div>
             <div class="line"></div>
-            <div class="search-container">
-                <div class="filter-container" [class.active]="isFilterActive" (click)="toggleFilter($event)">
-                    <p class="filter-text1">ІНСТИТУТИ & ФАКУЛЬТЕТИ</p>
-                    <p class="filter-text2">*НЕОБОВ'ЯЗКОВО ОБИРАТИ</p>
-                    <img src="../../../assets/img/subdivision-page-img/icons2.png" alt="Filter Image"
-                         class="filter-image">
-                    <div class="faculty-list" *ngIf="isFilterActive">
-                        <button *ngFor="let faculty of facultyList">
-                            <div class="left-side">{{ faculty }}</div>
-                            <div class="right-side">Additional Info</div>
-                        </button>
-                    </div>
-                    <div class="filter-container" *ngIf="isDepartmentFilterActive"
-                         (click)="toggleDepartmentFilter($event)">
-                        <p class="filter-text1">КАФЕДРИ</p>
-                        <img src="../../../assets/img/subdivision-page-img/icons2.png" alt="Filter Image"
-                             class="filter-image">
-                        <div class="department-list" *ngIf="isDepartmentFilterActive">
-                            <!-- Add your list of departments here -->
-                            <button *ngFor="let department of departmentList">{{ department }}</button>
-                        </div>
-                    </div>
+          
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" class="search-container">
+
+                <div class="filter-container">
+                    <p-multiSelect (onChange)="onSelectChange($event)" [options]="instituteList" optionLabel="name"
+                        placeholder="ІНСТИТУТИ & ФАКУЛЬТЕТИ"></p-multiSelect>
                 </div>
+
                 <div class="search-bar" (click)="toggleDropdown($event)">
                     <button class="search-button" (click)="onSearch()">Знайти</button>
                     <img src="../../../assets/img/subdivision-page-img/icons1.png" alt="Search Image">
@@ -37,8 +22,7 @@
                             type="text"
                             [(ngModel)]="searchInput"
                             (blur)="onSearchBlur()"
-                            (keyup.enter)="onSearch()"
-                        >
+                            (keyup.enter)="onSearch()">
                         <ul class="dropdown-list" *ngIf="showSearchHistory">
                             <li *ngFor="let historyItem of searchHistory.slice(0, 5)" (click)="onHistoryItemClick(historyItem)">
                                 {{ historyItem }}
@@ -48,6 +32,20 @@
                         </ul>
                     </div>
                 </div>
+
+                <div *ngIf="filterDepartmentList.length" class="departments">
+                    <p-multiSelect [options]="filterDepartmentList" [group]="true" [(ngModel)]="selectedDepartments"
+                        placeholder="КАФЕДРИ" scrollHeight="250px" display="chip">
+                        <ng-template let-group pTemplate="group">
+                            <div class="flex align-items-center">
+                                <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                    [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
+                                <span>{{ group.label }}</span>
+                            </div>
+                        </ng-template>
+                    </p-multiSelect>
+                </div>
+
             </div>
         </div>
 
