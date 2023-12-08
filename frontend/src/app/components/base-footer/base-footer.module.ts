@@ -4,14 +4,15 @@ import { RouterModule } from "@angular/router";
 import { BaseFooterComponent } from "./base-footer.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { ScrollTopModule } from 'primeng/scrolltop';
-
+import { MenuModule } from 'primeng/menu';
 @NgModule({
     declarations: [BaseFooterComponent],
     imports: [
         CommonModule,
         RouterModule,
         FlexLayoutModule,
-        ScrollTopModule
+        ScrollTopModule,
+        MenuModule
     ],
     exports: [BaseFooterComponent]
 })

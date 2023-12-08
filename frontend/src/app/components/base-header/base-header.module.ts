@@ -4,6 +4,7 @@ import { BaseHeaderRoutingModule } from './base-header-routing.module';
 import { RouterModule } from "@angular/router";
 import { BaseHeaderComponent } from "./base-header.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {MenubarModule} from "primeng/menubar";
 
 @NgModule({
   declarations: [BaseHeaderComponent],
@@ -11,7 +12,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
         CommonModule,
         BaseHeaderRoutingModule,
         RouterModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MenubarModule
     ],
   exports: [BaseHeaderComponent]
 })

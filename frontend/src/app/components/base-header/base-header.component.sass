@@ -48,3 +48,51 @@
 
 .link:hover
     cursor: pointer
+
+@media (max-width: 790px)
+    .toolbar
+        display: flex
+        align-items: center
+        flex-direction: column
+    .logo
+        margin-left: 50px
+        margin-right: auto
+    .image_logo
+        height: 65px
+    .toolbar_text
+        font-family: "Garamond", serif
+        font-weight: 100
+        font-size: 25px
+        color: white
+        line-height: 26.64px
+        text-align: center
+        margin-top: 0
+    .navigation
+        justify-content: center
+        align-items:  center
+        margin-top: 30px
+        margin-left: 20px
+        flex-wrap: wrap
+    .navigation_button
+        background-color: transparent
+        cursor: pointer
+        border: 0
+        margin-right: 10px
+        color: white
+        text-decoration: none
+        transition: color 0.3s
+        &:hover p.toolbar_text
+            color: #886F4F
+        p.toolbar_text
+            white-space: nowrap
+            &::before
+                text-decoration: none
+        &.active p.toolbar_text
+            text-decoration: underline
+            text-underline-offset: 10px
+        .navigation
+            margin-top: 40px
+@media (min-width: 791px)
+    .toolbar
+        display: flex
+        align-items: center
