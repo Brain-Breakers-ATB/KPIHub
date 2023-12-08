@@ -26,9 +26,19 @@ a
     line-height: normal
     font-weight: 500
     color: white
+    @media (min-width: 1280px)
+        font-size: 58px
+    @media (max-width: 1024px)
+        font-size: 50px
+    @media (max-width: 768px)
+        font-size: 40px
+    @media (max-width: 480px)
+        font-size: 32px
+    @media (max-width: 320px)
+        font-size: 24px
 
 .line
-    width: 387px
+    width: 33%
     border: 1px solid white
     margin: auto
 
@@ -42,6 +52,7 @@ a
     font-family: "Montserrat", serif
     padding-top: 24px
     padding-bottom: 14px
+
     &.sticky
         position: sticky
         top: 0
@@ -58,6 +69,11 @@ a
 
 .activity_item
     margin-top: 100px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
 
 .activity_name
     display: block
@@ -72,6 +88,9 @@ a
     width: 75%
     max-height: 90%
     border-radius: 15px
+    transition: transform 0.3s
+    margin-bottom: 10px
+
     &:hover
         transform: scale(1.25)
         transition: transform 0.3s
@@ -82,6 +101,7 @@ a
     border-radius: 100px
     margin-right: 30px
     vertical-align: middle
+    margin-bottom: 10px
 
 .activity_description
     font-size: 24px
@@ -89,6 +109,63 @@ a
     color: white
     text-align: justify
     margin: 32px 122px 60px
+
+@media (min-width: 1280px)
+    .activity_image
+        width: 75%
+    .activity_icon
+        width: 7%
+        height: 7%
+        margin-right: 30px
+    .activity_description
+        margin: 32px 122px 60px
+
+@media (max-width: 1024px)
+    .activity_image
+        width: 90%
+    .activity_icon
+        width: 6%
+        height: 6%
+        margin-right: 20px
+    .activity_description
+        margin: 24px 80px 40px
+        text-align: center
+        font-size: 20px
+
+@media (max-width: 768px)
+    .activity_image
+        width: 95%
+    .activity_icon
+        width: 5%
+        height: 5%
+        margin-right: 15px
+    .activity_description
+        margin: 16px 60px 30px
+        text-align: center
+        font-size: 18px
+
+@media (max-width: 600px)
+    .activity_image
+        width: 75%
+    .activity_icon
+        width: 8%
+        height: 8%
+        margin-right: 10px
+    .activity_description
+        margin: 12px 30px 20px
+        text-align: center
+        font-size: 24px
+
+@media (max-width: 320px)
+    .activity_image
+        width: 75%
+    .activity_icon
+        width: 10%
+        height: 10%
+        margin-right: 5px
+    .activity_description
+        margin: 8px 20px 10px
+        text-align: center
 
 .activity_button
     color: #000000
@@ -101,6 +178,7 @@ a
     border-radius: 100px
     font-family: "Montserrat", serif
     margin-bottom: 60px
+
     &:hover
         background: #d38364
         color: white
@@ -122,6 +200,7 @@ a
     border-radius: 15px
     margin-top: 60px
     margin-bottom: 60px
+
     &:hover
         transform: scale(1.15)
         transition: transform 0.3s
@@ -135,27 +214,21 @@ a
     font-size: 24px
     color: white
     text-align: justify
+
     &.event_text1, &.event_text2, &.event_text4
         text-indent: 1.5em
-        margin-right: 122px
+
     &.event_text2
         text-align: center
-        margin: 50px 150px 35px
+
     &.event_text3
         text-align: center
         margin-bottom: 40px
 
-.event_button_text1, .event_button_text2, .event_button_text3, .event_button_text4
-    margin: 13px 30px
-    &.event_button_text2
-        margin: 1px 30px
-        font-size: 18px
-    &.event_button_text3
-        margin: 13px 55px
-    &.event_button_text4
-        margin: 10px 20px
+.event_button_text2
+    font-size: 18px
 
-.event_button1, .event_button2, .event_button3, .event_button4, .event_button5
+.event_button1, .event_button2, .event_button3, .event_button4, .event_button5, .event_button6
     color: black
     height: 65px
     width: 210px
@@ -166,17 +239,207 @@ a
     border: none
     border-radius: 100px
     font-family: "Montserrat", serif
+
     &:hover
         background: #BF9E80
         transform: scale(1.1)
         transition: transform 0.3s
+
     &.event_button4
         width: 200px
         height: 65px
+
     &.event_button5
+        width: 200px
+        height: 65px
+
+    &.event_button6
         font-size: 20px
         margin-left: 60px
         margin-bottom: 50px
+
+@media (min-width: 1280px)
+    .event_text1
+        margin-right: 122px
+    .event_text4
+        margin-right: 122px
+    .event_text2
+        margin: 50px 150px 35px
+
+@media (max-width: 1280px)
+    .event_button1,
+    .event_button2,
+    .event_button3,
+    .event_button4,
+    .event_button5,
+    .event_button6
+        width: 180px
+        margin-right: 20px
+
+        &.event_button4
+            width: 190px
+            height: 65px
+            margin-top: 25px
+
+        &.event_button5
+            width: 190px
+            height: 65px
+
+        &.event_button6
+            font-size: 20px
+            margin-left: 60px
+            margin-bottom: 50px
+    .event_text1
+        font-size: 24px
+        margin-right: 122px
+    .event_text4
+        margin-right: 122px
+        text-align: center
+
+@media (max-width: 1024px)
+    .event_button1,
+    .event_button2,
+    .event_button3,
+    .event_button4,
+    .event_button5,
+    .event_button6
+        width: 160px
+        margin-right: 15px
+
+        &.event_button4
+            width: 170px
+            height: 65px
+
+        &.event_button5
+            width: 170px
+            height: 65px
+
+        &.event_button6
+            font-size: 20px
+            margin-left: 60px
+            margin-bottom: 50px
+    .event_icon
+        height: 120px
+    .event_text1
+        font-size: 20px
+        margin-right: 80px
+    .event_text2
+        font-size: 20px
+        margin: 40px 120px 30px
+    .event_text4
+        margin-right: 80px
+
+@media (max-width: 768px)
+    .event_button1,
+    .event_button2,
+    .event_button3,
+    .event_button4,
+    .event_button5,
+    .event_button6
+        width: 140px
+        margin-right: 10px
+
+        &.event_button4
+            width: 150px
+            height: 65px
+
+        &.event_button5
+            width: 150px
+            height: 65px
+
+        &.event_button6
+            margin-top: 20px
+            font-size: 20px
+            margin-left: 60px
+            margin-bottom: 50px
+    .event_icon
+        height: 100px
+    .event_text1
+        font-size: 18px
+        margin-right: 60px
+    .event_text2
+        font-size: 18px
+        margin: 30px 80px 25px
+    .event_text4
+        margin-right: 60px
+
+@media (max-width: 600px)
+    .event_button1,
+    .event_button2,
+    .event_button3,
+    .event_button4,
+    .event_button5,
+    .event_button6
+        width: 140px
+        margin-right: 0
+        margin-bottom: 10px
+
+        &.event_button4
+            width: 80%
+            margin-top: 15%
+            margin-right: 0
+            margin-bottom: 10px
+
+        &.event_button5
+            width: 80%
+            margin-right: 0
+            margin-bottom: 10px
+
+        &.event_button6
+            font-size: 20px
+            margin-left: 60px
+            margin-bottom: 50px
+    .event_icon
+        height: 80px
+    .event_text1
+        font-size: 24px
+        margin-right: 40px
+        text-align: center
+    .event_text2
+        font-size: 24px
+        margin: 20px 40px 15px
+        text-align: center
+    .event_text4
+        margin-right: 40px
+    .event_button_text4
+        font-size: 18px
+
+
+@media (max-width: 320px)
+    .event_button1,
+    .event_button2,
+    .event_button3,
+    .event_button4,
+    .event_button5,
+    .event_button6
+        width: 100%
+        margin-right: 0
+        margin-bottom: 10px
+
+        &.event_button4
+            width: 100%
+            margin-right: 0
+            margin-bottom: 10px
+
+        &.event_button5
+            width: 100%
+            margin-right: 0
+            margin-bottom: 10px
+
+        &.event_button6
+            font-size: 20px
+            margin-left: 0
+            margin-bottom: 50px
+    .event_icon
+        height: 60px
+    .event_text1
+        font-size: 24px
+        margin-right: 20px
+    .event_text2
+        font-size: 24px
+        margin: 15px 20px 10px
+    .event_text4
+        margin-right: 20px
 
 .workshops
     margin-top: 50px
@@ -193,6 +456,21 @@ a
     border-radius: 100px
     text-align: center
     margin-top: 55px
+    @media (max-width: 1280px)
+        height: 120px
+        border-radius: 100px
+    @media (max-width: 1024px)
+        height: 90px
+        border-radius: 80px
+    @media (max-width: 768px)
+        height: 60px
+        border-radius: 60px
+    @media (max-width: 600px)
+        height: 60px
+        border-radius: 60px
+    @media (max-width: 320px)
+        height: 60px
+        border-radius: 60px
 
 .courses
     display: flex
@@ -203,11 +481,25 @@ a
     color: white
     text-align: justify
     margin-left: 123px
+    @media (max-width: 1280px)
+        margin-left: 90px
+        font-size: 22px
+    @media (max-width: 1024px)
+        margin-left: 70px
+        font-size: 20px
+    @media (max-width: 768px)
+        margin-left: 50px
+        font-size: 16px
+    @media (max-width: 600px)
+        margin-left: 30px
+        font-size: 14px
+    @media (max-width: 320px)
+        margin-left: 10px
+        font-size: 14px
 
 .course_button
     margin-top: 90px
     height: 65px
-    width: 1000px
     color: black
     font-size: 24px
     text-align: center
@@ -218,9 +510,30 @@ a
     border-radius: 100px
     font-family: "Montserrat", serif
     margin-right: 123px
+
     &:hover
         background: #BF9E80
         transform: scale(1.1)
+
+    @media (max-width: 1280px)
+        margin-right: 90px
+        margin-top: 70px
+    @media (max-width: 1024px)
+        margin-right: 70px
+        margin-top: 60px
+    @media (max-width: 768px)
+        margin-right: 50px
+        margin-top: 50px
+    @media (max-width: 600px)
+        margin-right: 20px
+        margin-top: 70px
+        height: 30px
+        border-radius: 30px
+        font-size: 16px
+    @media (max-width: 320px)
+        margin-right: 10px
+        margin-top: 30px
+        height: 30px
 
 .course_image
     max-width: 70%
@@ -228,6 +541,7 @@ a
     border-radius: 15px
     margin-top: 60px
     margin-bottom: 60px
+
     &:hover
         transform: scale(1.2)
         transition: transform 0.3s
@@ -243,6 +557,9 @@ a
     height: 100px
     border-radius: 100px
     vertical-align: middle
+    @media (max-width: 600px)
+        height: 50px
+        border-radius: 50px
 
 .telegram_button
     color: black
@@ -256,15 +573,23 @@ a
     font-family: "Montserrat", serif
     margin-left: 50px
     margin-right: 50px
+
     &:hover
         background: #BF9E80
         transform: scale(1.1)
+
+    @media (max-width: 600px)
+        margin-left: 0
+        margin-right: 0
+        font-size: 16px
 
 .telegram_text
     margin: 10px 20px
 
 .left_block_telegram
     margin-top: 40px
+    @media (max-width: 600px)
+        margin-top: 10px
 
 table
     margin-top: 40px !important
@@ -278,3 +603,38 @@ table, th, td
     text-align: center
     margin: 0 auto
     color: white
+    @media (max-width: 600px)
+        font-size: 16px
+
+.content
+    background-color: #322922
+    opacity: 0.82
+    height: 57px
+  
+nav 
+    text-align: center
+  
+.word 
+    text-transform: uppercase
+    font-weight: lighter
+    font-size: 23px
+
+.menu 
+    list-style-type: none
+    margin: 0px
+    padding: 0px
+    background-color: #322922
+    text-align: center
+
+.main-menu 
+    display: inline-block
+
+.main-menu a 
+    display: block
+    padding: 15px 40px 
+    color: #ffffff 
+    text-decoration: none 
+    font-weight: lighter 
+
+.main-menu a:hover 
+    background-color: #41362e

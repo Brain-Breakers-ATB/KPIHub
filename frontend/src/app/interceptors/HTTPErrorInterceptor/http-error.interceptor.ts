@@ -31,7 +31,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
             console.error("Internal Server Error");
             break;
           case 504:
-            console.error("Service Unvailabe")
+            console.error("Service Unavailable")
             break;
         }
         return throwError(()=> err);

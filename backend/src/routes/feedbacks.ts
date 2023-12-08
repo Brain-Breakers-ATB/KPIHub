@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import mongoose from "mongoose";
 import { Feedback } from '../models/feedbacks';
+import * as EmailValidator from 'email-validator';
 
 const router = express.Router();
 
@@ -21,7 +22,17 @@ router.post('/AddFeedback', async (req: Request, res: Response) => {
   try {
     // Create a new feedback instance with the data from the request body
     const newFeedback = Feedback.build(req.body);
-        
+
+    //Removing whitespaces
+    newFeedback.name = newFeedback.name.trim();
+    newFeedback.email = newFeedback.email.trim();
+    newFeedback.message = newFeedback.message.trim();
+
+    // Email validation
+    if (!EmailValidator.validate(newFeedback.email)){
+      return res.status(400).json('Validation error');
+    }
+
     // Save the new feedback item to the database
     const savedFeedback = await newFeedback.save();
 
