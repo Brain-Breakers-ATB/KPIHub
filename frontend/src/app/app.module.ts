@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SubdivisionsPageComponent} from "./components/subdivisions-page/subdivisions-page.component";
 import {PaginatorModule} from "primeng/paginator";
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {PaginatorModule} from "primeng/paginator";
         BrowserAnimationsModule,
         PaginatorModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MultiSelectModule
     ],
   providers: [
     {
