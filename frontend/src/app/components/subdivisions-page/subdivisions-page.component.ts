@@ -7,6 +7,7 @@ import { Cathedra, Department } from 'src/app/models/departments';
 import { InstitutesService } from 'src/app/services/institutes.service';
 import { Institute } from 'src/app/models/institutes';
 
+// noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
     selector: 'app-subdivisions-page',
     templateUrl: './subdivisions-page.component.html',
@@ -16,6 +17,7 @@ import { Institute } from 'src/app/models/institutes';
 export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     isFilterActive: boolean = false;
     isDepartmentFilterActive: boolean = false;
+    lastUniqueSearch: string = '';
     searchInput = '';
     showSearchHistory = false;
     searchHistory: string[] = [];
