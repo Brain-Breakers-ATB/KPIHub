@@ -9,6 +9,7 @@ import { studentTelegramChannelRouter } from "./routes/studentTelegramChannels.t
 import { socialLinksRouter } from "./routes/socialLinks.ts";
 import { feedbacksRouter } from "./routes/feedbacks.ts";
 import { entrantFAQRouter } from "./routes/entrantFAQs.ts";
+import { institutesRouter } from "./routes/institutes.ts";
 
 import { DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT } from "../config";
 import { entrantTelegramChannelRouter } from "./routes/entrantTelegramChannels.ts";
@@ -46,7 +47,9 @@ app.use("/api/feedbacks", feedbacksRouter);
 
 app.use("/api/entrantFAQ", entrantFAQRouter);
 
-app.use("/api/entrantTelegramChannels", entrantTelegramChannelRouter)
+app.use("/api/entrantTelegramChannels", entrantTelegramChannelRouter);
+
+app.use("/api/institutes", institutesRouter);
 
 // Connect to MongoDB
 mongoose
