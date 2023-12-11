@@ -1,4 +1,5 @@
 import * as dotenv from "dotenv";
+
 dotenv.config();
 
 export const DB_ENDPOINT = process.env.DB_ENDPOINT;

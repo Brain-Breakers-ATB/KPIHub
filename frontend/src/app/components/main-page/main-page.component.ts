@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MediaObserver, MediaChange} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-main-page',
@@ -20,10 +21,15 @@ export class MainPageComponent implements OnInit {
         'Покращити організацію і структуру сайту, щоб забезпечити легке навігування та доступ до різних розділів та послуг.',
         'Зробити більш сучасний дизайн, щоб користування сайтом було приємніше.'
     ];
+    isMobile: boolean = false;
 
-    refreshItems () {}
-  
-    ngOnInit() {
-        this.refreshItems ();
+    constructor(private mediaObserver: MediaObserver) { }
+    refreshItems() { }
+
+    ngOnInit(): void {
+        this.mediaObserver.asObservable().subscribe((change: MediaChange[]) => {
+            this.isMobile = change.some((mediaChange) => mediaChange.mqAlias === 'xs' ||
+                mediaChange.mqAlias === 'sm');
+        });
     }
 }
