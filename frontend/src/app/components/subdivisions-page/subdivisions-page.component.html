@@ -6,12 +6,12 @@
                 "Дізнайся більше про навчальні напрями та освітні можливості в інститутах&факультетах!"
             </div>
             <div class="line"></div>
-          
+
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" class="search-container">
 
                 <div class="filter-container">
                     <p-multiSelect (onChange)="onSelectChange($event)" [options]="instituteList" optionLabel="name"
-                        placeholder="ІНСТИТУТИ & ФАКУЛЬТЕТИ"></p-multiSelect>
+                                   placeholder="ІНСТИТУТИ & ФАКУЛЬТЕТИ"></p-multiSelect>
                 </div>
 
                 <div class="search-bar" (click)="toggleDropdown($event)">
@@ -24,22 +24,27 @@
                             (blur)="onSearchBlur()"
                             (keyup.enter)="onSearch()">
                         <ul class="dropdown-list" *ngIf="showSearchHistory">
-                            <li *ngFor="let historyItem of searchHistory.slice(0, 5)" (click)="onHistoryItemClick(historyItem)">
+                            <li *ngFor="let historyItem of searchHistory.slice(0, 5)"
+                                (click)="onHistoryItemClick(historyItem)">
                                 {{ historyItem }}
-                                <button *ngIf="searchHistory.length > 0" class="delete-button" (click)="deleteHistoryItem(historyItem)">×</button>
+                                <button *ngIf="searchHistory.length > 0" class="delete-button"
+                                        (click)="deleteHistoryItem(historyItem)">×
+                                </button>
                             </li>
-                            <button *ngIf="searchHistory.length > 0" class="clear-history-button" (click)="clearSearchHistory($event)">Очистити історію</button>
+                            <button *ngIf="searchHistory.length > 0" class="clear-history-button"
+                                    (click)="clearSearchHistory($event)">Очистити історію
+                            </button>
                         </ul>
                     </div>
                 </div>
 
                 <div *ngIf="filterDepartmentList.length" class="departments">
                     <p-multiSelect [options]="filterDepartmentList" [group]="true" [(ngModel)]="selectedDepartments"
-                        placeholder="КАФЕДРИ" scrollHeight="250px" display="chip">
+                                   placeholder="КАФЕДРИ" scrollHeight="250px" display="chip">
                         <ng-template let-group pTemplate="group">
                             <div class="flex align-items-center">
                                 <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
-                                    [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
+                                     [class]="'mr-2 flag flag-' + group.value" style="width: 20px" alt="cathedra"/>
                                 <span>{{ group.label }}</span>
                             </div>
                         </ng-template>

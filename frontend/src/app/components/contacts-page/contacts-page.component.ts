@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
-import { SocialLinksService } from "../../services/social-links.service";
-import { SocialLink } from "../../models/socialLinks";
+import {HttpClient} from '@angular/common/http';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {SocialLinksService} from "../../services/social-links.service";
+import {SocialLink} from "../../models/socialLinks";
 import {take} from "rxjs";
 
 @Component({
@@ -13,10 +13,10 @@ import {take} from "rxjs";
 
 export class ContactsPageComponent implements OnInit {
     readonly APIUrl = "http://localhost:3000/api/";
-
     socialLinks: SocialLink[] = [];
     feedbackForm!: FormGroup;
     submitted: boolean = false;
+    isSocialLinksLoading: boolean = true;
 
     constructor(
         private socialLinksService: SocialLinksService,
@@ -24,11 +24,11 @@ export class ContactsPageComponent implements OnInit {
         private http: HttpClient
     ) { }
 
-    get feedback(){
+    get feedback() {
         return this.feedbackForm.controls;
     }
 
-    get Email(){
+    get Email() {
         return this.feedbackForm.get('email')
     }
 
@@ -45,8 +45,7 @@ export class ContactsPageComponent implements OnInit {
             try {
                 console.warn('Your feedback has been submitted');
                 console.log(fbToPost);
-            }
-            catch {
+            } catch {
                 console.warn('Your feedback has NOT been submitted');
             }
         });
@@ -58,13 +57,11 @@ export class ContactsPageComponent implements OnInit {
         if (this.feedbackForm.invalid) {
             return;
         }
-      
+
         this.postFeedback(this.feedbackForm);
         this.submitted = false;
         this.feedbackForm.reset();
     }
-
-    isSocialLinksLoading: boolean = true;
 
     ngOnInit() {
         this.socialLinksService.getSocialLinks().pipe(take(1)).subscribe((socialLinks: SocialLink[]) => {

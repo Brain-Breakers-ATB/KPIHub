@@ -1,18 +1,17 @@
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Institute } from '../models/institutes';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Institute} from '../models/institutes';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
 export class InstitutesService {
-  constructor(private httpClient:HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 
-  getInstitutes(): Observable<Institute[]> {
-    const mockUrl = 'assets/mocks/institutes.json';
-
-    return this.httpClient.get<Institute[]>(mockUrl);
-  }
+    getInstitutes(): Observable<Institute[]> {
+        const mockUrl = 'assets/mocks/institutes.json';
+        return this.httpClient.get<Institute[]>(mockUrl);
+    }
 }

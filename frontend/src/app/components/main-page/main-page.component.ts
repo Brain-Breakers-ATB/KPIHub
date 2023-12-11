@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import {Component, OnInit} from '@angular/core';
+import {MediaObserver, MediaChange} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-main-page',
@@ -12,7 +12,6 @@ export class MainPageComponent implements OnInit {
     Ігоря Сікорського» – найбільший український університет і один з найбільших технічних університетів Європи.
     Університет працює і розвивається з 1898 року як кампус, в якому на одній території в 160 гектарів органічно об'єднані
     умови для навчання та відпочинку`;
-    constructor(private mediaObserver: MediaObserver) {}
 
     listItems: string[] = [
         'Забезпечити користувачам легкий та швидкий доступ до всієї необхідної інформації про КПІ без зайвого переключення між різними ресурсами.',
@@ -22,12 +21,15 @@ export class MainPageComponent implements OnInit {
         'Покращити організацію і структуру сайту, щоб забезпечити легке навігування та доступ до різних розділів та послуг.',
         'Зробити більш сучасний дизайн, щоб користування сайтом було приємніше.'
     ];
-
-    refreshItems () {}
     isMobile: boolean = false;
+
+    constructor(private mediaObserver: MediaObserver) { }
+    refreshItems() { }
+
     ngOnInit(): void {
         this.mediaObserver.asObservable().subscribe((change: MediaChange[]) => {
-            this.isMobile = change.some((mediaChange) => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
+            this.isMobile = change.some((mediaChange) => mediaChange.mqAlias === 'xs' ||
+                mediaChange.mqAlias === 'sm');
         });
     }
 }
