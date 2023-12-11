@@ -13,6 +13,8 @@ import { entrantFAQRouter } from "./routes/entrantFAQs.ts";
 import { DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT } from "../config";
 import { entrantTelegramChannelRouter } from "./routes/entrantTelegramChannels.ts";
 
+import { rateLimit } from "./RateLimiter/rateLimiter.ts";
+
 // MongoDB connection URL with authentication
 const CONNECTION_STRING = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@${DB_ENDPOINT}`;
 
@@ -23,6 +25,9 @@ app.use(cors());
 
 // Middleware for parsing JSON request bodies
 app.use(json());
+
+// Middleware for limiting reqests
+app.use(rateLimit);
 
 // Mount the itemRouter for handling item-related routes
 app.use("/api/items", itemsRouter);
