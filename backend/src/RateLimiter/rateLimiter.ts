@@ -4,8 +4,8 @@ const setRateLimit = expressRateLimit;
 
 const rateLimitMiddelware = setRateLimit({
     windowMs: 60 * 1000,
-    max: 5,
-    message: "You have exceeded your 5 requests per minute limit.",
+    max: 20,
+    message: "You have exceeded your 20 requests per minute limit.",
     headers: true,
 })
 

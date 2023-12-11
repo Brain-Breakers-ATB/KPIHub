@@ -11,8 +11,9 @@ export class InstitutesService {
   constructor(private httpClient:HttpClient) { }
 
   getInstitutes(): Observable<Institute[]> {
+    const url = 'http://localhost:3000/api/institutes/GetInstitute';
     const mockUrl = 'assets/mocks/institutes.json';
 
-    return this.httpClient.get<Institute[]>(mockUrl);
+    return this.httpClient.get<Institute[]>(url);
   }
 }
