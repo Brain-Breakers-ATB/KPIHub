@@ -1,11 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PaginatorState } from 'primeng/paginator';
-import { DepartmentsService } from "../../services/departments.service";
-import { Subject, take, takeUntil } from "rxjs";
-import { SelectItemGroup } from 'primeng/api';
-import { Cathedra, Department } from 'src/app/models/departments';
-import { InstitutesService } from 'src/app/services/institutes.service';
-import { Institute } from 'src/app/models/institutes';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {PaginatorState} from 'primeng/paginator';
+import {DepartmentsService} from "../../services/departments.service";
+import {Subject, takeUntil} from "rxjs";
+import {SelectItemGroup} from 'primeng/api';
+import {Cathedra, Department} from 'src/app/models/departments';
+import {InstitutesService} from 'src/app/services/institutes.service';
+import {Institute} from 'src/app/models/institutes';
 
 // noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
@@ -22,29 +22,19 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     showSearchHistory = false;
     searchHistory: string[] = [];
     searchResults: string[] = [];
-
     first: number = 0;
     rows: number = 10;
-
-    departments: Department[] = [];
-
-    private destroy$: Subject<boolean> = new Subject<boolean>();
-
     filterDepartmentList: SelectItemGroup[] = [];
-
-    private departmentList!: SelectItemGroup[];
-
     instituteList!: Institute[];
-
     selectedDepartments!: Department[];
+    private destroy$: Subject<boolean> = new Subject<boolean>();
+    private departmentList!: SelectItemGroup[];
 
     constructor(private departmentService: DepartmentsService, private instituteService: InstitutesService) { }
 
     ngOnInit() {
-
         this.getDepartments();
         this.getInstitutes();
-
         const storedHistory = localStorage.getItem('searchHistory');
         if (storedHistory) {
             this.searchHistory = JSON.parse(storedHistory);
@@ -66,7 +56,6 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
     toggleFilter(event: Event) {
         this.searchInput = '';
-
         this.isFilterActive = !this.isFilterActive;
         event.stopPropagation();
     }
@@ -171,13 +160,15 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
     onSelectChange(event: { value: Institute[] }) {
         const selectedInstitutes: string[] = event.value.map((instituteList: Institute) => instituteList.code);
-        this.filterDepartmentList = this.departmentList.filter((department: SelectItemGroup) => selectedInstitutes.includes(department.label));
+        this.filterDepartmentList = this.departmentList.filter((department: SelectItemGroup) => selectedInstitutes.
+        includes(department.label));
         console.log(selectedInstitutes);
         console.log(this.departmentList);
     }
 
     private getDepartments(): void {
-        this.departmentService.getDepartments().pipe(takeUntil(this.destroy$)).subscribe((departments: Department[]) => {
+        this.departmentService.getDepartments().pipe(takeUntil(this.destroy$)).subscribe(
+            (departments: Department[]) => {
             this.departmentList = departments.map((department: Department) => ({
                 label: department.shortName,
                 items: department.departments.map((cathedra: Cathedra) => ({

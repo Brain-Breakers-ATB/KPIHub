@@ -12,7 +12,8 @@
                 <button class="navigation_button" routerLink="" routerLinkActive="active">
                     <p class="toolbar_text">ГОЛОВНА</p>
                 </button>
-                <button class="navigation_button" *ngFor="let item of menu" [routerLink]="item.link" routerLinkActive="active">
+                <button class="navigation_button" *ngFor="let item of menu" [routerLink]="item.link"
+                        routerLinkActive="active">
                     <p class="toolbar_text">{{ item.label }}</p>
                 </button>
             </div>
@@ -20,7 +21,8 @@
                 <button class="navigation_button" routerLink="" routerLinkActive="active-main">
                     <p class="toolbar_text">ГОЛОВНА</p>
                 </button>
-                <button class="navigation_button" *ngFor="let item of menu" [routerLink]="item.link" routerLinkActive="active">
+                <button class="navigation_button" *ngFor="let item of menu" [routerLink]="item.link"
+                        routerLinkActive="active">
                     <p class="toolbar_text">{{ item.label }}</p>
                 </button>
             </ng-template>
@@ -28,7 +30,6 @@
 
         <ng-template #mobileNavigation>
             <p-menubar [model]="items"></p-menubar>
-
         </ng-template>
     </div>
 </header>

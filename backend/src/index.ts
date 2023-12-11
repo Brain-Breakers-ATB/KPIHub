@@ -1,19 +1,17 @@
 import express from "express";
 import cors from 'cors';
 import mongoose from "mongoose";
-import { json } from "body-parser";
+import {json} from "body-parser";
+import {itemsRouter} from "./routes/items.ts";
+import {activitiesRouter} from "./routes/activities.ts";
+import {studentTelegramChannelRouter} from "./routes/studentTelegramChannels.ts";
+import {socialLinksRouter} from "./routes/socialLinks.ts";
+import {feedbacksRouter} from "./routes/feedbacks.ts";
+import {entrantFAQRouter} from "./routes/entrantFAQs.ts";
+import {DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT} from "../config";
+import {entrantTelegramChannelRouter} from "./routes/entrantTelegramChannels.ts";
 
-import { itemsRouter } from "./routes/items.ts";
-import { activitiesRouter } from "./routes/activities.ts";
-import { studentTelegramChannelRouter } from "./routes/studentTelegramChannels.ts";
-import { socialLinksRouter } from "./routes/socialLinks.ts";
-import { feedbacksRouter } from "./routes/feedbacks.ts";
-import { entrantFAQRouter } from "./routes/entrantFAQs.ts";
-
-import { DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT } from "../config";
-import { entrantTelegramChannelRouter } from "./routes/entrantTelegramChannels.ts";
-
-// MongoDB connection URL with authentication
+// MongoDB's connection URL with authentication
 const CONNECTION_STRING = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@${DB_ENDPOINT}`;
 
 const app = express();
@@ -45,14 +43,14 @@ app.use("/api/entrantTelegramChannels", entrantTelegramChannelRouter)
 
 // Connect to MongoDB
 mongoose
-  .connect(CONNECTION_STRING)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-    process.exit(1); // Exit the process with an error code
-  });
+    .connect(CONNECTION_STRING)
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((error) => {
+        console.error("Error connecting to MongoDB:", error);
+        process.exit(1); // Exit the process with an error code
+    });
 
 // Start the Express server
 app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+    console.log(`Server is listening on port ${PORT}`);
 });

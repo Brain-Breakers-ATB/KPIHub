@@ -1,16 +1,15 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
+import {DepartmentsService} from './departments.service';
 
-import { DepartmentsServiceService } from './departments.service';
+describe('DepartmentsService', () => {
+    let service: DepartmentsService;
 
-describe('DepartmentsServiceService', () => {
-  let service: DepartmentsServiceService;
+    beforeEach(() => {
+        TestBed.configureTestingModule({});
+        service = TestBed.inject(DepartmentsService);
+    });
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(DepartmentsServiceService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(service).toBeTruthy();
+    });
 });
