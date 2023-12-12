@@ -10,6 +10,7 @@ import {feedbacksRouter} from "./routes/feedbacks.ts";
 import {entrantFAQRouter} from "./routes/entrantFAQs.ts";
 import {DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT} from "../config";
 import {entrantTelegramChannelRouter} from "./routes/entrantTelegramChannels.ts";
+import searchRouter from './routes/search';
 
 // MongoDB's connection URL with authentication
 const CONNECTION_STRING = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@${DB_ENDPOINT}`;
@@ -40,6 +41,8 @@ app.use("/api/feedbacks", feedbacksRouter);
 app.use("/api/entrantFAQ", entrantFAQRouter);
 
 app.use("/api/entrantTelegramChannels", entrantTelegramChannelRouter)
+
+app.use('/api/search', searchRouter);
 
 // Connect to MongoDB
 mongoose
