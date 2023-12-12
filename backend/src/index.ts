@@ -1,18 +1,25 @@
 import express from "express";
 import cors from 'cors';
 import mongoose from "mongoose";
-import {json} from "body-parser";
-import {itemsRouter} from "./routes/items.ts";
-import {activitiesRouter} from "./routes/activities.ts";
-import {studentTelegramChannelRouter} from "./routes/studentTelegramChannels.ts";
-import {socialLinksRouter} from "./routes/socialLinks.ts";
-import {feedbacksRouter} from "./routes/feedbacks.ts";
-import {entrantFAQRouter} from "./routes/entrantFAQs.ts";
-import {DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT} from "../config";
-import {entrantTelegramChannelRouter} from "./routes/entrantTelegramChannels.ts";
+
+import { json } from "body-parser";
+import { itemsRouter } from "./routes/items.ts";
+import { activitiesRouter } from "./routes/activities.ts";
+import { studentTelegramChannelRouter } from "./routes/studentTelegramChannels.ts";
+import { socialLinksRouter } from "./routes/socialLinks.ts";
+import { feedbacksRouter } from "./routes/feedbacks.ts";
+import { entrantFAQRouter } from "./routes/entrantFAQs.ts";
+import { institutesRouter } from "./routes/institutes.ts";
+import { departmentsRouter } from "./routes/departments.ts";
+
 import searchRouter from './routes/search';
 
-// MongoDB's connection URL with authentication
+import { DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT } from "../config";
+import { entrantTelegramChannelRouter } from "./routes/entrantTelegramChannels.ts";
+
+import { rateLimit } from "./RateLimiter/rateLimiter.ts";
+
+// MongoDB connection URL with authentication
 const CONNECTION_STRING = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@${DB_ENDPOINT}`;
 
 const app = express();
@@ -22,6 +29,9 @@ app.use(cors());
 
 // Middleware for parsing JSON request bodies
 app.use(json());
+
+// Middleware for limiting reqests
+app.use(rateLimit);
 
 // Mount the itemRouter for handling item-related routes
 app.use("/api/items", itemsRouter);
@@ -40,7 +50,11 @@ app.use("/api/feedbacks", feedbacksRouter);
 
 app.use("/api/entrantFAQ", entrantFAQRouter);
 
-app.use("/api/entrantTelegramChannels", entrantTelegramChannelRouter)
+app.use("/api/entrantTelegramChannels", entrantTelegramChannelRouter);
+
+app.use("/api/institutes", institutesRouter);
+
+app.use("/api/departments", departmentsRouter);
 
 app.use('/api/search', searchRouter);
 
