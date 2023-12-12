@@ -10,8 +10,10 @@ import {Department} from '../models/departments';
 export class DepartmentsService {
     constructor(private httpClient: HttpClient) { }
 
-    getDepartments(): Observable<Department[]> {
-        const mockUrl = 'assets/mocks/departments.json';
-        return this.httpClient.get<Department[]>(mockUrl);
-    }
+  getDepartments(): Observable<Department[]> {
+    const url = 'http://localhost:3000/api/departments/GetDepartment'
+    const mockUrl = 'assets/mocks/departments.json';
+
+    return this.httpClient.get<Department[]>(url);
+  }
 }
