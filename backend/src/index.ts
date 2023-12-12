@@ -56,14 +56,14 @@ app.use("/api/departments", departmentsRouter);
 
 // Connect to MongoDB
 mongoose
-  .connect(CONNECTION_STRING)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-    process.exit(1); // Exit the process with an error code
-  });
+    .connect(CONNECTION_STRING)
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((error) => {
+        console.error("Error connecting to MongoDB:", error);
+        process.exit(1); // Exit the process with an error code
+    });
 
 // Start the Express server
 app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+    console.log(`Server is listening on port ${PORT}`);
 });

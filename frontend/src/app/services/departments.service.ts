@@ -1,14 +1,14 @@
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Department } from '../models/departments';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Department} from '../models/departments';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
 export class DepartmentsService {
-  constructor(private httpClient:HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 
   getDepartments(): Observable<Department[]> {
     const url = 'http://localhost:3000/api/departments/GetDepartment'

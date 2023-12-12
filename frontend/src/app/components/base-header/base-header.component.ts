@@ -1,6 +1,6 @@
-import { Component, OnDestroy, HostListener } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
-import { Subject, filter, takeUntil } from 'rxjs';
+import {Component, OnDestroy, HostListener} from '@angular/core';
+import {NavigationStart, Router} from '@angular/router';
+import {Subject, filter, takeUntil} from 'rxjs';
 import {MenuItem} from "primeng/api";
 
 @Component({
@@ -8,66 +8,64 @@ import {MenuItem} from "primeng/api";
     templateUrl: './base-header.component.html',
     styleUrls: ['./base-header.component.sass']
 })
+
 export class BaseHeaderComponent implements OnDestroy {
     private destroy$: Subject<boolean> = new Subject<boolean>();
-
     isMobileView = false;
-    isDisplayed  = true;
+    isDisplayed = true;
+    expandedMenu = false;
+
     menu: { label: string, link: string }[] = [
-        { label: 'ВСТУПНИКУ', link: 'entrant' },
-        { label: 'СТУДЕНТУ', link: 'student' },
-        { label: 'ГАЛЕРЕЯ', link: 'gallery' },
-        { label: 'МАПА', link: 'map' },
-        { label: 'ІНСТИТУТИ & ФАКУЛЬТЕТИ', link: 'subdivisions' },
-        { label: 'КОНТАКТИ', link: 'contacts' }
+        {label: 'ВСТУПНИКУ', link: 'entrant'},
+        {label: 'СТУДЕНТУ', link: 'student'},
+        {label: 'ГАЛЕРЕЯ', link: 'gallery'},
+        {label: 'МАПА', link: 'map'},
+        {label: 'ІНСТИТУТИ & ФАКУЛЬТЕТИ', link: 'subdivisions'},
+        {label: 'КОНТАКТИ', link: 'contacts'}
     ];
 
-    items: MenuItem[] =[
-
+    items: MenuItem[] = [
         {
             label: 'ГОЛОВНА',
-            url:'/',
+            url: '/',
             icon: 'pi pi-fw pi-home'
         },
         {
             label: 'ВСТУПНИКУ',
-            url:'entrant',
+            url: 'entrant',
 
         },
         {
             label: 'СТУДЕНТУ',
-            url:'student',
+            url: 'student',
         },
         {
             label: 'ГАЛЕРЕЯ',
-            url:'gallery',
+            url: 'gallery',
 
         },
         {
             label: 'МАПА',
-            url:'map',
+            url: 'map',
 
         },
         {
             label: 'ІНСТИТУТИ & ФАКУЛЬТЕТИ',
-            url:'subdivisions',
+            url: 'subdivisions',
 
         },
         {
             label: 'КОНТАКТИ',
-            url:'contacts',
+            url: 'contacts',
 
         },
 
     ];
 
-    expandedMenu = false;
-
     constructor(private router: Router) {
         this.router.events.pipe(
-            filter(event => event instanceof NavigationStart),
-            takeUntil(this.destroy$)
-        ).subscribe((event) => {
+            filter(event => event instanceof NavigationStart), takeUntil(this.destroy$)).
+        subscribe((event) => {
             this.isDisplayed = (event as NavigationStart).url === "/";
         });
         this.checkIsMobileView();
@@ -82,15 +80,12 @@ export class BaseHeaderComponent implements OnDestroy {
         return this.router.url === '/';
     }
 
-
     @HostListener('window: resize', ['$event.target'])
     onResize(event: Window): void {
-    this.checkIsMobileView();
-
+        this.checkIsMobileView();
     }
+
     checkIsMobileView(): void {
         this.isMobileView = window.innerWidth <= 750;
     }
-
-
 }
