@@ -1,63 +1,69 @@
 <div class="wrapper">
-  <div class="container">
-      <div class="contacts_block">
-          <p class="contacts_block_title">Зв'яжіться з нами</p>
-          <div class="contact_info">
-              <img src="../../../assets/img/contacts-page-img/icons_tel.jpg" alt="tel">
-              <p class="call">Телефон</p>
-          </div>
-          <a class="phone_number" href="tel:+380442049494">+38 (044) 204 9494</a>
-          <div class="location_info">
-              <img src="../../../assets/img/contacts-page-img/icons_location.jpg" alt="location">
-              <p class="location">Адреса</p>
-          </div>
-          <p class="location_text">Проспект Перемоги, 37, Київ, 03056</p>
-          <div class="work_time">
-              <img src="../../../assets/img/contacts-page-img/icons_clock.jpg" alt="clock">
-              <p class="work_time">Робочі години</p>
-          </div>
-          <p class="time">Пн-Пт: 09:00 - 18:00<br>Сб-Нд: Зачинено</p>
-          <div class="email">
-              <img src="../../../assets/img/contacts-page-img/icons_email.jpg" alt="email">
-              <p class="email_text">Електронна пошта</p>
-          </div>
-          <a class="Email" href="mailto:" target="_blank">Mail@KPI.UA</a>
-      </div>
-      <div class="feedback_form">
-          <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
-              <div class="form_group">
-                  <label for="name">Ім'я/Нікнейм:</label>
-                  <input type="text" id="name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && feedback['name'].errors }" required>
-                  <div *ngIf="submitted && feedback['name'].errors" class="invalid-feedback">
-                    <div *ngIf="feedback['name'].errors?.['required']" style="color:red;">Name is required</div>
-                  </div>
-              </div>
-              <div class="form_group">
-                  <label for="email">Електронна пошта:</label>
-                  <input type="email" id="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && feedback['email'].errors }" required>
-                  <div *ngIf="submitted && feedback['email'].errors" class="invalid-feedback">
-                    <div *ngIf="feedback['email'].errors?.['required']" style="color:red;">Email is required</div>
-                    <div *ngIf="feedback['email'].errors?.['email']" style="color:red;">Email must be a valid email address</div>
-                  </div>
-              </div>
-              <div class="form_group">
-                  <label for="message">Повідомлення:</label>
-                  <textarea id="message" formControlName="message" rows="4" [ngClass]="{ 'is-invalid': submitted &&
+    <div class="container">
+        <div class="contacts_block">
+            <p class="contacts_block_title">Зв'яжіться з нами</p>
+            <div class="contact_info">
+                <img src="../../../assets/img/contacts-page-img/icons_tel.jpg" alt="tel">
+                <p class="call">Телефон</p>
+            </div>
+            <a class="phone_number" href="tel:+380442049494">+38 (044) 204 9494</a>
+            <div class="location_info">
+                <img src="../../../assets/img/contacts-page-img/icons_location.jpg" alt="location">
+                <p class="location">Адреса</p>
+            </div>
+            <p class="location_text">Проспект Перемоги, 37, Київ, 03056</p>
+            <div class="work_time">
+                <img src="../../../assets/img/contacts-page-img/icons_clock.jpg" alt="clock">
+                <p class="work_time">Робочі години</p>
+            </div>
+            <p class="time">Пн-Пт: 09:00 - 18:00<br>Сб-Нд: Зачинено</p>
+            <div class="email">
+                <img src="../../../assets/img/contacts-page-img/icons_email.jpg" alt="email">
+                <p class="email_text">Електронна пошта</p>
+            </div>
+            <a class="Email" href="mailto:" target="_blank">Mail@KPI.UA</a>
+        </div>
+        <div class="feedback_form">
+            <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+                <div class="form_group">
+                    <label for="name">Ім'я/Нікнейм:</label>
+                    <input type="text" id="name" formControlName="name"
+                           [ngClass]="{ 'is-invalid': submitted && feedback['name'].errors }" required>
+                    <div *ngIf="submitted && feedback['name'].errors" class="invalid-feedback">
+                        <div *ngIf="feedback['name'].errors?.['required']" style="color:red;">Name is required</div>
+                    </div>
+                </div>
+                <div class="form_group">
+                    <label for="email">Електронна пошта:</label>
+                    <input type="email" id="email" formControlName="email"
+                           [ngClass]="{ 'is-invalid': submitted && feedback['email'].errors }" required>
+                    <div *ngIf="submitted && feedback['email'].errors" class="invalid-feedback">
+                        <div *ngIf="feedback['email'].errors?.['required']" style="color:red;">Email is required</div>
+                        <div *ngIf="feedback['email'].errors?.['email']" style="color:red;">Email must be a valid email
+                            address
+                        </div>
+                    </div>
+                </div>
+                <div class="form_group">
+                    <label for="message">Повідомлення:</label>
+                    <textarea id="message" formControlName="message" rows="4" [ngClass]="{ 'is-invalid': submitted &&
                   feedback['message'].errors }" required></textarea>
-                  <div *ngIf="submitted && feedback['message'].errors" class="invalid-feedback">
-                    <div *ngIf="feedback['message'].errors?.['required']" style="color:red;">Message is required</div>
-                  </div>
-              </div>
-              <button type="submit">Відправити</button>
-          </form>
-      </div>
-  </div>
+                    <div *ngIf="submitted && feedback['message'].errors" class="invalid-feedback">
+                        <div *ngIf="feedback['message'].errors?.['required']" style="color:red;">Message is required
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Відправити</button>
+            </form>
+        </div>
+    </div>
     <div class="links">
         <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank">
             <img [src]="'../../../assets/img/contacts-page-img/icons_' + link.icon + '.jpg'" [alt]="link.icon">
         </a>
         <div class="card">
-            <p-progressSpinner *ngIf="isSocialLinksLoading" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+            <p-progressSpinner *ngIf="isSocialLinksLoading" styleClass="w-4rem h-4rem" strokeWidth="8"
+                               fill="var(--surface-ground)"
                                animationDuration=".5s"></p-progressSpinner>
         </div>
     </div>
