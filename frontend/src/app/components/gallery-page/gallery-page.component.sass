@@ -1,0 +1,311 @@
+.wrapper
+    font-family: "Montserrat", serif
+    margin: 0
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+
+* 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+@keyframes animate
+    0%
+        transform: perspective(1000px) rotateY(0deg)
+    100%
+        transform: perspective(1000px) rotateY(360deg)
+
+.box 
+    margin-top: 250px
+    justify-content: center
+    text-align: center
+    position: relative
+    width: 300px
+    height: 250px
+    transform-style: preserve-3d
+    transform: perspective(1000px) rotateY(0deg)
+    animation: animate 40s linear infinite 
+
+.box span 
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    transform-origin: center
+    transform-style: preserve-3d
+    transform: rotateY(calc( var(--i) * 45deg)) translateZ(400px)
+    -webkit-box-reflect: below 0px linear-gradient(transparent,transparent, #0004)
+
+.box span img 
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.first
+    display: flex
+    overflow-y: auto
+    height: 780px
+
+.second
+    display: flex
+    overflow-y: auto
+    height: 500px
+
+.first-second
+    display: flex
+    overflow-y: auto
+    height: 700px
+    background-color: #c82c2c
+
+
+.container 
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    transform-style: preserve-3d
+
+.container .photo-box 
+    position: relative
+    width: 270px
+    height: 270px
+    transition: 0.5s
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0002)
+
+.container .photo-box img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.container:hover > :not(:hover)
+    margin: 0 -20px
+    filter: drop-shadow(0 0 25px #000)
+    transform: perspective(500px) rotateY(45deg) scale(0.95)
+
+.container .photo-box:hover ~ .photo-box
+    transform: perspective(500px) rotateY(-45deg) scale(0.95)
+
+.container .photo-box:hover
+    width: 300px
+    height: 300px
+    transform: perspective(500px) rotateY(0) scale(1.5)
+    z-index: 1000
+
+@media (max-width: 1920px)
+    .first
+        height: 1000px
+        justify-content: center
+        text-align: center
+    .box
+        justify-content: center
+        text-align: center
+        margin-top: 320px
+        width: 350px
+        height: 300px
+        transform: perspective(1400px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(490px)
+    .second
+        height: 700px
+        justify-content: center
+        text-align: center
+        margin-top: -100px
+    .container
+        text-align: center
+        justify-content: center
+    .container .photo-box
+        width: 300px
+        height: 300px 
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 370px
+        height: 370px
+
+@media (max-width: 1440px)
+    .first
+        height: 900px
+    .box
+        margin-top: 320px
+        width: 330px
+        height: 280px
+        transform: perspective(1200px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(420px)
+    .second
+        height: 600px
+        margin-top: -100px
+    .container .photo-box
+        width: 250px
+        height: 250px 
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 350px
+        height: 350px
+
+@media ( max-width: 1280px)
+    .first
+        height: 800px
+    .box
+        margin-top: 320px
+        width: 270px
+        height: 230px
+        transform: perspective(900px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(400px)
+    .second
+        height: 550px
+        margin-top: -80px
+    .container .photo-box
+        width: 200px
+        height: 200px 
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 300px
+        height: 300px
+
+@media ( max-width: 1024px)
+    .first
+        height: 700px
+    .box
+        margin-top: 300px
+        width: 220px
+        height: 180px
+        transform: perspective(800px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(330px)
+    .second
+        height: 550px
+        margin-top: -80px
+    .container .photo-box
+        width: 150px
+        height: 150px 
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 200px
+        height: 200px
+
+@media ( max-width: 800px)
+    .first
+        height: 600px
+    .box
+        margin-top: 300px
+        width: 200px
+        height: 160px
+        transform: perspective(700px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(290px)
+    .second
+        height: 500px
+        margin-top: -80px
+    .container .photo-box
+        width: 130px
+        height: 130px 
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 180px
+        height: 180px
+
+@media ( max-width: 600px)
+    .first
+        height: 600px
+    .box
+        margin-top: 200px
+        width: 170px
+        height: 130px
+        transform: perspective(600px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(240px)
+    .second
+        height: 300px
+        margin-top: -170px
+    .container .photo-box
+        width: 100px
+        height: 100px 
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 150px
+        height: 150px
+
+@media ( max-width: 490px)
+    .first
+        height: 450px
+    .box
+        margin-top: 140px
+        width: 150px
+        height: 110px
+        transform: perspective(350px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(200px)
+    .second
+        height: 250px
+        margin-top: -170px
+    .container .photo-box
+        width: 80px
+        height: 80px 
+        margin-left: 5px
+    .container .photo-box:hover
+        width: 150px
+        height: 150px
+
+@media ( max-width: 430px)
+    .first
+        height: 400px
+    .box
+        margin-top: 140px
+        width: 120px
+        height: 90px
+        transform: perspective(300px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(170px)
+    .second
+        height: 250px
+        margin-top: -170px
+    .container .photo-box
+        width: 70px
+        height: 70px 
+        margin-left: 5px
+    .container .photo-box:hover
+        width: 130px
+        height: 130px
+
+@media ( max-width: 380px)
+    .first
+        height: 350px
+    .box
+        margin-top: 100px
+        width: 120px
+        height: 90px
+        transform: perspective(290px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(160px)
+    .second
+        height: 200px
+        margin-top: -140px
+    .container .photo-box
+        width: 60px
+        height: 60px 
+        margin-left: 5px
+    .container .photo-box:hover
+        width: 100px
+        height: 100px
+
+@media ( max-width: 340px)
+    .first
+        height: 340px
+    .box
+        margin-top: 100px
+        width: 110px
+        height: 80px
+        transform: perspective(280px) rotateY(0deg)
+    .box span 
+        transform: rotateY(calc( var(--i) * 45deg)) translateZ(150px)
