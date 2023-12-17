@@ -28,7 +28,7 @@
                                 (click)="onHistoryItemClick(historyItem)">
                                 {{ historyItem }}
                                 <button *ngIf="searchHistory.length > 0" class="delete-button"
-                                        (click)="deleteHistoryItem(historyItem)">×
+                                        (click)="deleteHistoryItem($event, historyItem)">×
                                 </button>
                             </li>
                             <button *ngIf="searchHistory.length > 0" class="clear-history-button"
@@ -36,6 +36,7 @@
                             </button>
                         </ul>
                     </div>
+
                 </div>
 
                 <div *ngIf="filterDepartmentList.length" class="departments">
@@ -53,8 +54,21 @@
 
             </div>
         </div>
-
-        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
-                     [rowsPerPageOptions]="[10, 25, 50]"></p-paginator>
     </section>
 </div>
+<section class="search-result" *ngIf="showSearchResult">
+    <div class="search-result_inner">
+        <div class="search-result_title">
+            Результати пошуку
+        </div>
+        <div class="line-search"></div>
+
+        <!-- Виведення результатів пошуку з пагінацією -->
+        <div *ngFor="let result of searchResults">
+            {{ result }}
+        </div>
+
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalRecords"
+                     [rowsPerPageOptions]="[10, 25, 50]"></p-paginator>
+    </div>
+</section>

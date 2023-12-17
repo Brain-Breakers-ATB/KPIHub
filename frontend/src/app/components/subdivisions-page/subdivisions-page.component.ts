@@ -1,11 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {PaginatorState} from 'primeng/paginator';
-import {DepartmentsService} from "../../services/departments.service";
-import {Subject, takeUntil} from "rxjs";
-import {SelectItemGroup} from 'primeng/api';
-import {Cathedra, Department} from 'src/app/models/departments';
-import {InstitutesService} from 'src/app/services/institutes.service';
-import {Institute} from 'src/app/models/institutes';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { PaginatorState } from 'primeng/paginator';
+import { DepartmentsService } from '../../services/departments.service';
+import { Subject, takeUntil } from 'rxjs';
+import { SelectItemGroup } from 'primeng/api';
+import { Cathedra, Department } from 'src/app/models/departments';
+import { InstitutesService } from 'src/app/services/institutes.service';
+import { Institute } from 'src/app/models/institutes';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { SelectItem } from 'primeng/api';
 
 // noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
@@ -29,8 +31,13 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     selectedDepartments!: Department[];
     private destroy$: Subject<boolean> = new Subject<boolean>();
     private departmentList!: SelectItemGroup[];
-
-    constructor(private departmentService: DepartmentsService, private instituteService: InstitutesService) { }
+    showSearchResult: boolean = false;
+    constructor(
+        private departmentService: DepartmentsService,
+        private instituteService: InstitutesService,
+        private httpClient: HttpClient,
+    ) { }
+    totalRecords: number = 0; // Загальна кількість записів для пагінації
 
     ngOnInit() {
         this.getDepartments();
@@ -46,12 +53,20 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         this.destroy$.unsubscribe();
     }
 
-    deleteHistoryItem(historyItem: string) {
+    deleteHistoryItem(event: Event, historyItem: string) {
+        // Prevent the default action of the event
+        event.preventDefault();
+        // Stop the event from further propagation
+        event.stopPropagation();
+
         const index = this.searchHistory.indexOf(historyItem);
         if (index !== -1) {
             this.searchHistory.splice(index, 1);
             localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
         }
+
+        // Keep the dropdown open
+        this.showSearchHistory = true;
     }
 
     toggleFilter(event: Event) {
@@ -68,7 +83,17 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     }
 
     toggleDropdown(event: Event) {
+        // Show the search history
         this.showSearchHistory = true;
+
+        // Check if the click event originated from the delete button or clear history button
+        const isDeleteButton = (event.target as HTMLElement).classList.contains('delete-button');
+        const isClearHistoryButton = (event.target as HTMLElement).classList.contains('clear-history-button');
+
+        // Close the dropdown only if it's not the delete button or clear history button click
+        if (!isDeleteButton && !isClearHistoryButton) {
+            this.showSearchHistory = true;
+        }
     }
 
     onSearchBlur() {
@@ -83,12 +108,72 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
             return;
         }
 
+        const apiUrl = 'http://localhost:3000/api/search';
+
+        // Modify the following lines to handle optional filters
+        const selectedInstitutes = this.filterDepartmentList
+            .filter(group => group.items && group.items.length > 0 &&
+                group.items
+                    .map((item: SelectItem<any>) => item as CustomSelectItem) // Map to CustomSelectItem
+                    .some((item: CustomSelectItem) => item.checked !== undefined && item.checked))
+            .map(group => group.label)
+            .join(',');
+
+        const selectedDepartments = this.selectedDepartments
+            ? this.selectedDepartments.map(department => department.name).join(',')
+            : '';
+
+        const keywords = trimmedSearchInput;
+        const sort = 'date';
+        const maxResultsPerPage = this.rows;
+        const page = (this.first / this.rows) + 1;
+
+        const params = new HttpParams()
+            .set('institutes', selectedInstitutes)
+            .set('departments', selectedDepartments)
+            .set('keywords', keywords)
+            .set('sort', sort)
+            .set('maxResultsPerPage', maxResultsPerPage.toString())
+            .set('page', page.toString());
+
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            // Add any other headers if needed
+        });
+
+        this.httpClient
+            .get(apiUrl, { params, headers })
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(
+                (apiResponse: any) => {
+                    if (apiResponse.status === 'success') {
+                        // Extract data from the response
+                        const responseData = apiResponse.data;
+                        const results = responseData.results;
+                        const totalResults = responseData.totalResults;
+
+                        // Update your searchResults or other properties based on the extracted data
+                        this.searchResults = results;
+
+                        // Print the extracted data for debugging
+                        console.log('Results:', this.searchResults);
+                        console.log('Total Results:', totalResults);
+                    } else {
+                        // Handle the case when the status is not 'success'
+                        console.error('API Error:', apiResponse);
+                    }
+                },
+                (error: any) => {
+                    // Handle error if the HTTP request fails
+                    console.error('API Error:', error);
+                }
+            );
         // Your existing search logic
-        this.searchResults = ['Результат 1', 'Результат 2', 'Результат 3'];
-        // Додаємо поточний searchInput в історію пошуку
+        this.addToSearchHistory(trimmedSearchInput);
+        this.showSearchResult = true;
+        this.totalRecords = this.searchResults.length;
         this.addToSearchHistory(trimmedSearchInput);
 
-        // Закриваємо випадаючий список історії пошуку після натискання Enter або кнопки "Знайти"
         this.showSearchHistory = false;
     }
 
@@ -121,17 +206,17 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     }
 
     clearSearchHistory(event: Event) {
-        // Очищаємо історію пошуку та локальне сховище
+        // Clearing the search history
         this.searchHistory = [];
         localStorage.removeItem('searchHistory');
 
-        // Очищаємо останній унікальний запит
+        // Clear the last unique search
         this.lastUniqueSearch = '';
 
-        // Закриваємо випадаючий список історії пошуку
-        this.showSearchHistory = false;
+        // Keep the dropdown open
+        this.showSearchHistory = true;
 
-        // Зупиняємо подальше поширення події вверх
+        // Prevent further event propagation
         event.stopPropagation();
     }
 
@@ -169,14 +254,14 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     private getDepartments(): void {
         this.departmentService.getDepartments().pipe(takeUntil(this.destroy$)).subscribe(
             (departments: Department[]) => {
-            this.departmentList = departments.map((department: Department) => ({
-                label: department.shortName,
-                items: department.departments.map((cathedra: Cathedra) => ({
-                    label: cathedra.fullName,
-                    value: cathedra.shortName
+                this.departmentList = departments.map((department: Department) => ({
+                    label: department.shortName,
+                    items: department.departments.map((cathedra: Cathedra) => ({
+                        label: cathedra.fullName,
+                        value: cathedra.shortName
+                    }))
                 }))
-            }))
-        })
+            })
     }
 
     private getInstitutes(): void {
@@ -185,4 +270,9 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.destroy$))
             .subscribe((institutes: Institute[]) => this.instituteList = institutes)
     }
+}
+
+interface CustomSelectItem {
+    label: string;
+    checked?: boolean; // Add this line if 'checked' is a valid property
 }
