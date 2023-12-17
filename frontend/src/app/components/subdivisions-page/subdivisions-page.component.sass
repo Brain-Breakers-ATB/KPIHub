@@ -5,28 +5,22 @@
     background-position: center
     background-size: cover
     min-width: 1440px
-    min-height: 1226px
+    min-height: 900px
     display: flex
     justify-content: center
     align-items: center
 
-.delete-button
-    background: none
-    border: none
-    color: red
-    cursor: pointer
-    font-size: 14px
-    margin-left: 5px
-
 .b1_inner
-    padding-top: 60px
-    padding-bottom: 400px
+    margin-top: 50px
+    padding-bottom: 300px
     text-align: center
+    align-items: center
     position: relative
 
 .b1_title
     display: block
     margin-bottom: 20px
+    margin-right: 70px
     font-family: "Montserrat", serif
     font-size: 58px
     line-height: normal
@@ -38,13 +32,32 @@
     color: rgba(255, 255, 255, 1)
     font-family: "Montserrat", serif
 
+.search-result_title
+    display: block
+    margin-bottom: 20px
+    font-family: "Montserrat", serif
+    font-size: 58px
+    line-height: normal
+    font-weight: 500
+    color: #ffffff
+
+.search-result_inner
+    text-align: center
+    align-items: center
+    position: relative
+
+.line-search
+    width: 100%
+    border: 2px solid rgba(255, 255, 255, 1)
+    margin: 0 auto
+
 .line
     width: 387px
     border: 2px solid rgba(255, 255, 255, 1)
     margin: 0 auto
 
 .search-bar
-    width: 517px
+    width: 30%
     height: 58px
     padding: 4px 16px
     border-radius: 11px
@@ -58,10 +71,10 @@
     width: 40px
     height: auto
     margin-right: 10px
-    margin-left: 20px
 
 .search-bar input
     flex: 1
+    width: 100% /* Змінено ширину на 100% */
     border: none
     outline: none
     font-size: 36px
@@ -72,11 +85,9 @@
     background-color: transparent
 
 .search-button
-    width: 206px
-    height: 79px
-    top: 600px
-    left: 157px
-    padding: 33px
+    width: fit-content
+    padding: 30px
+    top: 370px
     border-radius: 5px
     background: rgba(0, 0, 0, 0.35)
     border: none
@@ -84,7 +95,7 @@
     font-family: "Montserrat", serif
     font-weight: 400
     line-height: 0
-    font-size: 40px
+    font-size: 35px
     cursor: pointer
     position: absolute
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease
@@ -98,7 +109,7 @@
     overflow-y: auto
 
 .faculty-list button
-    width: 325px
+    width: 270px
     height: 84px
     margin-bottom: 10px
     padding: 5px
@@ -119,7 +130,6 @@
     background-color: rgba(255, 255, 255, 1)
     position: absolute
     top: 80px
-    left: 316.5px
     transform: rotate(90deg)
 
 .faculty-list button .right-side
@@ -140,7 +150,6 @@
     width: 330px
     height: 58px
     top: 210px
-    left: 820px
     border-radius: 11px
     background: rgba(255, 255, 255, 1)
     position: absolute
@@ -149,7 +158,6 @@
     width: 330px
     height: 339px
     top: 212px
-    left: 996px
     border-radius: 11px
     background: rgba(255, 255, 255, 0.47)
     position: absolute
@@ -159,7 +167,7 @@
     overflow-y: auto
 
 .department-list button
-    width: 330px
+    width: 270px
     height: 58px
     margin-bottom: 10px
     padding: 5px
@@ -180,9 +188,8 @@
     background-color: rgba(255, 255, 255, 1)
     position: absolute
     top: 29px
-    left: 5px
 
-.search-bar .dropdown-list
+.dropdown-list
     position: absolute
     top: 100%
     left: 0
@@ -211,13 +218,24 @@
 .clear-history-button
     margin: 10px
     left: 45%
-
+    background: rgba(0, 0, 0, 0.5)
+    border: none
+    color: #fff
+    border-radius: 5px
+    font-size: 17px
+    cursor: pointer
 .search-container
     padding: 3rem 2rem 0 8.3rem
 
 .delete-button
+    height: fit-content
     background: none
     border: none
     color: #000
     cursor: pointer
-    font-size: 18px
+    font-size: 25px
+
+.search-result
+    background-color: #816644
+    height: 600px
+    min-width: 1440px
