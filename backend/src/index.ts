@@ -18,6 +18,7 @@ import { DB_ENDPOINT, DB_PASSWORD, DB_LOGIN, PORT } from "../config";
 import { entrantTelegramChannelRouter } from "./routes/entrantTelegramChannels.ts";
 
 import { rateLimit } from "./RateLimiter/rateLimiter.ts";
+import { S3Router } from "./routes/s3Database.ts";
 
 // MongoDB connection URL with authentication
 const CONNECTION_STRING = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@${DB_ENDPOINT}`;
@@ -57,6 +58,8 @@ app.use("/api/institutes", institutesRouter);
 app.use("/api/departments", departmentsRouter);
 
 app.use('/api/search', searchRouter);
+
+app.use('/api/image', S3Router);
 
 // Connect to MongoDB
 mongoose
