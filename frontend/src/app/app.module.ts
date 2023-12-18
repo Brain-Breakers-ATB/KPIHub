@@ -15,7 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SubdivisionsPageComponent} from "./components/subdivisions-page/subdivisions-page.component";
 import {PaginatorModule} from "primeng/paginator";
 import {MultiSelectModule} from 'primeng/multiselect';
-
+import { TreeSelectModule } from 'primeng/treeselect';
 @NgModule({
     declarations: [
         AppComponent,
@@ -34,7 +34,8 @@ import {MultiSelectModule} from 'primeng/multiselect';
         PaginatorModule,
         FormsModule,
         ReactiveFormsModule,
-        MultiSelectModule
+        MultiSelectModule,
+        TreeSelectModule
     ],
     providers: [
         {
