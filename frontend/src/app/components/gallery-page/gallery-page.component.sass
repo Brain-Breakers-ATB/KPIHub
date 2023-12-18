@@ -19,11 +19,11 @@
         transform: perspective(1000px) rotateY(360deg)
 
 .box 
-    margin-top: 250px
+    margin-top: 350px
     justify-content: center
     text-align: center
     position: relative
-    width: 300px
+    width: 400px
     height: 250px
     transform-style: preserve-3d
     transform: perspective(1000px) rotateY(0deg)
@@ -37,7 +37,7 @@
     height: 100%
     transform-origin: center
     transform-style: preserve-3d
-    transform: rotateY(calc( var(--i) * 45deg)) translateZ(400px)
+    transform: rotateY(calc( var(--i) * 72deg)) translateZ(400px)
     -webkit-box-reflect: below 0px linear-gradient(transparent,transparent, #0004)
 
 .box span img 
@@ -52,6 +52,12 @@
     display: flex
     overflow-y: auto
     height: 780px
+
+.text
+    justify-content: center
+    text-align: center
+    font-family: "Montserrat", serif
+
 
 .second
     display: flex
@@ -106,15 +112,18 @@
         height: 1000px
         justify-content: center
         text-align: center
+    .text
+        font-size: 36px
+
     .box
         justify-content: center
         text-align: center
         margin-top: 320px
-        width: 350px
+        width: 450px
         height: 300px
         transform: perspective(1400px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(490px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(490px)
     .second
         height: 700px
         justify-content: center
@@ -134,13 +143,15 @@
 @media (max-width: 1440px)
     .first
         height: 900px
+    .text
+        font-size: 32px
     .box
         margin-top: 320px
         width: 330px
         height: 280px
         transform: perspective(1200px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(420px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(420px)
     .second
         height: 600px
         margin-top: -100px
@@ -155,13 +166,15 @@
 @media ( max-width: 1280px)
     .first
         height: 800px
+    .text
+        font-size: 30px
     .box
         margin-top: 320px
         width: 270px
         height: 230px
         transform: perspective(900px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(400px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(400px)
     .second
         height: 550px
         margin-top: -80px
@@ -176,13 +189,15 @@
 @media ( max-width: 1024px)
     .first
         height: 700px
+    .text
+        font-size: 28px
     .box
         margin-top: 300px
         width: 220px
         height: 180px
         transform: perspective(800px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(330px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(330px)
     .second
         height: 550px
         margin-top: -80px
@@ -197,13 +212,15 @@
 @media ( max-width: 800px)
     .first
         height: 600px
+    .text
+        font-size: 26px
     .box
         margin-top: 300px
         width: 200px
         height: 160px
         transform: perspective(700px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(290px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(290px)
     .second
         height: 500px
         margin-top: -80px
@@ -218,13 +235,15 @@
 @media ( max-width: 600px)
     .first
         height: 600px
+    .text
+        font-size: 24px
     .box
         margin-top: 200px
         width: 170px
         height: 130px
         transform: perspective(600px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(240px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(240px)
     .second
         height: 300px
         margin-top: -170px
@@ -239,13 +258,15 @@
 @media ( max-width: 490px)
     .first
         height: 450px
+    .text
+        font-size: 22px
     .box
         margin-top: 140px
         width: 150px
         height: 110px
         transform: perspective(350px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(200px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(200px)
     .second
         height: 250px
         margin-top: -170px
@@ -260,13 +281,15 @@
 @media ( max-width: 430px)
     .first
         height: 400px
+    .text
+        font-size: 20px
     .box
         margin-top: 140px
         width: 120px
         height: 90px
         transform: perspective(300px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(170px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(170px)
     .second
         height: 250px
         margin-top: -170px
@@ -281,13 +304,15 @@
 @media ( max-width: 380px)
     .first
         height: 350px
+    .text
+        font-size: 18px
     .box
         margin-top: 100px
         width: 120px
         height: 90px
         transform: perspective(290px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(160px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(160px)
     .second
         height: 200px
         margin-top: -140px
@@ -302,10 +327,12 @@
 @media ( max-width: 340px)
     .first
         height: 340px
+    .text
+        font-size: 16px
     .box
         margin-top: 100px
         width: 110px
         height: 80px
         transform: perspective(280px) rotateY(0deg)
     .box span 
-        transform: rotateY(calc( var(--i) * 45deg)) translateZ(150px)
+        transform: rotateY(calc( var(--i) * 72deg)) translateZ(150px)
