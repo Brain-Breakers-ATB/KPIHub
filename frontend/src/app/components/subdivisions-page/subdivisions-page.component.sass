@@ -1,3 +1,4 @@
+
 .wrapper
     margin: 0
     background-image: url(../../../assets/img/subdivision-page-img/img1.png)
@@ -5,22 +6,28 @@
     background-position: center
     background-size: cover
     min-width: 1440px
-    min-height: 900px
+    min-height: 756px
     display: flex
     justify-content: center
     align-items: center
 
+.delete-button
+    background: none
+    border: none
+    color: red
+    cursor: pointer
+    font-size: 14px
+    margin-left: 5px
+
 .b1_inner
-    margin-top: 50px
-    padding-bottom: 300px
+    padding-top: 60px
+    padding-bottom: 100px
     text-align: center
-    align-items: center
     position: relative
 
 .b1_title
     display: block
     margin-bottom: 20px
-    margin-right: 70px
     font-family: "Montserrat", serif
     font-size: 58px
     line-height: normal
@@ -32,32 +39,13 @@
     color: rgba(255, 255, 255, 1)
     font-family: "Montserrat", serif
 
-.search-result_title
-    display: block
-    margin-bottom: 20px
-    font-family: "Montserrat", serif
-    font-size: 58px
-    line-height: normal
-    font-weight: 500
-    color: #ffffff
-
-.search-result_inner
-    text-align: center
-    align-items: center
-    position: relative
-
-.line-search
-    width: 100%
-    border: 2px solid rgba(255, 255, 255, 1)
-    margin: 0 auto
-
 .line
     width: 387px
     border: 2px solid rgba(255, 255, 255, 1)
     margin: 0 auto
 
 .search-bar
-    width: 30%
+    width: 360px
     height: 58px
     padding: 4px 16px
     border-radius: 11px
@@ -74,7 +62,6 @@
 
 .search-bar input
     flex: 1
-    width: 100% /* Змінено ширину на 100% */
     border: none
     outline: none
     font-size: 36px
@@ -83,25 +70,27 @@
     letter-spacing: 0
     color: rgba(0, 0, 0, 1)
     background-color: transparent
+    width: 280px
 
 .search-button
-    width: fit-content
-    padding: 30px
-    top: 370px
-    border-radius: 5px
-    background: rgba(0, 0, 0, 0.35)
+    width: 150px
+    height: 44px
+    left: 370px
+    padding: 29px
+    border-radius: 11px
+    background: #886F4F
     border: none
     color: #fff
     font-family: "Montserrat", serif
     font-weight: 400
     line-height: 0
-    font-size: 35px
+    font-size: 28px
     cursor: pointer
     position: absolute
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease
 
     &:hover
-        background: rgba(0, 0, 0, 0.5)
+        background: black
         transform: scale(1.1)
 
 .faculty-list
@@ -109,7 +98,7 @@
     overflow-y: auto
 
 .faculty-list button
-    width: 270px
+    width: 325px
     height: 84px
     margin-bottom: 10px
     padding: 5px
@@ -130,6 +119,7 @@
     background-color: rgba(255, 255, 255, 1)
     position: absolute
     top: 80px
+    left: 316.5px
     transform: rotate(90deg)
 
 .faculty-list button .right-side
@@ -146,10 +136,14 @@
     letter-spacing: 0
     text-align: center
 
+.departments
+    margin-left: 159px
+
 .department-filter-container
     width: 330px
     height: 58px
     top: 210px
+    left: 820px
     border-radius: 11px
     background: rgba(255, 255, 255, 1)
     position: absolute
@@ -158,6 +152,7 @@
     width: 330px
     height: 339px
     top: 212px
+    left: 996px
     border-radius: 11px
     background: rgba(255, 255, 255, 0.47)
     position: absolute
@@ -167,7 +162,7 @@
     overflow-y: auto
 
 .department-list button
-    width: 270px
+    width: 330px
     height: 58px
     margin-bottom: 10px
     padding: 5px
@@ -188,8 +183,9 @@
     background-color: rgba(255, 255, 255, 1)
     position: absolute
     top: 29px
+    left: 5px
 
-.dropdown-list
+.search-bar .dropdown-list
     position: absolute
     top: 100%
     left: 0
@@ -206,6 +202,7 @@
 .dropdown-list
     overflow: hidden
 
+
 .search-bar .dropdown-list li
     color: #000
     padding: 10px
@@ -218,24 +215,115 @@
 .clear-history-button
     margin: 10px
     left: 45%
-    background: rgba(0, 0, 0, 0.5)
-    border: none
-    color: #fff
-    border-radius: 5px
-    font-size: 17px
-    cursor: pointer
+
 .search-container
-    padding: 3rem 2rem 0 8.3rem
+    padding: 3rem 2rem 0 9.3rem
 
 .delete-button
-    height: fit-content
     background: none
     border: none
     color: #000
     cursor: pointer
-    font-size: 25px
-
+    font-size: 18px
 .search-result
-    background-color: #816644
-    height: 600px
-    min-width: 1440px
+    background-color: #886F4F
+.search-result-inner
+    display: flex
+    flex-wrap: wrap
+.search-result_title
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    font-family: "Montserrat", serif
+    font-size: 33px
+    line-height: normal
+    font-weight: 500
+    color: #ffffff
+    padding: 20px
+.line-search
+    width: 100%
+    border: 1px solid rgba(255, 255, 255, 1)
+    margin-bottom: 50px
+search-results
+    max-width: 500px
+    padding: 20px
+    margin-bottom: 50px
+.search-result-item
+    width: 350px
+    height: 329px
+    border-radius: 24px
+    //margin: 0 10px 40px 10px
+    margin-left: 65px
+    background: rgba(50, 41, 34, 1)
+
+.box_container
+    display:  grid
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr))
+    justify-content: center
+    gap: 50px
+
+    max-width: 100%
+    flex-wrap: wrap
+
+.result-container
+    width: 100%
+    box-sizing: border-box
+    padding: 30px
+
+
+.result-content
+    display: flex
+    flex-direction: column
+    text-align: center
+    align-items: center
+    margin-top: 10px
+    margin-bottom: 10px
+.result-photo
+    max-width: 40%
+    height: auto
+    margin: 10px auto /* Center the image */
+    display: block /* Ensure it behaves like a block element */
+    text-align: center
+.result-photo2
+    max-width: 10%
+    height: auto
+    margin: 10px auto
+    display: block
+    text-align: center
+.result-title
+    font-size: 18px
+    color: #FFFFFF
+    margin-bottom: 4px
+.result-button
+    margin-top: 10px /* Add spacing between the snippet and the button */
+    background-color: rgba(255, 255, 255, 0.7)
+    color: #000000
+    padding: 15px 40px
+    text-align: center
+    text-decoration: none
+    display: inline-block
+    font-size: 20px
+    cursor: pointer
+    border-radius: 4px
+    border: none
+    font-family: "Montserrat", serif
+    font-weight: 400
+    cursor: pointer
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease
+
+    &:hover
+        background: wheat
+        transform: scale(1.1)
+
+.total-records
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    font-family: "Montserrat", serif
+    font-size: 33px
+    line-height: normal
+    font-weight: 500
+    color: #ffffff
+    padding: 20px
