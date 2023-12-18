@@ -8,6 +8,9 @@ import { InstitutesService } from 'src/app/services/institutes.service';
 import { Institute } from 'src/app/models/institutes';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { SelectItem } from 'primeng/api';
+import {ResultsService} from "../../services/results.service";
+import {Result} from "../../models/results";
+
 
 // noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
@@ -23,25 +26,29 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     searchInput = '';
     showSearchHistory = false;
     searchHistory: string[] = [];
-    searchResults: string[] = [];
+    searchResults: Result[] = [];
     first: number = 0;
     rows: number = 10;
     filterDepartmentList: SelectItemGroup[] = [];
     instituteList!: Institute[];
     selectedDepartments!: Department[];
+    resultList!: Result[];
     private destroy$: Subject<boolean> = new Subject<boolean>();
     private departmentList!: SelectItemGroup[];
     showSearchResult: boolean = false;
+    public totalResults: number = 0;
     constructor(
         private departmentService: DepartmentsService,
         private instituteService: InstitutesService,
         private httpClient: HttpClient,
+        private resultsService: ResultsService
     ) { }
     totalRecords: number = 0; // Загальна кількість записів для пагінації
 
     ngOnInit() {
         this.getDepartments();
         this.getInstitutes();
+        this.getResults();
         const storedHistory = localStorage.getItem('searchHistory');
         if (storedHistory) {
             this.searchHistory = JSON.parse(storedHistory);
@@ -81,7 +88,9 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         this.isDepartmentFilterActive = !this.isDepartmentFilterActive;
         event.stopPropagation();
     }
-
+    redirectToUrl(url: string): void {
+        window.open(url, '_blank');
+    }
     toggleDropdown(event: Event) {
         // Show the search history
         this.showSearchHistory = true;
@@ -106,8 +115,14 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         const trimmedSearchInput = this.searchInput.trim();
         if (trimmedSearchInput === '') {
             return;
-        }
 
+        }
+        this.addToSearchHistory(trimmedSearchInput);
+        this.showSearchResult = true;
+        this.totalRecords = this.searchResults.length;
+        this.addToSearchHistory(trimmedSearchInput);
+
+        this.showSearchHistory = false;
         const apiUrl = 'http://localhost:3000/api/search';
 
         // Modify the following lines to handle optional filters
@@ -134,6 +149,8 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
             .set('keywords', keywords)
             .set('sort', sort)
             .set('maxResultsPerPage', maxResultsPerPage.toString())
+            .set('first', this.first.toString())  // Include the 'first' parameter
+            .set('rows', this.rows.toString())
             .set('page', page.toString());
 
         const headers = new HttpHeaders({
@@ -154,18 +171,21 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
                         // Update your searchResults or other properties based on the extracted data
                         this.searchResults = results;
-
+                        this.totalRecords = totalResults;
+                        this.first = (page - 1) * maxResultsPerPage; // Update 'first' for pagination
                         // Print the extracted data for debugging
                         console.log('Results:', this.searchResults);
                         console.log('Total Results:', totalResults);
                     } else {
                         // Handle the case when the status is not 'success'
                         console.error('API Error:', apiResponse);
+                        this.totalRecords = 0;
                     }
                 },
                 (error: any) => {
                     // Handle error if the HTTP request fails
                     console.error('API Error:', error);
+                    this.totalRecords = 0;
                 }
             );
         // Your existing search logic
@@ -175,6 +195,7 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         this.addToSearchHistory(trimmedSearchInput);
 
         this.showSearchHistory = false;
+
     }
 
     onHistoryItemClick(historyItem: string) {
@@ -239,8 +260,19 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     }
 
     onPageChange(event: PaginatorState) {
-        this.first = event.first!;
-        this.rows = event.rows!;
+        this.first = event.first || 0;
+        this.rows = event.rows || 10;
+        // Adjust the range of results based on pagination
+        const startIndex = this.first;
+        const endIndex = startIndex + this.rows;
+
+        // Update your displayed results based on the current page
+        this.searchResults = this.resultList.slice(startIndex, endIndex);
+
+        // Perform any other necessary logic related to pagination
+
+        // Call the search function when the page changes
+        this.onSearch();
     }
 
     onSelectChange(event: { value: Institute[] }) {
@@ -263,13 +295,29 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
                 }))
             })
     }
+    private getResults(): void {
+        this.resultsService.getResults().pipe(takeUntil(this.destroy$)).subscribe(
+            (data: { data: { results: Result[], totalResults: number } }) => {
+                this.resultList = data.data.results;
+                this.totalResults = data.data.totalResults;
+                // Assign the results to searchResults of type Result[]
+                this.searchResults = data.data.results;
+            },
+            (error) => {
+                console.error('Error fetching results:', error);
+                this.totalResults = 0;
+            }
+        );
+    }
 
     private getInstitutes(): void {
         this.instituteService
             .getInstitutes()
             .pipe(takeUntil(this.destroy$))
             .subscribe((institutes: Institute[]) => this.instituteList = institutes)
+
     }
+
 }
 
 interface CustomSelectItem {
