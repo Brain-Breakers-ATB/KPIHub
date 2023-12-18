@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="974a5023-0e75-4c4d-b17e-a822d66f6317" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/contacts-page/contacts-page.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/contacts-page/contacts-page.component.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/base-header/base-header-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/base-header/base-header-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/base-header/base-header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/base-header/base-header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/base-header/base-header.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/base-header/base-header.component.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/base-header/base-header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/base-header/base-header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/map-page/map-page.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/map-page/map-page.component.sass" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/map-page/map-page.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/map-page/map-page.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/map-page/map-page.module.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702897058935</updated>
       <workItem from="1702897062337" duration="6457000" />
-      <workItem from="1702931189870" duration="769000" />
+      <workItem from="1702931189870" duration="2705000" />
     </task>
     <servers />
   </component>

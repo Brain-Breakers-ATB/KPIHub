@@ -6,7 +6,6 @@ import {StudentPageComponent} from "../student-page/student-page.component";
 import {ContactsPageComponent} from "../contacts-page/contacts-page.component";
 import {GalleryPageComponent} from "../gallery-page/gallery-page.component";
 import {SubdivisionsPageComponent} from "../subdivisions-page/subdivisions-page.component";
-import {MapPageComponent} from "../map-page/map-page.component";
 import {NotfoundComponent} from "../notfound/notfound.component";
 
 const routes: Routes = [
@@ -42,12 +41,6 @@ const routes: Routes = [
         path: 'subdivisions',
         component: SubdivisionsPageComponent,
     },
-    {
-        path: 'map',
-        component: MapPageComponent,
-        loadChildren: () => import('../map-page/map-page.module').then((m) => m.MapPageModule)
-    },
-
     {
         path: '**',
         redirectTo: '/notfound'

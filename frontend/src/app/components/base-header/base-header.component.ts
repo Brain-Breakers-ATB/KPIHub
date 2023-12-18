@@ -17,7 +17,6 @@ export class BaseHeaderComponent implements OnDestroy {
         { label: 'ВСТУПНИКУ', link: 'entrant' },
         { label: 'СТУДЕНТУ', link: 'student' },
         { label: 'ГАЛЕРЕЯ', link: 'gallery' },
-        { label: 'МАПА', link: 'map' },
         { label: 'ІНСТИТУТИ & ФАКУЛЬТЕТИ', link: 'subdivisions' },
         { label: 'КОНТАКТИ', link: 'contacts' },
     ];
@@ -39,10 +38,6 @@ export class BaseHeaderComponent implements OnDestroy {
         {
             label: 'ГАЛЕРЕЯ',
             routerLink: 'gallery',
-        },
-        {
-            label: 'МАПА',
-            routerLink: 'map',
         },
         {
             label: 'ІНСТИТУТИ & ФАКУЛЬТЕТИ',
