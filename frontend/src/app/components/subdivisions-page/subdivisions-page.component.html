@@ -17,7 +17,8 @@
 
                 <div class="search-bar" (click)="toggleDropdown($event)">
                     <button class="search-button" (click)="onSearch()">Знайти</button>
-                    <img src="http://localhost:3000/api/image/getFolderFile/subdivision-page-img/icons1.png" alt="Search Image">
+                    <img src="http://localhost:3000/api/image/getFolderFile/subdivision-page-img/icons1.png"
+                         alt="Search Image">
                     <div class="search-input-container">
                         <input
                             type="text"
@@ -67,14 +68,18 @@
                     <div class="result-content">
                         <h3 class="result-title">{{ result.title }}</h3>
                         <p class="result-snippet">{{ result.snippet }}</p>
-                        <img  class="result-photo2" src="../../../assets/img/subdivision-page-img/icons4.png" alt="{{ result.title }}">
+                        <img class="result-photo2" src="../../../assets/img/subdivision-page-img/icons4.png"
+                             alt="{{ result.title }}">
 
-                        <button pButton type="button" label="Тиць" (click)="redirectToUrl(result.url)" class="result-button">Тиць</button>
+                        <button pButton type="button" label="Тиць" (click)="redirectToUrl(result.url)"
+                                class="result-button">Тиць
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalResults" [rowsPerPageOptions]="[10, 25, 50]"></p-paginator>
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalResults"
+                     [rowsPerPageOptions]="[10, 25, 50]"></p-paginator>
 
     </div>
 </section>

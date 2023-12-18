@@ -1,16 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PaginatorState } from 'primeng/paginator';
-import { DepartmentsService } from '../../services/departments.service';
-import { Subject, takeUntil } from 'rxjs';
-import { SelectItemGroup } from 'primeng/api';
-import { Cathedra, Department } from 'src/app/models/departments';
-import { InstitutesService } from 'src/app/services/institutes.service';
-import { Institute } from 'src/app/models/institutes';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { SelectItem } from 'primeng/api';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {PaginatorState} from 'primeng/paginator';
+import {DepartmentsService} from '../../services/departments.service';
+import {Subject, takeUntil} from 'rxjs';
+import {SelectItemGroup} from 'primeng/api';
+import {Cathedra, Department} from 'src/app/models/departments';
+import {InstitutesService} from 'src/app/services/institutes.service';
+import {Institute} from 'src/app/models/institutes';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {SelectItem} from 'primeng/api';
 import {ResultsService} from "../../services/results.service";
 import {Result} from "../../models/results";
-
 
 // noinspection AngularMissingOrInvalidDeclarationInModule
 @Component({
@@ -37,12 +36,15 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     private departmentList!: SelectItemGroup[];
     showSearchResult: boolean = false;
     public totalResults: number = 0;
+
     constructor(
         private departmentService: DepartmentsService,
         private instituteService: InstitutesService,
         private httpClient: HttpClient,
         private resultsService: ResultsService
-    ) { }
+    ) {
+    }
+
     totalRecords: number = 0; // Загальна кількість записів для пагінації
 
     ngOnInit() {
@@ -88,9 +90,11 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         this.isDepartmentFilterActive = !this.isDepartmentFilterActive;
         event.stopPropagation();
     }
+
     redirectToUrl(url: string): void {
         window.open(url, '_blank');
     }
+
     toggleDropdown(event: Event) {
         // Show the search history
         this.showSearchHistory = true;
@@ -159,7 +163,7 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         });
 
         this.httpClient
-            .get(apiUrl, { params, headers })
+            .get(apiUrl, {params, headers})
             .pipe(takeUntil(this.destroy$))
             .subscribe(
                 (apiResponse: any) => {
@@ -277,8 +281,7 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
     onSelectChange(event: { value: Institute[] }) {
         const selectedInstitutes: string[] = event.value.map((instituteList: Institute) => instituteList.code);
-        this.filterDepartmentList = this.departmentList.filter((department: SelectItemGroup) => selectedInstitutes.
-        includes(department.label));
+        this.filterDepartmentList = this.departmentList.filter((department: SelectItemGroup) => selectedInstitutes.includes(department.label));
         console.log(selectedInstitutes);
         console.log(this.departmentList);
     }
@@ -295,6 +298,7 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
                 }))
             })
     }
+
     private getResults(): void {
         this.resultsService.getResults().pipe(takeUntil(this.destroy$)).subscribe(
             (data: { data: { results: Result[], totalResults: number } }) => {
