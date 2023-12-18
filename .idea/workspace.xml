@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="974a5023-0e75-4c4d-b17e-a822d66f6317" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbmi/fbmi1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbmi/fbmi2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbmi/fbmi3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbmi/fbmi4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbmi/fbmi5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbt/fbt1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbt/fbt2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbt/fbt3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbt/fbt4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fbt/fbt5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fea/fea1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fea/fea2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fea/fea3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fea/fea4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fea/fea5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fel/fel1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fel/fel2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fel/fel3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fel/fel4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fel/fel5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fiot/fiot1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fiot/fiot2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fiot/fiot3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fiot/fiot4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fiot/fiot5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fl/fl1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fl/fl2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fl/fl3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fl/fl4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fl/fl5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmf/fmf1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmf/fmf2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmf/fmf3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmf/fmf4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmf/fmf5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmm/fmm1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmm/fmm2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmm/fmm3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmm/fmm4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fmm/fmm5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fpm/fpm1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fpm/fpm2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fpm/fpm3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fpm/fpm4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fpm/fpm5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fsp/fsp1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fsp/fsp2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fsp/fsp3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fsp/fsp4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fsp/fsp5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fti/fti1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fti/fti2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fti/fti3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fti/fti4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/fti/fti5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/htf/htf1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/htf/htf2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/htf/htf3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/htf/htf4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/htf/htf5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iat/iat1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iat/iat2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iat/iat3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iat/iat4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iat/iat5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iate/iate1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iate/iate2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iate/iate3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iate/iate4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iate/iate5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iee/iee1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iee/iee2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iee/iee3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iee/iee4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iee/iee5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ihf/ihf1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ihf/ihf2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ihf/ihf3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ihf/ihf4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ihf/ihf5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/imz/imz1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/imz/imz2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/imz/imz3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/imz/imz4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/imz/imz5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ipsa/ipsa1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ipsa/ipsa2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ipsa/ipsa3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ipsa/ipsa4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/ipsa/ipsa5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iszzi/iszzi1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iszzi/iszzi2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iszzi/iszzi3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iszzi/iszzi4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/iszzi/iszzi5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/its/its1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/its/its2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/its/its3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/its/its4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/its/its5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/mmi/mmi1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/mmi/mmi2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/mmi/mmi3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/mmi/mmi4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/mmi/mmi5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/pbf/pbf1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/pbf/pbf2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/pbf/pbf3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/pbf/pbf4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/pbf/pbf5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/rtf/rtf1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/rtf/rtf2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/rtf/rtf3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/rtf/rtf4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/rtf/rtf5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/vpi/vpi1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/vpi/vpi2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/vpi/vpi3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/vpi/vpi4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/institutes/vpi/vpi5.jpg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2ZiFaR93CpBAEO5hiaCVV6MkeGu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Programming/WebStorm/KPIHub/frontend/src/assets/img/institutes/vpi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Programming\\WebStorm\\KPIHub\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\WebStorm\KPIHub\frontend\src\assets\img\institutes\ipsa" />
+      <recent name="D:\Programming\WebStorm\KPIHub\frontend\src\assets\img\institutes\iat" />
+      <recent name="D:\Programming\WebStorm\KPIHub\frontend\src\assets\img\institutes\vpi" />
+      <recent name="D:\Programming\WebStorm\KPIHub\frontend\src\assets\img\institutes\rtf" />
+      <recent name="D:\Programming\WebStorm\KPIHub\frontend\src\assets\img\institutes\pbf" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="974a5023-0e75-4c4d-b17e-a822d66f6317" name="Changes" comment="" />
+      <created>1702897058935</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702897058935</updated>
+      <workItem from="1702897062337" duration="6457000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
