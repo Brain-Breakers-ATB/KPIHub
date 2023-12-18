@@ -1,0 +1,93 @@
+{
+    "status": "success",
+    "data": {
+        "results": [
+            {
+                "title": "Page Title 1",
+                "url": "https://www.google.com/",
+                "snippet": "This is a snippet containing keyword1"
+            },
+            {
+                "title": "Page Title 2",
+                "url": "httpsite2.com/page2",
+                "snippet": "Another page with keyword1 and keyword2"
+            },
+            {
+                "title": "Page Title 3",
+                "url": "httpsite1.com/page3",
+                "snippet": "Content relevant to the search query"
+            },
+            {
+                "title": "Page Title 4",
+                "url": "httpsite2.com/page4",
+                "snippet": "A snippet with keyword2 for more diversity"
+            },
+            {
+                "title": "Page Title 5",
+                "url": "httpsite1.com/page5",
+                "snippet": "Keyword1 featured prominently in this snippet"
+            },
+            {
+                "title": "Page Title 6",
+                "url": "httpsite2.com/page6",
+                "snippet": "An example snippet with no specific keywords"
+            },
+            {
+                "title": "Page Title 7",
+                "url": "httpsite1.com/page7",
+                "snippet": "Yet another snippet with keyword1 and keyword2"
+            },
+            {
+                "title": "Page Title 8",
+                "url": "httpsite2.com/page8",
+                "snippet": "Content related to the search query"
+            },
+            {
+                "title": "Page Title 9",
+                "url": "httpsite1.com/page9",
+                "snippet": "Keyword2 appears in this snippet"
+            },
+            {
+                "title": "Page Title 10",
+                "url": "httpsite2.com/page10",
+                "snippet": "Snippet without specific keywords"
+            },
+            {
+                "title": "Page Title 11",
+                "url": "httpsite2.com/page11",
+                "snippet": "Snippet without specific keywords"
+            },
+            {
+                "title": "Page Title 12",
+                "url": "httpsite2.com/page12",
+                "snippet": "Snippet without specific keywords"
+            },
+            {
+                "title": "Page Title 13",
+                "url": "httpsite2.com/page13",
+                "snippet": "Snippet without specific keywords"
+            },
+            {
+                "title": "Page Title 14",
+                "url": "httpsite2.com/page14",
+                "snippet": "Snippet without specific keywords"
+            },
+            {
+
+                "title": "Page Title 15",
+                "url": "httpsite2.com/page15",
+                "snippet": "Snippet without specific keywords"
+            }
+        ],
+        "totalResults": 15,
+        "currentPage": 1,
+        "maxResultsPerPage": 10,
+        "sorting": "relevance",
+        "additionalInfo": {
+            "querySites": ["site1.com", "site2.com"],
+            "queryKeywords": ["keyword1", "keyword2"],
+            "executionTime": 120,
+            "serverTimestamp": "2023-11-28T123456Z"
+        }
+    }
+}
