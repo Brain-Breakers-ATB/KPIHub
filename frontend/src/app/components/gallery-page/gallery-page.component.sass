@@ -1,14 +1,15 @@
 .wrapper
-    margin: 0
+    font-family: "Montserrat", serif
+
+.gallery_banner
+    background-color: #816644
     background-image: url(../../../assets/img/institutes/gallery-phone.png)
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-    min-width: 1440px
-    min-height: 845px
-    display: flex
-    justify-content: center
-    align-items: center
+    padding-top: 400px
+    padding-bottom: 300px
+    text-align: center
 
 .b1_inner
     text-align: center
@@ -23,9 +24,19 @@
     line-height: normal
     font-weight: 500
     color: #ffffff
+    @media (min-width: 1280px)
+        font-size: 58px
+    @media (max-width: 1024px)
+        font-size: 50px
+    @media (max-width: 768px)
+        font-size: 40px
+    @media (max-width: 480px)
+        font-size: 32px
+    @media (max-width: 320px)
+        font-size: 24px
 
 .line
-    width: 387px
+    width: 33%
     border: 2px solid rgba(255, 255, 255, 1)
     margin: 0 auto
 
@@ -162,7 +173,7 @@
 
     .text1
         font-size: 30px
-    
+
     .text
         font-size: 30px
     .box
