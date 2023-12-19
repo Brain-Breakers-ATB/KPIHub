@@ -1,369 +1,546 @@
-<div>
-    <div class="zero">
-        <div class="card flex justify-content-center">
-            <p-treeSelect (onNodeSelect)="scrollTo(selectedNodes.key!)" class="md:w-20rem w-full"
-                          containerStyleClass="w-full" [(ngModel)]="selectedNodes" [options]="nodes"
-                          placeholder="Select Item"></p-treeSelect>
+<div fxLayout="column" class="wrapper">
+        <div class="background-image"></div>
+        <div class="b1_inner">
+                <div class="b1_title">
+                        "Галерея: Естетика навчання та інновацій у світлинах!"
+                </div>
+                <div class="line"></div>
         </div>
-    </div>
-    <p class="text" id="2">НН ВПІ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi5.jpg"
-                                       alt=""></span>
+        <div class="zero">
+                <div class="card flex justify-content-center">
+                        <p-treeSelect (onNodeSelect)="scrollTo(selectedNodes.key!)" class="md:w-20rem w-full"
+                                containerStyleClass="w-full" [(ngModel)]="selectedNodes" [options]="nodes"
+                                placeholder="Select Item"></p-treeSelect>
+                </div>
         </div>
-    </div>
-    <p class="text" id="3">НН ІАТ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat5.jpg"
-                                       alt=""></span>
+</div>
+
+<div class="gallery">
+        <p class="text1" id="1">ІАТЕ</p>
+        <p class="text">Інститут атомної та теплової енергетики</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="4">НН ІАТЕ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iate/iate5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="2">ІСЗЗІ</p>
+        <p class="text">Інститут спеціального зв'язку та захисту інформації</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="5">НН ІЕЕ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="3">ІХФ</p>
+        <p class="text">Інженерно-хiмiчний факультет</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="6">НН ІМЗ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="4">НН ВПІ</p>
+        <p class="text">Навчально-науковий видавничо-полiграфiчний інститут</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/vpi/vpi5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="7">НН ІПСА</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="5">НН ІАТ</p>
+        <p class="text">Навчально-науковий інститут аерокосмічних технологій</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iat/iat5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="1">ІСЗЗІ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="6">НН ІЕЕ</p>
+        <p class="text">Навчально-науковий інститут енергозбереження та енергоменеджменту</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iee/iee5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="8">ІТС</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="7">НН ІМЗ</p>
+        <p class="text">Навчально-науковий інститут матеріалознавства та зварювання ім. Є.О. Патона</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/imz/imz5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="14">ІХФ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ihf/ihf5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="8">НН ІПСА</p>
+        <p class="text">Навчально-науковий інститут прикладного системного аналiзу</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/ipsa/ipsa5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="9">НН ММІ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="9">НН ІТС</p>
+        <p class="text">Навчально-науковий інститут телекомунiкацiйних систем</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/iszzi/iszzi5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="15">ПБФ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="10">НН ММІ</p>
+        <p class="text">Навчально-науковий механiко-машинобудiвний iнститут</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/mmi/mmi5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="16">РТФ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="11">НН ФТІ</p>
+        <p class="text">Навчально-науковий фiзико-технiчний iнститут</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="17">ФБМІ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="12">ПБФ</p>
+        <p class="text">Приладобудiвний факультет</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/pbf/pbf5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="18">ФБТ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="13">РТФ</p>
+        <p class="text">Радiотехнiчний факультет</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/rtf/rtf5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="19">ФЕА</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="14">ФБМІ</p>
+        <p class="text">Факультет біомедичної інженерії</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbmi/fbmi5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="20">ФЕЛ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="15">ФБТ</p>
+        <p class="text">Факультет бiотехнологiї i бiотехнiки</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fbt/fbt5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="21">ФІОТ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="16">ФЕА</p>
+        <p class="text">Факультет електроенерготехнiки та автоматики</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fea/fea5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="22">ФЛ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="17">ФЕЛ</p>
+        <p class="text">Факультет електронiки</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fel/fel5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="23">ФММ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="18">ФІОТ</p>
+        <p class="text">Факультет iнформатики та обчислювальної технiки</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fiot/fiot5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="26">ФМФ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="19">ФЛ</p>
+        <p class="text">Факультет лiнгвiстики</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fl/fl5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="25">ФПМ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="20">ФММ</p>
+        <p class="text">Факультет менеджменту та маркетингу</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmm/fmm5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="24">ФСП</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="21">ФМФ</p>
+        <p class="text">Фiзико-математичний факультет</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fmf/fmf5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="10">НН ФТІ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fti/fti5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="22">ФПМ</p>
+        <p class="text">Факультет прикладної математики</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fpm/fpm5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
-    <p class="text" id="27">ХТФ</p>
-    <div class="first">
-        <div class="box">
-            <span style="--i:1;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf1.jpg"
-                                       alt=""></span>
-            <span style="--i:2;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf2.jpg"
-                                       alt=""></span>
-            <span style="--i:3;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf3.jpg"
-                                       alt=""></span>
-            <span style="--i:4;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf4.jpg"
-                                       alt=""></span>
-            <span style="--i:5;"> <img src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf5.jpg"
-                                       alt=""></span>
+
+        <p class="text" id="23">ФСП</p>
+        <p class="text">Факультет соціології і права</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/fsp/fsp5.jpg"
+                                        alt=""></span>
+                </div>
         </div>
-    </div>
+
+        <p class="text" id="24">ХТФ</p>
+        <p class="text">Хiмiко-технологiчний факультет</p>
+        <div class="first">
+                <div class="box">
+                        <span style="--i:1;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf1.jpg"
+                                        alt=""></span>
+                        <span style="--i:2;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf2.jpg"
+                                        alt=""></span>
+                        <span style="--i:3;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf3.jpg"
+                                        alt=""></span>
+                        <span style="--i:4;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf4.jpg"
+                                        alt=""></span>
+                        <span style="--i:5;"> <img
+                                        src="http://localhost:3000/api/image/getKeyFile?Key=institutes/htf/htf5.jpg"
+                                        alt=""></span>
+                </div>
+        </div>
 </div>
