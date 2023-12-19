@@ -37,14 +37,14 @@ router.get('/getFile/:fileName', (req: express.Request, res: express.Response) =
 })
 
 router.get('/getFolderFile/:foldername/:filename', (req: express.Request, res: express.Response) => {
-    retriveFolderFile(req.params.foldername, req.params.filename, res);
+    retriveFile(req.params.foldername + '/' + req.params.filename, res);
 })
 
 router.get('/getKeyFile', (req: express.Request, res: express.Response) => {
     if (typeof req.query.Key !== 'string') {
         return res.status(400).send({ message: 'No file uploaded' });
     }
-    retriveKeyFile(req.query.Key, res);
+    retriveFile(req.query.Key, res);
 })
 
 function uploadFile(source: string, targetName: string, res: express.Response){
@@ -73,39 +73,7 @@ function uploadFile(source: string, targetName: string, res: express.Response){
     })
 }
 
-function retriveFile(filename: string, res: express.Response) {
-    const getParams ={
-        Bucket: 'kpi-hub-bucket',
-        Key: filename,
-    };
-
-    s3.getObject(getParams, (err: AWS.AWSError, data: S3.GetObjectOutput) => {
-        if (err) {
-            return res.status(400).send({success:false,err:err});
-        }
-        else {
-            return res.send(data.Body);
-        }
-    });
-}
-
-function retriveFolderFile(foldername: string, filename: string, res: express.Response) {
-    const getParams  = {
-        Bucket: 'kpi-hub-bucket',
-        Key: foldername + '/' + filename,
-    };
-
-    s3.getObject(getParams, (err: AWS.AWSError, data: S3.GetObjectOutput) => {
-        if (err) {
-            return res.status(400).send({success:false,err:err});
-        }
-        else {
-            return res.send(data.Body);
-        }
-    });
-}
-
-function retriveKeyFile(Key: string, res: express.Response) {
+function retriveFile(Key: string, res: express.Response) {
     const getParams ={
         Bucket: 'kpi-hub-bucket',
         Key: Key,
