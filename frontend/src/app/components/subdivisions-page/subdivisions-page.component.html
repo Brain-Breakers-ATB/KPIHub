@@ -1,61 +1,58 @@
-<html lang="uk">
 <div class="wrapper">
     <section class="b1">
-        <div class="background-image"></div>
-        <div class="b1_inner">
+            <div class="background-image"></div>
             <div class="b1_title">
                 "Дізнайся більше про навчальні напрями та освітні можливості в інститутах&факультетах!"
             </div>
             <div class="line"></div>
 
-            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" class="search-container">
+                <div class="search-container">
+                    <div class="visible-filter-container">
+                        <div class="filter-container">
+                            <p-multiSelect (onChange)="onSelectChange($event)" [options]="instituteList" optionLabel="name"
+                                           placeholder="ІНСТИТУТИ & ФАКУЛЬТЕТИ"></p-multiSelect>
+                        </div>
 
-                <div class="filter-container">
-                    <p-multiSelect (onChange)="onSelectChange($event)" [options]="instituteList" optionLabel="name"
-                                   placeholder="ІНСТИТУТИ & ФАКУЛЬТЕТИ"></p-multiSelect>
+                        <div class="search-input-container">
+                            <div class="search-bar" (click)="toggleDropdown($event)">
+                                <input
+                                    type="text"
+                                    [(ngModel)]="searchInput"
+                                    (blur)="onSearchBlur()"
+                                    (keyup.enter)="onSearch()">
+                                    <img src="http://localhost:3000/api/image/getFolderFile/subdivision-page-img/icons1.png"
+                                     alt="Search Image">
+                                <ul class="dropdown-list" *ngIf="showSearchHistory">
+                                    <li *ngFor="let historyItem of searchHistory.slice(0, 5)"
+                                        (click)="onHistoryItemClick(historyItem)">
+                                        {{ historyItem }}
+                                        <button *ngIf="searchHistory.length > 0" class="delete-button"
+                                                (click)="deleteHistoryItem($event, historyItem)">×
+                                        </button>
+                                    </li>
+                                    <button *ngIf="searchHistory.length > 0" class="clear-history-button"
+                                            (click)="clearSearchHistory($event)">Очистити історію
+                                    </button>
+                                </ul>
+                            </div>
+                            <button class="search-button" (click)="onSearch()">Знайти</button>
+                        </div>
                 </div>
 
-                <div class="search-bar" (click)="toggleDropdown($event)">
-                    <button class="search-button" (click)="onSearch()">Знайти</button>
-                    <img src="http://localhost:3000/api/image/getFolderFile/subdivision-page-img/icons1.png"
-                         alt="Search Image">
-                    <div class="search-input-container">
-                        <input
-                            type="text"
-                            [(ngModel)]="searchInput"
-                            (blur)="onSearchBlur()"
-                            (keyup.enter)="onSearch()">
-                        <ul class="dropdown-list" *ngIf="showSearchHistory">
-                            <li *ngFor="let historyItem of searchHistory.slice(0, 5)"
-                                (click)="onHistoryItemClick(historyItem)">
-                                {{ historyItem }}
-                                <button *ngIf="searchHistory.length > 0" class="delete-button"
-                                        (click)="deleteHistoryItem($event, historyItem)">×
-                                </button>
-                            </li>
-                            <button *ngIf="searchHistory.length > 0" class="clear-history-button"
-                                    (click)="clearSearchHistory($event)">Очистити історію
-                            </button>
-                        </ul>
+                    <div *ngIf="filterDepartmentList.length">
+                        <p-multiSelect [options]="filterDepartmentList" [group]="true" [(ngModel)]="selectedDepartments"
+                                       placeholder="КАФЕДРИ" scrollHeight="250px" display="chip">
+                            <ng-template let-group pTemplate="group">
+                                <div class="flex align-items-center">
+                                    <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                         [class]="'mr-2 flag flag-' + group.value" style="width: 20px" alt="cathedra"/>
+                                    <span>{{ group.label }}</span>
+                                </div>
+                            </ng-template>
+                        </p-multiSelect>
                     </div>
 
                 </div>
-
-                <div *ngIf="filterDepartmentList.length" class="departments">
-                    <p-multiSelect [options]="filterDepartmentList" [group]="true" [(ngModel)]="selectedDepartments"
-                                   placeholder="КАФЕДРИ" scrollHeight="250px" display="chip">
-                        <ng-template let-group pTemplate="group">
-                            <div class="flex align-items-center">
-                                <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
-                                     [class]="'mr-2 flag flag-' + group.value" style="width: 20px" alt="cathedra"/>
-                                <span>{{ group.label }}</span>
-                            </div>
-                        </ng-template>
-                    </p-multiSelect>
-                </div>
-
-            </div>
-        </div>
     </section>
 </div>
 <section class="search-result" *ngIf="showSearchResult">
