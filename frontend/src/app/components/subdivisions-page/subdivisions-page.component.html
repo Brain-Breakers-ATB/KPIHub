@@ -1,3 +1,4 @@
+<html lang="uk">
 <div class="wrapper">
     <section class="b1">
         <div class="background-image"></div>
@@ -16,7 +17,7 @@
 
                 <div class="search-bar" (click)="toggleDropdown($event)">
                     <button class="search-button" (click)="onSearch()">Знайти</button>
-                    <img src="../../../assets/img/subdivision-page-img/icons1.png" alt="Search Image">
+                    <img src="http://localhost:3000/api/image/getFolderFile/subdivision-page-img/icons1.png">
                     <div *ngIf="searchErrorMessage" class="search-error-message">
                         {{ searchErrorMessage }}
                     </div>
@@ -59,17 +60,26 @@
 </div>
 <section class="search-result" *ngIf="showSearchResult">
     <div class="search-result_inner">
-        <div class="search-result_title">
-            Результати пошуку
-        </div>
+        <div class="total-records">Загальна кількість результатів: {{ totalResults }}</div>
         <div class="line-search"></div>
+        <div class="box_container">
+            <div *ngFor="let result of resultList.slice(first, first + rows)" class="search-result-item">
+                <div class="result-container">
+                    <div class="result-content">
+                        <h3 class="result-title">{{ result.title }}</h3>
+                        <p class="result-snippet">{{ result.snippet }}</p>
+                        <img class="result-photo2" src="../../../assets/img/subdivision-page-img/icons4.png"
+                             alt="{{ result.title }}">
 
-        <!-- Виведення результатів пошуку з пагінацією -->
-        <div *ngFor="let result of searchResults">
-            {{ result }}
+                        <button pButton type="button" label="Тиць" (click)="redirectToUrl(result.url)"
+                                class="result-button">Тиць
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalRecords"
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalResults"
                      [rowsPerPageOptions]="[10, 25, 50]"></p-paginator>
+
     </div>
 </section>

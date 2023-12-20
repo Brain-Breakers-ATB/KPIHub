@@ -1,0 +1,352 @@
+.wrapper
+    font-family: "Montserrat", serif
+
+.gallery_banner
+    background-color: #816644
+    background-image: url(../../../assets/img/institutes/gallery-phone.png)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    padding-top: 400px
+    padding-bottom: 300px
+    text-align: center
+
+.b1_inner
+    text-align: center
+    position: relative
+    padding-bottom: 30px
+
+.b1_title
+    display: block
+    margin-bottom: 20px
+    font-family: "Montserrat", serif
+    font-size: 58px
+    line-height: normal
+    font-weight: 500
+    color: #ffffff
+    @media (min-width: 1280px)
+        font-size: 58px
+    @media (max-width: 1024px)
+        font-size: 50px
+    @media (max-width: 768px)
+        font-size: 40px
+    @media (max-width: 480px)
+        font-size: 32px
+    @media (max-width: 320px)
+        font-size: 24px
+
+.line
+    width: 33%
+    border: 2px solid rgba(255, 255, 255, 1)
+    margin: 0 auto
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+.gallery
+    background: #886F4F
+
+.header-inst
+    background: #322922
+    padding: 20px
+
+@keyframes animate
+    0%
+        transform: perspective(1000px) rotateY(0deg)
+    100%
+        transform: perspective(1000px) rotateY(360deg)
+
+.box
+    margin-top: 350px
+    justify-content: center
+    text-align: center
+    position: relative
+    width: 400px
+    height: 250px
+    transform-style: preserve-3d
+    transform: perspective(1000px) rotateY(0deg)
+    animation: animate 40s linear infinite
+
+.box span
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    transform-origin: center
+    transform-style: preserve-3d
+    transform: rotateY(calc(var(--i) * 72deg)) translateZ(400px)
+
+.box span img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.first
+    display: flex
+    overflow-y: auto
+    height: 780px
+
+.text
+    justify-content: center
+    text-align: center
+    font-family: "Montserrat", serif
+
+.zero
+    display: flex
+    flex-direction: column
+
+@media (max-width: 1920px)
+    .first
+        height: 850px
+        margin-top: 50px
+        justify-content: center
+        text-align: center
+
+    .text
+        font-size: 36px
+
+    .box
+        justify-content: center
+        text-align: center
+        margin-top: 200px
+        width: 450px
+        height: 300px
+        transform: perspective(1400px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(490px)
+    .second
+        height: 700px
+        justify-content: center
+        text-align: center
+        margin-top: -100px
+    .container
+        text-align: center
+        justify-content: center
+    .container .photo-box
+        width: 300px
+        height: 300px
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 370px
+        height: 370px
+
+@media (max-width: 1440px)
+    .first
+        height: 800px
+        margin-top: -150px
+
+    .text
+        font-size: 32px
+    .box
+        margin-top: 320px
+        width: 370px
+        height: 280px
+        transform: perspective(1200px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(420px)
+    .second
+        height: 600px
+        margin-top: -100px
+    .container .photo-box
+        width: 250px
+        height: 250px
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 350px
+        height: 350px
+
+@media (max-width: 1280px)
+    .first
+        height: 750px
+        margin-top: -150px
+
+    .text
+        font-size: 30px
+    .box
+        margin-top: 320px
+        width: 360px
+        height: 230px
+        transform: perspective(900px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(400px)
+    .second
+        height: 550px
+        margin-top: -80px
+    .container .photo-box
+        width: 200px
+        height: 200px
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 300px
+        height: 300px
+
+@media (max-width: 1024px)
+    .first
+        height: 630px
+        margin-top: -180px
+
+    .text
+        font-size: 28px
+    .box
+        margin-top: 300px
+        width: 320px
+        height: 180px
+        transform: perspective(800px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(330px)
+    .second
+        height: 550px
+        margin-top: -80px
+    .container .photo-box
+        width: 150px
+        height: 150px
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 200px
+        height: 200px
+
+@media (max-width: 800px)
+    .first
+        height: 580px
+        margin-top: -230px
+
+    .text
+        font-size: 26px
+    .box
+        margin-top: 300px
+        width: 240px
+        height: 160px
+        transform: perspective(700px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(290px)
+    .second
+        height: 500px
+        margin-top: -80px
+    .container .photo-box
+        width: 130px
+        height: 130px
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 180px
+        height: 180px
+
+@media (max-width: 600px)
+    .first
+        height: 450px
+        margin-top: -140px
+
+    .text
+        font-size: 24px
+    .box
+        margin-top: 200px
+        width: 210px
+        height: 130px
+        transform: perspective(600px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(240px)
+    .second
+        height: 300px
+        margin-top: -170px
+    .container .photo-box
+        width: 100px
+        height: 100px
+        margin-left: 10px
+    .container .photo-box:hover
+        width: 150px
+        height: 150px
+
+@media (max-width: 490px)
+    .first
+        height: 370px
+        margin-top: -80px
+
+    .text
+        font-size: 22px
+    .box
+        margin-top: 140px
+        width: 190px
+        height: 120px
+        transform: perspective(350px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(200px)
+    .second
+        height: 250px
+        margin-top: -170px
+    .container .photo-box
+        width: 80px
+        height: 80px
+        margin-left: 5px
+    .container .photo-box:hover
+        width: 150px
+        height: 150px
+
+@media (max-width: 430px)
+    .first
+        height: 310px
+        margin-top: -90px
+
+    .text
+        font-size: 20px
+    .box
+        margin-top: 140px
+        width: 170px
+        height: 110px
+        transform: perspective(300px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(170px)
+    .second
+        height: 250px
+        margin-top: -170px
+    .container .photo-box
+        width: 70px
+        height: 70px
+        margin-left: 5px
+    .container .photo-box:hover
+        width: 130px
+        height: 130px
+
+@media (max-width: 380px)
+    .first
+        height: 300px
+        margin-top: -50px
+
+    .text
+        font-size: 18px
+    .box
+        margin-top: 100px
+        width: 180px
+        height: 115px
+        transform: perspective(290px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(160px)
+    .second
+        height: 200px
+        margin-top: -140px
+    .container .photo-box
+        width: 60px
+        height: 60px
+        margin-left: 5px
+    .container .photo-box:hover
+        width: 100px
+        height: 100px
+
+@media (max-width: 340px)
+    .first
+        height: 250px
+        margin-top: -60px
+
+    .text
+        font-size: 16px
+    .box
+        margin-top: 100px
+        width: 140px
+        height: 100px
+        transform: perspective(280px) rotateY(0deg)
+    .box span
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(150px)

@@ -3,22 +3,22 @@
         <div class="contacts_block">
             <p class="contacts_block_title">Зв'яжіться з нами</p>
             <div class="contact_info">
-                <img src="../../../assets/img/contacts-page-img/icons_tel.jpg" alt="tel">
+                <img src="http://localhost:3000/api/image/getFolderFile/contacts-page-img/icons_tel.jpg" alt="tel">
                 <p class="call">Телефон</p>
             </div>
             <a class="phone_number" href="tel:+380442049494">+38 (044) 204 9494</a>
             <div class="location_info">
-                <img src="../../../assets/img/contacts-page-img/icons_location.jpg" alt="location">
+                <img src="http://localhost:3000/api/image/getFolderFile/contacts-page-img/icons_location.jpg" alt="location">
                 <p class="location">Адреса</p>
             </div>
             <p class="location_text">Проспект Перемоги, 37, Київ, 03056</p>
             <div class="work_time">
-                <img src="../../../assets/img/contacts-page-img/icons_clock.jpg" alt="clock">
+                <img src="http://localhost:3000/api/image/getFolderFile/contacts-page-img/icons_clock.jpg" alt="clock">
                 <p class="work_time">Робочі години</p>
             </div>
             <p class="time">Пн-Пт: 09:00 - 18:00<br>Сб-Нд: Зачинено</p>
             <div class="email">
-                <img src="../../../assets/img/contacts-page-img/icons_email.jpg" alt="email">
+                <img src="http://localhost:3000/api/image/getFolderFile/contacts-page-img/icons_email.jpg" alt="email">
                 <p class="email_text">Електронна пошта</p>
             </div>
             <a class="Email" href="mailto:" target="_blank">Mail@KPI.UA</a>
@@ -59,7 +59,7 @@
     </div>
     <div class="links">
         <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank">
-            <img [src]="'../../../assets/img/contacts-page-img/icons_' + link.icon + '.jpg'" [alt]="link.icon">
+            <img [src]="'http://localhost:3000/api/image/getFolderFile/contacts-page-img/icons_' + link.icon + '.jpg'" [alt]="link.icon">
         </a>
         <div class="card">
             <p-progressSpinner *ngIf="isSocialLinksLoading" styleClass="w-4rem h-4rem" strokeWidth="8"

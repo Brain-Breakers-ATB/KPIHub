@@ -12,7 +12,7 @@
         <section class="services" id="services">
             <div class="box_container">
                 <div *ngFor="let faqItem of faqItems" class="box faq_button" (click)="expandBox(faqItem.id)">
-                    <img [src]="'../../../assets/img/entrant-page-img/' + faqItem.iconSrc" style="float: left"
+                    <img [src]="'http://localhost:3000/api/image/getFolderFile/entrant-page-img/' + faqItem.iconSrc" style="float: left"
                          alt="" [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">
                     <h3 [style.display]="!isBoxExpanded(faqItem.id) ? 'block' : 'none'">{{ faqItem.question }}</h3>
                     <div [class]="'text_content' + faqItem.id"
@@ -36,7 +36,7 @@
                 <td [width]="600">
                     <div>
                         <div fxFlex="30">
-                            <img class="telegram_image" [src]="'../../../assets/img/entrant-page-img/' + item.imgSrc"
+                            <img class="telegram_image" [src]="'http://localhost:3000/api/image/getFolderFile/entrant-page-img/' + item.imgSrc"
                                  alt="KPI">
                         </div>
                         <div class="left_block_telegram" fxFlex="70">{{ item.name }}</div>

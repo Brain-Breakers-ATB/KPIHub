@@ -32,12 +32,12 @@
             <ng-container *ngIf="i % 2 === 0; else oddTemplate">
                 <!-- Even iterations -->
                 <div fxFlex="50">
-                    <img class="activity_image" [src]="'../../../assets/img/student-page-img/' + activity.imageSrc"
+                    <img class="activity_image" [src]="'http://localhost:3000/api/image/getFolderFile/student-page-img/' + activity.imageSrc"
                          alt="{{ activity.title }}"/>
                 </div>
                 <div fxFlex="50">
                     <b class="activity_name">
-                        <img class="activity_icon" [src]="'../../../assets/img/student-page-img/' + activity.iconImgSrc"
+                        <img class="activity_icon" [src]="'http://localhost:3000/api/image/getFolderFile/student-page-img/' + activity.iconImgSrc"
                              alt="{{ activity.title }}"/>
                         {{ activity.title }}
                     </b>
@@ -51,7 +51,7 @@
                 <!-- Odd iterations -->
                 <div fxFlex="50">
                     <b class="activity_name">
-                        <img class="activity_icon" [src]="'../../../assets/img/student-page-img/' + activity.iconImgSrc"
+                        <img class="activity_icon" [src]="'http://localhost:3000/api/image/getFolderFile/student-page-img/' + activity.iconImgSrc"
                              alt="{{ activity.title }}"/>
                         {{ activity.title }}
                     </b>
@@ -61,7 +61,7 @@
                     </button>
                 </div>
                 <div fxFlex="50">
-                    <img class="activity_image" [src]="'../../../assets/img/student-page-img/' + activity.imageSrc"
+                    <img class="activity_image" [src]="'http://localhost:3000/api/image/getFolderFile/student-page-img/' + activity.imageSrc"
                          alt="{{ activity.title }}"/>
                 </div>
             </ng-template>
@@ -71,10 +71,10 @@
     </section>
     <section class="events_block">
         <div class="block_title" id="stickyTitle2"><p>Гуртки. Олімпіади. Проєкти</p></div>
-        <img class="event_image" src="../../../assets/img/student-page-img/img6.jpg" alt="KPI"/>
+        <img class="event_image" src="http://localhost:3000/api/image/getFolderFile/student-page-img/img6.jpg" alt="KPI"/>
         <div>
             <div fxFlex="30">
-                <img class="event_icon" src="../../../assets/img/student-page-img/icon5.jpg" alt="KPI"/>
+                <img class="event_icon" src="http://localhost:3000/api/image/getFolderFile/student-page-img/icon5.jpg" alt="KPI"/>
             </div>
             <div fxFlex="70">
                 <p class="event_text1">
@@ -114,10 +114,10 @@
             Також в КПІ ім. Ігоря Сікорського проходять І етапи Всеукраїнських студентських олімпіад, переможці
             яких беруть участь в ІІ етапах Всеукраїнських студентських олімпіад.
         </p>
-        <img class="event_image" src="../../../assets/img/student-page-img/img7.jpg" alt="KPI"/>
+        <img class="event_image" src="http://localhost:3000/api/image/getFolderFile/student-page-img/img7.jpg" alt="KPI"/>
         <div>
             <div fxFlex="30">
-                <img class="event_icon" src="../../../assets/img/student-page-img/icon6.jpg" alt="KPI"/>
+                <img class="event_icon" src="http://localhost:3000/api/image/getFolderFile/student-page-img/icon6.jpg" alt="KPI"/>
             </div>
             <div fxFlex="70">
                 <div fxLayout="row" fxLayout.xs="column">
@@ -142,10 +142,10 @@
             </div>
         </div>
         <div class="horizontal-divider-line"></div>
-        <img class="event_image" src="../../../assets/img/student-page-img/img8.jpg" alt="KPI"/>
+        <img class="event_image" src="http://localhost:3000/api/image/getFolderFile/student-page-img/img8.jpg" alt="KPI"/>
         <div>
             <div fxFlex="30">
-                <img class="event_icon" src="../../../assets/img/student-page-img/icon7.jpg" alt="KPI"/>
+                <img class="event_icon" src="http://localhost:3000/api/image/getFolderFile/student-page-img/icon7.jpg" alt="KPI"/>
             </div>
             <div fxFlex="70">
                 <p class="event_text4">
@@ -167,7 +167,7 @@
     </section>
     <section class="courses_block">
         <div class="block_title" id="stickyTitle3"><p>Безкоштовні курси</p></div>
-        <img class="course_icon" src="../../../assets/img/student-page-img/icon8.jpg" alt="KPI"/>
+        <img class="course_icon" src="http://localhost:3000/api/image/getFolderFile/student-page-img/icon8.jpg" alt="KPI"/>
         <div class="courses" fxLayoutGap="50px" fxLayoutGap.xs="5px">
             <p class="course_text">
                 Після переговорів МОН та КПІ з представниками Coursera, студенти та викладачі КПІ ім. Ігоря
@@ -176,12 +176,12 @@
                 студенти також можуть користуватися іншими платформами, а також відвідувати курси, що належать
                 саме КПІ (наприклад, курси іноземних мов тощо).
             </p>
-            <img class="course_icon" src="../../../assets/img/student-page-img/icon9.png" alt="KPI"/>
+            <img class="course_icon" src="http://localhost:3000/api/image/getFolderFile/student-page-img/icon9.png" alt="KPI"/>
             <button class="course_button">
                 <div><a href="https://kpi.ua/board-fdp" target="_blank">Детальніше</a></div>
             </button>
         </div>
-        <img class="course_image" src="../../../assets/img/student-page-img/img9.jpg" alt="KPI"/>
+        <img class="course_image" src="http://localhost:3000/api/image/getFolderFile/student-page-img/img9.jpg" alt="KPI"/>
     </section>
     <section class="telegram_block">
         <div class="block_title" id="stickyTitle4"><p>Усі важливі Telegram-канали КПІ</p></div>
@@ -196,7 +196,7 @@
                     <div>
                         <div fxFlex="30">
                             <img class="telegram_image"
-                                 [src]="'../../../assets/img/student-page-img/' + channel.imageSrc"
+                                 [src]="'http://localhost:3000/api/image/getFolderFile/student-page-img/' + channel.imageSrc"
                                  alt="{{ channel.name }}"/>
                         </div>
                         <div class="left_block_telegram" fxFlex="70">{{ channel.name }}</div>
