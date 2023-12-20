@@ -226,115 +226,43 @@
     font-size: 18px
 
 .search-result
-    background-color: #886F4F
+    background-color: #816644
+    height: 600px
+    min-width: 1440px
 
-.search-result-inner
-    display: flex
-    flex-wrap: wrap
+.search-error-message
+    color: black
 
-.search-result_title
+.history-item
     display: flex
-    justify-content: center
     align-items: center
-    height: 100%
-    font-family: "Montserrat", serif
-    font-size: 33px
-    line-height: normal
-    font-weight: 500
-    color: #ffffff
-    padding: 20px
-
-.line-search
-    width: 100%
-    border: 1px solid rgba(255, 255, 255, 1)
-    margin-bottom: 50px
-
-search-results
-    max-width: 500px
-    padding: 20px
-    margin-bottom: 50px
-
-.search-result-item
-    width: 350px
-    height: 329px
-    border-radius: 24px
-    //margin: 0 10px 40px 10px
-    margin-left: 65px
-    background: rgba(50, 41, 34, 1)
-
-.box_container
-    display: grid
-    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr))
-    justify-content: center
-    gap: 50px
-
-    max-width: 100%
-    flex-wrap: wrap
-
-.result-container
-    width: 100%
-    box-sizing: border-box
-    padding: 30px
-
-
-.result-content
-    display: flex
-    flex-direction: column
-    text-align: center
-    align-items: center
-    margin-top: 10px
-    margin-bottom: 10px
-
-.result-photo
-    max-width: 40%
-    height: auto
-    margin: 10px auto
-    /* Center the image */
-    display: block
-    /* Ensure it behaves like a block element */
-    text-align: center
-
-.result-photo2
-    max-width: 10%
-    height: auto
-    margin: 10px auto
-    display: block
-    text-align: center
-
-.result-title
-    font-size: 18px
-    color: #FFFFFF
-    margin-bottom: 4px
-
-.result-button
-    margin-top: 10px
-    /* Add spacing between the snippet and the button */
-    background-color: rgba(255, 255, 255, 0.7)
-    color: #000000
-    padding: 15px 40px
-    text-align: center
-    text-decoration: none
-    display: inline-block
-    font-size: 20px
+    padding: 10px
     cursor: pointer
-    border-radius: 4px
-    border: none
-    font-family: "Montserrat", serif
-    font-weight: 400
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease
+    transition: background-color 0.3s ease
 
-    &:hover
-        background: wheat
-        transform: scale(1.1)
+.history-item-wrapper
+  display: flex
+  align-items: center
 
-.total-records
-    display: flex
-    justify-content: center
-    align-items: center
-    height: 100%
-    font-family: "Montserrat", serif
-    font-size: 33px
-    line-height: normal
-    font-weight: 500
-    color: #ffffff
-    padding: 20px
+.delete-button
+  height: fit-content
+  background: none
+  border: none
+  color: #000
+  cursor: pointer
+  font-size: 25px
+
+.search-bar .dropdown-list li
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 10px
+  cursor: pointer
+  transition: background-color 0.3s ease
+
+.search-bar .dropdown-list li span
+  flex: 1
+  text-align: center
+
+.search-bar .dropdown-list li:hover
+  background-color: rgba(0, 0, 0, 0.1)
