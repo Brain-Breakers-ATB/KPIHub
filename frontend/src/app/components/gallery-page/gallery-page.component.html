@@ -1,23 +1,25 @@
 <div fxLayout="column" class="wrapper">
-    <section class="gallery_banner">
-        <div class="background-image"></div>
-        <div class="b1_inner">
-                <div class="b1_title">"Галерея: Естетика навчання та інновацій у світлинах!"</div>
-                <div class="line"></div>
-        </div>
-        <div class="zero">
-                <div class="card flex justify-content-center">
-                        <p-treeSelect (onNodeSelect)="scrollTo(selectedNodes.key!)" class="md:w-20rem w-full"
-                                containerStyleClass="w-full" [(ngModel)]="selectedNodes" [options]="nodes"
-                                placeholder="Select Item"></p-treeSelect>
+        <section class="gallery_banner">
+                <div class="background-image"></div>
+                <div class="b1_inner">
+                        <div class="b1_title">"Галерея: Естетика навчання та інновацій у світлинах!"</div>
+                        <div class="line"></div>
                 </div>
-        </div>
-    </section>
+                <div class="zero">
+                        <div class="card flex justify-content-center">
+                                <p-treeSelect (onNodeSelect)="scrollTo(selectedNodes.key!)" class="md:w-20rem w-full"
+                                        containerStyleClass="w-full" [(ngModel)]="selectedNodes" [options]="nodes"
+                                        placeholder="Select Item"></p-treeSelect>
+                        </div>
+                </div>
+        </section>
 </div>
 
 <div class="gallery">
-        <p class="text1" id="1">ІАТЕ</p>
-        <p class="text">Інститут атомної та теплової енергетики</p>
+        <div class="header-inst">
+                <p class="text" id="1">ІАТЕ</p>
+                <p class="text">Інститут атомної та теплової енергетики</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -38,8 +40,10 @@
                 </div>
         </div>
 
-        <p class="text" id="2">ІСЗЗІ</p>
-        <p class="text">Інститут спеціального зв'язку та захисту інформації</p>
+        <div class="header-inst">
+                <p class="text" id="2">ІСЗЗІ</p>
+                <p class="text">Інститут спеціального зв'язку та захисту інформації</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -60,8 +64,10 @@
                 </div>
         </div>
 
-        <p class="text" id="3">ІХФ</p>
-        <p class="text">Інженерно-хiмiчний факультет</p>
+        <div class="header-inst">
+                <p class="text" id="3">ІХФ</p>
+                <p class="text">Інженерно-хiмiчний факультет</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -82,8 +88,10 @@
                 </div>
         </div>
 
-        <p class="text" id="4">НН ВПІ</p>
-        <p class="text">Навчально-науковий видавничо-полiграфiчний інститут</p>
+        <div class="header-inst">
+                <p class="text" id="4">НН ВПІ</p>
+                <p class="text">Навчально-науковий видавничо-полiграфiчний інститут</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -104,8 +112,10 @@
                 </div>
         </div>
 
-        <p class="text" id="5">НН ІАТ</p>
-        <p class="text">Навчально-науковий інститут аерокосмічних технологій</p>
+        <div class="header-inst">
+                <p class="text" id="5">НН ІАТ</p>
+                <p class="text">Навчально-науковий інститут аерокосмічних технологій</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -126,8 +136,10 @@
                 </div>
         </div>
 
-        <p class="text" id="6">НН ІЕЕ</p>
-        <p class="text">Навчально-науковий інститут енергозбереження та енергоменеджменту</p>
+        <div class="header-inst">
+                <p class="text" id="6">НН ІЕЕ</p>
+                <p class="text">Навчально-науковий інститут енергозбереження та енергоменеджменту</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -148,8 +160,10 @@
                 </div>
         </div>
 
-        <p class="text" id="7">НН ІМЗ</p>
-        <p class="text">Навчально-науковий інститут матеріалознавства та зварювання ім. Є.О. Патона</p>
+        <div class="header-inst">
+                <p class="text" id="7">НН ІМЗ</p>
+                <p class="text">Навчально-науковий інститут матеріалознавства та зварювання ім. Є.О. Патона</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -170,8 +184,10 @@
                 </div>
         </div>
 
-        <p class="text" id="8">НН ІПСА</p>
-        <p class="text">Навчально-науковий інститут прикладного системного аналiзу</p>
+        <div class="header-inst">
+                <p class="text" id="8">НН ІПСА</p>
+                <p class="text">Навчально-науковий інститут прикладного системного аналiзу</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -192,8 +208,10 @@
                 </div>
         </div>
 
-        <p class="text" id="9">НН ІТС</p>
-        <p class="text">Навчально-науковий інститут телекомунiкацiйних систем</p>
+        <div class="header-inst">
+                <p class="text" id="9">НН ІТС</p>
+                <p class="text">Навчально-науковий інститут телекомунiкацiйних систем</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -214,8 +232,10 @@
                 </div>
         </div>
 
-        <p class="text" id="10">НН ММІ</p>
-        <p class="text">Навчально-науковий механiко-машинобудiвний iнститут</p>
+        <div class="header-inst">
+                <p class="text" id="10">НН ММІ</p>
+                <p class="text">Навчально-науковий механiко-машинобудiвний iнститут</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -236,8 +256,10 @@
                 </div>
         </div>
 
-        <p class="text" id="11">НН ФТІ</p>
-        <p class="text">Навчально-науковий фiзико-технiчний iнститут</p>
+        <div class="header-inst">
+                <p class="text" id="11">НН ФТІ</p>
+                <p class="text">Навчально-науковий фiзико-технiчний iнститут</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -258,8 +280,10 @@
                 </div>
         </div>
 
-        <p class="text" id="12">ПБФ</p>
-        <p class="text">Приладобудiвний факультет</p>
+        <div class="header-inst">
+                <p class="text" id="12">ПБФ</p>
+                <p class="text">Приладобудiвний факультет</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -280,8 +304,10 @@
                 </div>
         </div>
 
-        <p class="text" id="13">РТФ</p>
-        <p class="text">Радiотехнiчний факультет</p>
+        <div class="header-inst">
+                <p class="text" id="13">РТФ</p>
+                <p class="text">Радiотехнiчний факультет</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -302,8 +328,10 @@
                 </div>
         </div>
 
-        <p class="text" id="14">ФБМІ</p>
-        <p class="text">Факультет біомедичної інженерії</p>
+        <div class="header-inst">
+                <p class="text" id="14">ФБМІ</p>
+                <p class="text">Факультет біомедичної інженерії</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -324,8 +352,10 @@
                 </div>
         </div>
 
-        <p class="text" id="15">ФБТ</p>
-        <p class="text">Факультет бiотехнологiї i бiотехнiки</p>
+        <div class="header-inst">
+                <p class="text" id="15">ФБТ</p>
+                <p class="text">Факультет бiотехнологiї i бiотехнiки</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -346,8 +376,10 @@
                 </div>
         </div>
 
-        <p class="text" id="16">ФЕА</p>
-        <p class="text">Факультет електроенерготехнiки та автоматики</p>
+        <div class="header-inst">
+                <p class="text" id="16">ФЕА</p>
+                <p class="text">Факультет електроенерготехнiки та автоматики</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -368,8 +400,10 @@
                 </div>
         </div>
 
-        <p class="text" id="17">ФЕЛ</p>
-        <p class="text">Факультет електронiки</p>
+        <div class="header-inst">
+                <p class="text" id="17">ФЕЛ</p>
+                <p class="text">Факультет електронiки</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -390,8 +424,10 @@
                 </div>
         </div>
 
-        <p class="text" id="18">ФІОТ</p>
-        <p class="text">Факультет iнформатики та обчислювальної технiки</p>
+        <div class="header-inst">
+                <p class="text" id="18">ФІОТ</p>
+                <p class="text">Факультет iнформатики та обчислювальної технiки</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -412,8 +448,10 @@
                 </div>
         </div>
 
-        <p class="text" id="19">ФЛ</p>
-        <p class="text">Факультет лiнгвiстики</p>
+        <div class="header-inst">
+                <p class="text" id="19">ФЛ</p>
+                <p class="text">Факультет лiнгвiстики</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -434,8 +472,10 @@
                 </div>
         </div>
 
-        <p class="text" id="20">ФММ</p>
-        <p class="text">Факультет менеджменту та маркетингу</p>
+        <div class="header-inst">
+                <p class="text" id="20">ФММ</p>
+                <p class="text">Факультет менеджменту та маркетингу</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -456,8 +496,10 @@
                 </div>
         </div>
 
-        <p class="text" id="21">ФМФ</p>
-        <p class="text">Фiзико-математичний факультет</p>
+        <div class="header-inst">
+                <p class="text" id="21">ФМФ</p>
+                <p class="text">Фiзико-математичний факультет</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -478,8 +520,10 @@
                 </div>
         </div>
 
-        <p class="text" id="22">ФПМ</p>
-        <p class="text">Факультет прикладної математики</p>
+        <div class="header-inst">
+                <p class="text" id="22">ФПМ</p>
+                <p class="text">Факультет прикладної математики</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -500,8 +544,10 @@
                 </div>
         </div>
 
-        <p class="text" id="23">ФСП</p>
-        <p class="text">Факультет соціології і права</p>
+        <div class="header-inst">
+                <p class="text" id="23">ФСП</p>
+                <p class="text">Факультет соціології і права</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
@@ -522,8 +568,10 @@
                 </div>
         </div>
 
-        <p class="text" id="24">ХТФ</p>
-        <p class="text">Хiмiко-технологiчний факультет</p>
+        <div class="header-inst">
+                <p class="text" id="24">ХТФ</p>
+                <p class="text">Хiмiко-технологiчний факультет</p>
+        </div>
         <div class="first">
                 <div class="box">
                         <span style="--i:1;"> <img
