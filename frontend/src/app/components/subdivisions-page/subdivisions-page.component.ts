@@ -111,8 +111,8 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
     onSearchBlur() {
         setTimeout(() => {
-            this.showSearchHistory = false;
-        }, 200);
+            this.showSearchHistory = true;
+        }, 300);
     }
 
     onSearch() {
@@ -125,8 +125,6 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         this.showSearchResult = true;
         this.totalRecords = this.searchResults.length;
         this.addToSearchHistory(trimmedSearchInput);
-
-        this.showSearchHistory = false;
         const apiUrl = 'http://localhost:3000/api/search';
 
         // Modify the following lines to handle optional filters
@@ -197,9 +195,7 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         this.showSearchResult = true;
         this.totalRecords = this.searchResults.length;
         this.addToSearchHistory(trimmedSearchInput);
-
         this.showSearchHistory = false;
-
     }
 
     onHistoryItemClick(historyItem: string) {
@@ -227,7 +223,7 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         this.lastUniqueSearch = this.searchInput;
 
         // Закриваємо випадаючий список історії пошуку
-        this.showSearchHistory = false;
+        this.showSearchHistory = true;
     }
 
     clearSearchHistory(event: Event) {
