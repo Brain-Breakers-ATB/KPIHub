@@ -38,9 +38,9 @@
                     <input type="email" id="email" formControlName="email"
                            [ngClass]="{ 'is-invalid': submitted && feedback['email'].errors }" required>
                     <div *ngIf="submitted && feedback['email'].errors" class="invalid-feedback">
-                        <div *ngIf="feedback['email'].errors?.['required']" style="color:red;">Email is required</div>
+                        <div *ngIf="feedback['email'].errors?.['required']" style="color:red;">Необхідно вказати адресу електронної пошти</div>
                         <div *ngIf="feedback['email'].errors?.['email']" style="color:red;">Необхідно вказати адресу електронної пошти
-                            
+
                         </div>
                     </div>
                 </div>
