@@ -30,7 +30,7 @@
                     <input type="text" id="name" formControlName="name"
                            [ngClass]="{ 'is-invalid': submitted && feedback['name'].errors }" required>
                     <div *ngIf="submitted && feedback['name'].errors" class="invalid-feedback">
-                        <div *ngIf="feedback['name'].errors?.['required']" style="color:red;">Name is required</div>
+                        <div *ngIf="feedback['name'].errors?.['required']" style="color:red;">Необхідно вказати ім'я</div>
                     </div>
                 </div>
                 <div class="form_group">
@@ -39,8 +39,8 @@
                            [ngClass]="{ 'is-invalid': submitted && feedback['email'].errors }" required>
                     <div *ngIf="submitted && feedback['email'].errors" class="invalid-feedback">
                         <div *ngIf="feedback['email'].errors?.['required']" style="color:red;">Email is required</div>
-                        <div *ngIf="feedback['email'].errors?.['email']" style="color:red;">Email must be a valid email
-                            address
+                        <div *ngIf="feedback['email'].errors?.['email']" style="color:red;">Необхідно вказати адресу електронної пошти
+                            
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <textarea id="message" formControlName="message" rows="4" [ngClass]="{ 'is-invalid': submitted &&
                   feedback['message'].errors }" required></textarea>
                     <div *ngIf="submitted && feedback['message'].errors" class="invalid-feedback">
-                        <div *ngIf="feedback['message'].errors?.['required']" style="color:red;">Message is required
+                        <div *ngIf="feedback['message'].errors?.['required']" style="color:red;">Введіть повідомлення
                         </div>
                     </div>
                 </div>
