@@ -17,6 +17,7 @@ import { SelectItem } from 'primeng/api';
 })
 
 export class SubdivisionsPageComponent implements OnInit, OnDestroy {
+    searchErrorMessage: string = ''; // Add this line
     isFilterActive: boolean = false;
     isDepartmentFilterActive: boolean = false;
     lastUniqueSearch: string = '';
@@ -32,6 +33,7 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
     private destroy$: Subject<boolean> = new Subject<boolean>();
     private departmentList!: SelectItemGroup[];
     showSearchResult: boolean = false;
+    instituteFilterSelected: boolean = false;
     constructor(
         private departmentService: DepartmentsService,
         private instituteService: InstitutesService,
@@ -104,8 +106,25 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
     onSearch() {
         const trimmedSearchInput = this.searchInput.trim();
-        if (trimmedSearchInput === '') {
+        const hasSelectedFilters = this.hasSelectedFilters();
+
+        if (trimmedSearchInput === '' && !hasSelectedFilters) {
+            // Set the error message to inform the user that the search field is empty
+            this.searchErrorMessage = 'Please enter a search query or select filters.';
             return;
+        }
+        if (this.instituteFilterSelected && !this.hasSelectedFilters()) {
+            // Display a message when an institute filter is selected without selecting any department filter
+            this.searchErrorMessage = 'Please select at least one department along with the institute filter.';
+            return;
+        }
+
+        // Check if the search is performed only with filters
+        const isSearchOnlyWithFilters = trimmedSearchInput === '' && hasSelectedFilters;
+
+        if (!isSearchOnlyWithFilters) {
+            // If not a search only with filters, add to search history
+            this.addToSearchHistory(trimmedSearchInput);
         }
 
         const apiUrl = 'http://localhost:3000/api/search';
@@ -168,14 +187,13 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
                     console.error('API Error:', error);
                 }
             );
+        this.searchErrorMessage = '';
         // Your existing search logic
-        this.addToSearchHistory(trimmedSearchInput);
         this.showSearchResult = true;
         this.totalRecords = this.searchResults.length;
-        this.addToSearchHistory(trimmedSearchInput);
-
         this.showSearchHistory = false;
     }
+
 
     onHistoryItemClick(historyItem: string) {
         // Перевіряємо, чи цей запит унікальний
@@ -247,8 +265,9 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
         const selectedInstitutes: string[] = event.value.map((instituteList: Institute) => instituteList.code);
         this.filterDepartmentList = this.departmentList.filter((department: SelectItemGroup) => selectedInstitutes.
         includes(department.label));
-        console.log(selectedInstitutes);
-        console.log(this.departmentList);
+
+        // Update the filter status
+        this.instituteFilterSelected = selectedInstitutes.length > 0 && this.filterDepartmentList.length === 0;
     }
 
     private getDepartments(): void {
@@ -270,9 +289,19 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.destroy$))
             .subscribe((institutes: Institute[]) => this.instituteList = institutes)
     }
+    private hasSelectedFilters(): boolean {
+        // Check if at least one filter is selected
+        return this.filterDepartmentList.some(group =>
+            group.items && group.items.length > 0 &&
+            group.items.some((item: SelectItem<any>) => (item as CustomSelectItem).checked !== undefined && (item as CustomSelectItem).checked)
+        ) || (this.selectedDepartments && this.selectedDepartments.length > 0);
+    }
 }
 
 interface CustomSelectItem {
     label: string;
     checked?: boolean; // Add this line if 'checked' is a valid property
+}
+interface CustomSelectItem extends SelectItem {
+    checked?: boolean;
 }
