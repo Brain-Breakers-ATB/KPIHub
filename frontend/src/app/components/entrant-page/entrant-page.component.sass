@@ -17,6 +17,21 @@ html
     padding-bottom: 460px
     text-align: center
 
+.telegram_block
+    background-color: #886F4F
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    margin: 0
+    text-align: center
+
+    table, th, td
+        font-size: 22px
+        border: 2px solid white
+        text-align: center
+        margin: 0 auto
+        color: white
+
 .entrants_banner_title
     display: block
     margin-bottom: 20px
@@ -63,7 +78,7 @@ b
 
 .text_content1, .text_content2, .text_content3, .text_content4, .text_content5, .text_content6, .text_content7, .text_content8
     width: 100%
-    font-size: 17px
+    font-size: 16px
     text-align: justify
     &.text_content2
         text-align: left
@@ -96,13 +111,49 @@ b
     max-width: 100%
 
 .faq_button
-    max-width: 600px
-    min-width: 300px
+    max-width: 650px
+    min-width: 350px
     width: calc(50% - 45px)
     border-radius: 15px
     margin: 10px
     font-size: 20px
     height: 200px
+
+.telegram_block_title
+    text-align: center
+    display: block
+    background-color: #322922
+    margin: 0
+    text-align: center
+    font-size: 36px
+    color: white
+    font-family: "Montserrat", serif
+    padding-top: 24px
+    padding-bottom: 14px
+
+.telegram_button
+    color: black
+    font-size: 20px
+    text-align: center
+    display: inline-block
+    cursor: pointer
+    background-color: #D9D9D9
+    border: none
+    border-radius: 100px
+    font-family: "Montserrat", serif
+    margin-left: 50px
+    margin-right: 50px
+    &:hover
+        background: #BF9E80
+        transform: scale(1.1)
+a 
+    text-decoration: none
+    color: black
+
+.telegram_image
+    height: 100px
+    border-radius: 100px
+    vertical-align: middle
 
 @media screen and (min-width: 768px)
     .faq_button
@@ -146,7 +197,7 @@ b
 
     table, th, td
         font-size: 22px
-        border: 1px solid white
+        border: 2px solid white
         text-align: center
         margin: 0 auto
         color: white
@@ -206,6 +257,12 @@ b
     .telegram_block_title
         font-size: 38px
 
+    .table
+        font-size: 60%
+        box-sizing: border-box
+        background-color: #886F4F
+
+
 @media (min-width: 791px)
     .entrants_banner_title
         font-size: 58px
@@ -239,3 +296,15 @@ b
 
     .telegram_button
         font-size: 15px
+
+@media (max-width: 1200px)
+    .text_content1, .text_content2, .text_content3, .text_content4, .text_content5, .text_content6, .text_content7, .text_content8
+        font-size: 15px
+
+@media (max-width: 1100px)
+    .text_content1, .text_content2, .text_content3, .text_content4, .text_content5, .text_content6, .text_content7, .text_content8
+        font-size: 14.5px
+
+@media (max-width: 930px)
+    .text_content1, .text_content2, .text_content3, .text_content4, .text_content5, .text_content6, .text_content7, .text_content8
+        font-size: 14px
