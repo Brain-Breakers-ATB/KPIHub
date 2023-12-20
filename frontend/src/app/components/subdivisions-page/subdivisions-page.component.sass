@@ -10,14 +10,6 @@
     padding-bottom: 400px
     text-align: center
 
-.delete-button
-    background: none
-    border: none
-    color: red
-    cursor: pointer
-    font-size: 14px
-    margin-left: 5px
-
 .b1_title
     display: block
     margin-bottom: 20px
@@ -203,7 +195,6 @@
 .dropdown-list
     overflow: hidden
 
-
 .search-input-container
     display: flex
     justify-content: space-between
@@ -226,19 +217,18 @@
 .clear-history-button
     margin: 10px
     left: 45%
+    background: rgba(0, 0, 0, 0.5)
+    border: none
+    color: #fff
+    border-radius: 5px
+    font-size: 17px
+    cursor: pointer
 
 .search-container
     display: flex
     justify-content: center
     align-items: center
     margin: 3rem
-
-.delete-button
-    background: none
-    border: none
-    color: #000
-    cursor: pointer
-    font-size: 18px
 
 .search-result
     background-color: #886F4F
@@ -248,7 +238,6 @@
     flex-wrap: wrap
 
 .search-result_title
-    display: flex
     justify-content: center
     align-items: center
     height: 100%
@@ -355,7 +344,7 @@ search-results
     .delete-button
         background: none
         border: none
-        color: red
+        color: black
         cursor: pointer
         font-size: 14px
         margin-left: 5px
@@ -506,21 +495,13 @@ search-results
         transition: background-color 0.3s ease
     .search-bar .dropdown-list li:hover
         background-color: rgba(0, 0, 0, 0.1)
-    .clear-history-button
-        margin: 10px
-        left: 45%
+
     .search-container
         flex-direction: column
         align-items: center
-        margin-bottom: 50px
         padding: 20px
         margin: 20px
-    .delete-button
-        background: none
-        border: none
-        color: #000
-        cursor: pointer
-        font-size: 18px
+
     .line-search
         width: 100%
         border: 1px solid rgba(255, 255, 255, 1)
@@ -549,3 +530,23 @@ search-results
         font-weight: 500
         color: #ffffff
         padding: 20px
+
+.search-bar .dropdown-list .history-item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px
+    cursor: pointer
+    transition: background-color 0.3s ease
+
+.search-bar .dropdown-list .history-item span
+    flex: 1
+    text-align: center
+
+.search-bar .dropdown-list .delete-button
+    background: none
+    border: none
+    color: black
+    cursor: pointer
+    font-size: 25px
+    margin-left: 5px
