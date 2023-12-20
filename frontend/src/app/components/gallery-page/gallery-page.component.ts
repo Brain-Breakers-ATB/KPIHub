@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {TreeNode} from 'primeng/api';
+import { Component } from '@angular/core';
+import { TreeNode } from 'primeng/api';
 
 @Component({
     selector: 'app-gallery-page',
@@ -11,118 +11,120 @@ export class GalleryPageComponent {
     selectedNodes: TreeNode<string> = {
         label: 'Оберіть інститут/факультет'
     };
-    nodes: TreeNode<string> [] = [{
+    nodes: TreeNode<string>[] = [{
         label: 'Інститути',
         selectable: false,
-        children: [{
-            label: 'ІСЗЗІ',
-            key: '1'
-        },
+        children: [
             {
-                label: 'НН ВПІ',
+                label: 'ІАТЕ',
+                key: '1'
+            },
+            {
+                label: 'ІСЗЗІ',
                 key: '2'
             },
             {
-                label: 'НН ІАТ',
-                key: '3'
-            },
-            {
-                label: 'НН ІАТЕ',
+                label: 'НН ВПІ',
                 key: '4'
             },
             {
-                label: 'НН ІЕЕ',
+                label: 'НН ІАТ',
                 key: '5'
             },
             {
-                label: 'НН ІМЗ',
+                label: 'НН ІЕЕ',
                 key: '6'
             },
             {
-                label: 'НН ІПСА',
+                label: 'НН ІМЗ',
                 key: '7'
             },
             {
-                label: 'НН ІТС',
+                label: 'НН ІПСА',
                 key: '8'
             },
             {
-                label: 'НН ММІ',
+                label: 'НН ІТС',
                 key: '9'
             },
             {
-                label: 'НН ФТІ',
+                label: 'НН ММІ',
                 key: '10'
+            },
+            {
+                label: 'НН ФТІ',
+                key: '11'
             }
         ]
     },
-        {
-            label: 'Факультети',
-            selectable: false,
-            children: [{
+    {
+        label: 'Факультети',
+        selectable: false,
+        children: [
+            {
                 label: 'ІХФ',
+                key: '3'
+            },
+            {
+                label: 'ПБФ',
+                key: '12'
+            },
+            {
+                label: 'РТФ',
+                key: '13'
+            },
+            {
+                label: 'ФБМІ',
                 key: '14'
             },
-                {
-                    label: 'ПБФ',
-                    key: '15'
-                },
-                {
-                    label: 'РТФ',
-                    key: '16'
-                },
-                {
-                    label: 'ФБМІ',
-                    key: '17'
-                },
-                {
-                    label: 'ФБТ',
-                    key: '18'
-                },
-                {
-                    label: 'ФЕА',
-                    key: '19'
-                },
-                {
-                    label: 'ФЕЛ',
-                    key: '20'
-                },
-                {
-                    label: 'ФІОТ',
-                    key: '21'
-                },
-                {
-                    label: 'ФЛ',
-                    key: '22'
-                },
-                {
-                    label: 'ФММ',
-                    key: '23'
-                },
-                {
-                    label: 'ФСП',
-                    key: '24'
-                },
-                {
-                    label: 'ФПМ',
-                    key: '25'
-                },
-                {
-                    label: 'ФМФ',
-                    key: '26'
-                },
-                {
-                    label: 'ХТФ',
-                    key: '27'
-                }
-            ]
-        }];
+            {
+                label: 'ФБТ',
+                key: '15'
+            },
+            {
+                label: 'ФЕА',
+                key: '16'
+            },
+            {
+                label: 'ФЕЛ',
+                key: '17'
+            },
+            {
+                label: 'ФІОТ',
+                key: '18'
+            },
+            {
+                label: 'ФЛ',
+                key: '19'
+            },
+            {
+                label: 'ФММ',
+                key: '20'
+            },
+            {
+                label: 'ФСП',
+                key: '21'
+            },
+            {
+                label: 'ФПМ',
+                key: '22'
+            },
+            {
+                label: 'ФМФ',
+                key: '23'
+            },
+            {
+                label: 'ХТФ',
+                key: '24'
+            }
+        ]
+    }];
 
     scrollTo(elementId: string): void {
         console.log("work")
         const element = document.getElementById(elementId);
         if (element) {
-            element.scrollIntoView({behavior: 'smooth'});
+            element.scrollIntoView({ behavior: 'smooth' });
         }
     }
 }
