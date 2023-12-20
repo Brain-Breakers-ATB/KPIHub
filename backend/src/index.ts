@@ -19,6 +19,7 @@ import { entrantTelegramChannelRouter } from "./routes/entrantTelegramChannels.t
 
 import { rateLimit } from "./RateLimiter/rateLimiter.ts";
 import { S3Router } from "./routes/s3Database.ts";
+import { imageRateLimit } from "./RateLimiter/imageRateLimiter.ts";
 
 // MongoDB connection URL with authentication
 const CONNECTION_STRING = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@${DB_ENDPOINT}`;
@@ -31,35 +32,32 @@ app.use(cors());
 // Middleware for parsing JSON request bodies
 app.use(json());
 
-// Middleware for limiting reqests
-app.use(rateLimit);
-
 // Mount the itemRouter for handling item-related routes
-app.use("/api/items", itemsRouter);
+app.use("/api/items", rateLimit, itemsRouter);
 
 // Mount the activitiesRouter for handling activity-related routes
-app.use("/api/activities", activitiesRouter);
+app.use("/api/activities", rateLimit, activitiesRouter);
 
 // Mount the studentTelegramChannelRouter for handling student Telegram channel-related routes
-app.use("/api/studentTelegramChannels", studentTelegramChannelRouter);
+app.use("/api/studentTelegramChannels", rateLimit, studentTelegramChannelRouter);
 
 // Mount the socialLinksRouter for handling social links-related routes
-app.use("/api/socialLinks", socialLinksRouter);
+app.use("/api/socialLinks", rateLimit, socialLinksRouter);
 
 // Mount the feedbacksRouter for handling feedback-related routes
-app.use("/api/feedbacks", feedbacksRouter);
+app.use("/api/feedbacks", rateLimit, feedbacksRouter);
 
-app.use("/api/entrantFAQ", entrantFAQRouter);
+app.use("/api/entrantFAQ", rateLimit, entrantFAQRouter);
 
-app.use("/api/entrantTelegramChannels", entrantTelegramChannelRouter);
+app.use("/api/entrantTelegramChannels", rateLimit, entrantTelegramChannelRouter);
 
-app.use("/api/institutes", institutesRouter);
+app.use("/api/institutes", rateLimit, institutesRouter);
 
-app.use("/api/departments", departmentsRouter);
+app.use("/api/departments", rateLimit, departmentsRouter);
 
-app.use('/api/search', searchRouter);
+app.use('/api/search', rateLimit, searchRouter);
 
-app.use('/api/image', S3Router);
+app.use('/api/image', imageRateLimit, S3Router);
 
 // Connect to MongoDB
 mongoose
