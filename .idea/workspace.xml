@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79511c15-8d10-4e1a-9a3f-d5efa269e521" name="Changes" comment="" />
+    <list default="true" id="79511c15-8d10-4e1a-9a3f-d5efa269e521" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/subdivisions-page/subdivisions-page.component.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.sass" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +22,8 @@
   "keyToString": {
     "git-widget-placeholder": "develop",
     "last_opened_file_path": "D:/Programming/WebStorm/KPIHub",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ts.external.directory.path": "D:\\Programming\\WebStorm\\KPIHub\\frontend\\node_modules\\typescript\\lib"
   }
 }]]></component>
   <component name="RecentsManager">
