@@ -30,7 +30,7 @@
                             <button *ngIf="searchHistory.length > 0" class="clear-history-button" (click)="clearSearchHistory($event)">Очистити історію</button>
                         </ul>
                     </div>
-                    <button class="search-button" (click)="onSearch()">Знайти</button>
+                    <button class="search-button" (click)="scrollTo('results'); onSearch()">Знайти</button>
                 </div>
             </div>
             <div *ngIf="filterDepartmentList.length">
@@ -51,7 +51,7 @@
 </div>
 <section class="search-result" *ngIf="showSearchResult">
     <div class="search-result_inner">
-        <div class="total-records">Загальна кількість результатів: {{ totalResults }}</div>
+        <div class="total-records" id="results">Загальна кількість результатів: {{ totalResults }}</div>
         <div class="line-search"></div>
         <div class="box_container">
             <div *ngFor="let result of resultList.slice(first, first + rows)" class="search-result-item">

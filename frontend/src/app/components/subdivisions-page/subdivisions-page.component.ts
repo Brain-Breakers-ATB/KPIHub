@@ -117,10 +117,11 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
     onSearch() {
         const trimmedSearchInput = this.searchInput.trim();
-        if (trimmedSearchInput === '') {
+        /*if (trimmedSearchInput === '') {
             return;
 
-        }
+        }*/
+
         this.addToSearchHistory(trimmedSearchInput);
         this.showSearchResult = true;
         this.totalRecords = this.searchResults.length;
@@ -243,7 +244,7 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
     private addToSearchHistory(item: string) {
         // Додаємо тільки унікальні результати в історію пошуку
-        if (!this.searchHistory.includes(item)) {
+        if (!this.searchHistory.includes(item) && item != "") {
             this.searchHistory.unshift(item.trim());
 
             // Зберігаємо тільки перші 5 результатів
@@ -318,6 +319,12 @@ export class SubdivisionsPageComponent implements OnInit, OnDestroy {
 
     }
 
+    scrollTo(elementId: string): void {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.scrollIntoView({behavior: 'smooth'});
+        }
+    }
 }
 
 interface CustomSelectItem {
